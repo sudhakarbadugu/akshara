@@ -1,0 +1,766 @@
+import type { JourneyDay } from '../../types'
+
+export const teluguJourney: JourneyDay[] = [
+  // ===================== WEEK 1: WORD FOUNDATION =====================
+
+  // ─── Day 1: Colors ───
+  {
+    day: 1,
+    week: 1,
+    theme: 'Colors',
+    subtitle: 'Learn to name colors around you',
+    icon: '🎨',
+    dailyGoal: 'Learn 6 color words and practice reading them',
+    xpReward: 50,
+    vocabulary: [
+      { english: 'Red', native: 'ఎరుపు', pronunciation: 'Yerupu', meaning: 'Red' },
+      { english: 'Blue', native: 'నీలం', pronunciation: 'Neelam', meaning: 'Blue' },
+      { english: 'Green', native: 'పచ్చ', pronunciation: 'Pachcha', meaning: 'Green' },
+      { english: 'Yellow', native: 'పసుపు', pronunciation: 'Pasupu', meaning: 'Yellow' },
+      { english: 'White', native: 'తెలుపు', pronunciation: 'Telupu', meaning: 'White' },
+      { english: 'Black', native: 'నలుపు', pronunciation: 'Nalupu', meaning: 'Black' },
+    ],
+    learningCard: {
+      native: 'ఎరుపు',
+      english: 'Red',
+      pronunciation: 'Yer-u-pu',
+      meaning: 'The color of fire, roses, and apples',
+      tip: 'In Telugu weddings, brides wear ఎరుపు (red) sarees for good luck! 🔴',
+    },
+    sentenceOfDay: {
+      english: 'The apple is red.',
+      native: 'ఆపిల్ ఎరుపు రంగులో ఉంది.',
+      pronunciation: 'Aapil yerupu rangulo undi.',
+      meaning: 'Describing the color of an apple',
+      wordByWordBreakdown: [
+        { word: 'ఆపిల్', meaning: 'apple' },
+        { word: 'ఎరుపు', meaning: 'red' },
+        { word: 'రంగులో', meaning: 'in color' },
+        { word: 'ఉంది', meaning: 'is (exists)' },
+      ],
+    },
+    activities: [
+      {
+        type: 'tap-listen',
+        title: 'Color Match',
+        instruction: 'Listen to the color name and tap the matching word in Telugu!',
+        data: {
+          audioWord: 'ఎరుపు',
+          options: ['ఎరుపు', 'నీలం', 'పచ్చ', 'పసుపు'],
+          correctIndex: 0,
+        },
+        xpReward: 10,
+      },
+      {
+        type: 'match',
+        title: 'Color Pairs',
+        instruction: 'Match each Telugu color with its English meaning.',
+        data: {
+          pairs: [
+            { native: 'ఎరుపు', english: 'Red' },
+            { native: 'నీలం', english: 'Blue' },
+            { native: 'పచ్చ', english: 'Green' },
+            { native: 'పసుపు', english: 'Yellow' },
+            { native: 'తెలుపు', english: 'White' },
+            { native: 'నలుపు', english: 'Black' },
+          ],
+        },
+        xpReward: 15,
+      },
+      {
+        type: 'write',
+        title: 'Trace: Red',
+        instruction: 'Trace the word for "Red" in Telugu script.',
+        data: { targetWord: 'ఎరుపు', hint: 'Yerupu' },
+        xpReward: 15,
+      },
+      {
+        type: 'speak',
+        title: 'Say the Colors',
+        instruction: 'Speak all six color names clearly. You got this!',
+        data: {
+          targetWords: ['ఎరుపు', 'నీలం', 'పచ్చ', 'పసుపు', 'తెలుపు', 'నలుపు'],
+        },
+        xpReward: 10,
+      },
+    ],
+    quiz: [
+      {
+        question: 'What is "ఎరుపు" in English?',
+        options: ['Blue', 'Red', 'Green', 'Yellow'],
+        correct: 1,
+        correctAnswer: 'Red',
+      },
+      {
+        question: 'How do you say "Green" in Telugu?',
+        options: ['నీలం', 'పసుపు', 'పచ్చ', 'తెలుపు'],
+        correct: 2,
+        correctAnswer: 'పచ్చ',
+      },
+      {
+        question: '"నలుపు" means what color?',
+        options: ['White', 'Yellow', 'Black', 'Orange'],
+        correct: 2,
+        correctAnswer: 'Black',
+      },
+    ],
+    realLifeUsage: [
+      '👉 Point at objects at home and say their color in Telugu: "This shirt is నీలం (blue)!"',
+      '👉 When shopping: "Do you have this in ఎరుపు (red)?"',
+      '👉 Describe nature: "The grass is పచ్చ (green) and the sun is పసుపు (yellow)."',
+    ],
+    revisionWords: [],
+  },
+
+  // ─── Day 2: Fruits ───
+  {
+    day: 2,
+    week: 1,
+    theme: 'Fruits',
+    subtitle: 'Delicious fruit names you will love',
+    icon: '🍎',
+    dailyGoal: 'Learn 6 fruit names and practice pronunciation',
+    xpReward: 50,
+    vocabulary: [
+      { english: 'Apple', native: 'ఆపిల్', pronunciation: 'Aapil', meaning: 'Apple' },
+      { english: 'Banana', native: 'అరటిపండు', pronunciation: 'Aratipandu', meaning: 'Banana' },
+      { english: 'Mango', native: 'మామిడిపండు', pronunciation: 'Maamidipandu', meaning: 'Mango' },
+      { english: 'Orange', native: 'కమలాఫలం', pronunciation: 'Kamalaaphalam', meaning: 'Orange' },
+      { english: 'Grapes', native: 'ద్రాక్ష', pronunciation: 'Draaksha', meaning: 'Grapes' },
+      { english: 'Watermelon', native: 'పుచ్చకాయ', pronunciation: 'Puchchakaaya', meaning: 'Watermelon' },
+    ],
+    learningCard: {
+      native: 'మామిడిపండు',
+      english: 'Mango',
+      pronunciation: 'Maa-mi-di-pan-du',
+      meaning: 'The king of fruits in India',
+      tip: 'Summer in India means మామిడిపండు (mango) season — everyone waits for it! 🥭',
+    },
+    sentenceOfDay: {
+      english: 'I like mangoes very much.',
+      native: 'నాకు మామిడిపండ్లు చాలా ఇష్టం.',
+      pronunciation: 'Naaku maamidipandlu chaala ishtam.',
+      meaning: 'Expressing love for mangoes',
+      wordByWordBreakdown: [
+        { word: 'నాకు', meaning: 'to me' },
+        { word: 'మామిడిపండ్లు', meaning: 'mangoes' },
+        { word: 'చాలా', meaning: 'very much' },
+        { word: 'ఇష్టం', meaning: 'like/favorite' },
+      ],
+    },
+    activities: [
+      {
+        type: 'tap-listen',
+        title: 'Fruit Recall',
+        instruction: 'Listen and tap the correct fruit name in Telugu!',
+        data: {
+          audioWord: 'మామిడిపండు',
+          options: ['ఆపిల్', 'మామిడిపండు', 'ద్రాక్ష', 'పుచ్చకాయ'],
+          correctIndex: 1,
+        },
+        xpReward: 10,
+      },
+      {
+        type: 'match',
+        title: 'Fruit Basket',
+        instruction: 'Match each fruit name to its English meaning.',
+        data: {
+          pairs: [
+            { native: 'ఆపిల్', english: 'Apple' },
+            { native: 'అరటిపండు', english: 'Banana' },
+            { native: 'మామిడిపండు', english: 'Mango' },
+            { native: 'కమలాఫలం', english: 'Orange' },
+            { native: 'ద్రాక్ష', english: 'Grapes' },
+            { native: 'పుచ్చకాయ', english: 'Watermelon' },
+          ],
+        },
+        xpReward: 15,
+      },
+      {
+        type: 'write',
+        title: 'Trace: Mango',
+        instruction: 'Trace the word for "Mango" in Telugu script.',
+        data: { targetWord: 'మామిడిపండు', hint: 'Maamidipandu' },
+        xpReward: 15,
+      },
+      {
+        type: 'speak',
+        title: 'Fruit Stand',
+        instruction: 'Say each fruit name in Telugu after hearing it.',
+        data: {
+          targetWords: ['ఆపిల్', 'అరటిపండు', 'మామిడిపండు', 'కమలాఫలం', 'ద్రాక్ష', 'పుచ్చకాయ'],
+        },
+        xpReward: 10,
+      },
+    ],
+    quiz: [
+      {
+        question: 'What is "మామిడిపండు" in English?',
+        options: ['Banana', 'Mango', 'Apple', 'Orange'],
+        correct: 1,
+        correctAnswer: 'Mango',
+      },
+      {
+        question: 'How do you say "Grapes" in Telugu?',
+        options: ['ద్రాక్ష', 'పుచ్చకాయ', 'కమలాఫలం', 'ఆపిల్'],
+        correct: 0,
+        correctAnswer: 'ద్రాక్ష',
+      },
+      {
+        question: '"అరటిపండు" is which fruit?',
+        options: ['Apple', 'Mango', 'Banana', 'Watermelon'],
+        correct: 2,
+        correctAnswer: 'Banana',
+      },
+    ],
+    realLifeUsage: [
+      '👉 At the fruit shop: "Give me one కమలాఫలం (orange) and two మామిడిపండ్లు (mangoes)."',
+      '👉 At breakfast: "I eat an ఆపిల్ (apple) every morning."',
+      '👉 In summer: "Let us buy a big పుచ్చకాయ (watermelon)!"',
+    ],
+    revisionWords: ['ఎరుపు', 'పచ్చ', 'తెలుపు'],
+  },
+
+  // ─── Day 3: Animals ───
+  {
+    day: 3,
+    week: 1,
+    theme: 'Animals',
+    subtitle: 'Meet the animals and their sounds',
+    icon: '🦁',
+    dailyGoal: 'Learn 6 animal names and their sounds',
+    xpReward: 50,
+    vocabulary: [
+      { english: 'Dog', native: 'కుక్క', pronunciation: 'Kukka', meaning: 'Dog' },
+      { english: 'Cat', native: 'పిల్లి', pronunciation: 'Pilli', meaning: 'Cat' },
+      { english: 'Cow', native: 'ఆవు', pronunciation: 'Aavu', meaning: 'Cow' },
+      { english: 'Bird', native: 'పక్షి', pronunciation: 'Pakshi', meaning: 'Bird' },
+      { english: 'Fish', native: 'చేప', pronunciation: 'Chepa', meaning: 'Fish' },
+      { english: 'Elephant', native: 'ఏనుగ', pronunciation: 'Yenuga', meaning: 'Elephant' },
+    ],
+    learningCard: {
+      native: 'ఏనుగ',
+      english: 'Elephant',
+      pronunciation: 'Ye-nu-ga',
+      meaning: 'The gentle giant of the forest',
+      tip: 'In Indian temples, ఏనుగ (elephants) are decorated beautifully during festivals! 🐘',
+    },
+    sentenceOfDay: {
+      english: 'The dog is barking loudly.',
+      native: 'కుక్క గట్టిగా మొరుగుతోంది.',
+      pronunciation: 'Kukka gattigaa morugutondi.',
+      meaning: 'Describing a barking dog',
+      wordByWordBreakdown: [
+        { word: 'కుక్క', meaning: 'dog' },
+        { word: 'గట్టిగా', meaning: 'loudly' },
+        { word: 'మొరుగుతోంది', meaning: 'is barking' },
+      ],
+    },
+    activities: [
+      {
+        type: 'tap-listen',
+        title: 'Animal Sounds',
+        instruction: 'Listen and tap the correct animal name in Telugu!',
+        data: {
+          audioWord: 'ఏనుగ',
+          options: ['కుక్క', 'ఆవు', 'పక్షి', 'ఏనుగ'],
+          correctIndex: 3,
+        },
+        xpReward: 10,
+      },
+      {
+        type: 'match',
+        title: 'Animal Kingdom',
+        instruction: 'Match each animal to its Telugu name.',
+        data: {
+          pairs: [
+            { native: 'కుక్క', english: 'Dog' },
+            { native: 'పిల్లి', english: 'Cat' },
+            { native: 'ఆవు', english: 'Cow' },
+            { native: 'పక్షి', english: 'Bird' },
+            { native: 'చేప', english: 'Fish' },
+            { native: 'ఏనుగ', english: 'Elephant' },
+          ],
+        },
+        xpReward: 15,
+      },
+      {
+        type: 'write',
+        title: 'Trace: Dog',
+        instruction: 'Trace the word for "Dog" in Telugu script.',
+        data: { targetWord: 'కుక్క', hint: 'Kukka' },
+        xpReward: 15,
+      },
+      {
+        type: 'speak',
+        title: 'Zoo Tour',
+        instruction: 'Say the animal names aloud like you are at a zoo!',
+        data: {
+          targetWords: ['కుక్క', 'పిల్లి', 'ఆవు', 'పక్షి', 'చేప', 'ఏనుగ'],
+        },
+        xpReward: 10,
+      },
+    ],
+    quiz: [
+      {
+        question: 'What is "కుక్క" in English?',
+        options: ['Cat', 'Dog', 'Cow', 'Bird'],
+        correct: 1,
+        correctAnswer: 'Dog',
+      },
+      {
+        question: 'How do you say "Elephant" in Telugu?',
+        options: ['ఆవు', 'ఏనుగ', 'చేప', 'పక్షి'],
+        correct: 1,
+        correctAnswer: 'ఏనుగ',
+      },
+      {
+        question: '"పిల్లి" means which animal?',
+        options: ['Dog', 'Bird', 'Cat', 'Fish'],
+        correct: 2,
+        correctAnswer: 'Cat',
+      },
+    ],
+    realLifeUsage: [
+      '👉 Seeing a street dog: "Look, a కుక్క (dog)!"',
+      '👉 Visiting a farm: "The ఆవు (cow) gives us milk."',
+      '👉 At the park: "The పక్షి (bird) is singing beautifully."',
+    ],
+    revisionWords: ['ఆపిల్', 'మామిడిపండు', 'అరటిపండు'],
+  },
+
+  // ─── Day 4: Family ───
+  {
+    day: 4,
+    week: 1,
+    theme: 'Family',
+    subtitle: 'Meet your family members in Telugu',
+    icon: '👨‍👩‍👧‍👦',
+    dailyGoal: 'Learn 6 family member names',
+    xpReward: 50,
+    vocabulary: [
+      { english: 'Mother', native: 'తల్లి', pronunciation: 'Talli', meaning: 'Mother' },
+      { english: 'Father', native: 'తండ్రి', pronunciation: 'Tandri', meaning: 'Father' },
+      { english: 'Brother', native: 'తమ్ముడు', pronunciation: 'Tammudu', meaning: 'Brother' },
+      { english: 'Sister', native: 'అక్క', pronunciation: 'Akka', meaning: 'Sister (older)' },
+      { english: 'Grandmother', native: 'అమ్మమ్మ', pronunciation: 'Ammamma', meaning: 'Grandmother' },
+      { english: 'Grandfather', native: 'తాతయ్య', pronunciation: 'Taatayya', meaning: 'Grandfather' },
+    ],
+    learningCard: {
+      native: 'అమ్మమ్మ',
+      english: 'Grandmother',
+      pronunciation: 'Am-mam-ma',
+      meaning: 'The loving elder of the family',
+      tip: 'In Telugu homes, అమ్మమ్మ (grandmother) is the expert cook and storyteller! 👵',
+    },
+    sentenceOfDay: {
+      english: 'My mother is very kind.',
+      native: 'నా తల్లి చాలా దయగలది.',
+      pronunciation: 'Naa talli chaala dayagaladi.',
+      meaning: 'Describing mother\'s kindness',
+      wordByWordBreakdown: [
+        { word: 'నా', meaning: 'my' },
+        { word: 'తల్లి', meaning: 'mother' },
+        { word: 'చాలా', meaning: 'very' },
+        { word: 'దయగలది', meaning: 'kind (has kindness)' },
+      ],
+    },
+    activities: [
+      {
+        type: 'tap-listen',
+        title: 'Family Tree',
+        instruction: 'Listen and tap the correct family member!',
+        data: {
+          audioWord: 'తండ్రి',
+          options: ['తల్లి', 'తండ్రి', 'తమ్ముడు', 'అక్క'],
+          correctIndex: 1,
+        },
+        xpReward: 10,
+      },
+      {
+        type: 'match',
+        title: 'Family Match',
+        instruction: 'Match each family word to its English meaning.',
+        data: {
+          pairs: [
+            { native: 'తల్లి', english: 'Mother' },
+            { native: 'తండ్రి', english: 'Father' },
+            { native: 'తమ్ముడు', english: 'Brother' },
+            { native: 'అక్క', english: 'Sister' },
+            { native: 'అమ్మమ్మ', english: 'Grandmother' },
+            { native: 'తాతయ్య', english: 'Grandfather' },
+          ],
+        },
+        xpReward: 15,
+      },
+      {
+        type: 'write',
+        title: 'Trace: Mother',
+        instruction: 'Trace the word for "Mother" in Telugu script.',
+        data: { targetWord: 'తల్లి', hint: 'Talli' },
+        xpReward: 15,
+      },
+      {
+        type: 'speak',
+        title: 'Family Introduction',
+        instruction: 'Say each family member name with love!',
+        data: {
+          targetWords: ['తల్లి', 'తండ్రి', 'తమ్ముడు', 'అక్క', 'అమ్మమ్మ', 'తాతయ్య'],
+        },
+        xpReward: 10,
+      },
+    ],
+    quiz: [
+      {
+        question: 'What is "తల్లి" in English?',
+        options: ['Father', 'Mother', 'Sister', 'Grandmother'],
+        correct: 1,
+        correctAnswer: 'Mother',
+      },
+      {
+        question: 'How do you say "Brother" in Telugu?',
+        options: ['అక్క', 'తమ్ముడు', 'తండ్రి', 'తాతయ్య'],
+        correct: 1,
+        correctAnswer: 'తమ్ముడు',
+      },
+      {
+        question: '"అమ్మమ్మ" means?',
+        options: ['Mother', 'Grandfather', 'Grandmother', 'Sister'],
+        correct: 2,
+        correctAnswer: 'Grandmother',
+      },
+    ],
+    realLifeUsage: [
+      '👉 Introducing family: "This is my తల్లి (mother)."',
+      '👉 Calling someone: "అమ్మమ్మ (grandma), tell me a story!"',
+      '👉 Talking about siblings: "My తమ్ముడు (brother) plays cricket."',
+    ],
+    revisionWords: ['కుక్క', 'పిల్లి', 'ఏనుగ', 'పక్షి'],
+  },
+
+  // ─── Day 5: Numbers 1-10 ───
+  {
+    day: 5,
+    week: 1,
+    theme: 'Numbers 1-10',
+    subtitle: 'Count from one to ten like a pro',
+    icon: '🔢',
+    dailyGoal: 'Learn numbers 1 through 10 in Telugu',
+    xpReward: 50,
+    vocabulary: [
+      { english: 'One', native: 'ఒకటి', pronunciation: 'Okati', meaning: '1' },
+      { english: 'Two', native: 'రెండు', pronunciation: 'Rendu', meaning: '2' },
+      { english: 'Three', native: 'మూడు', pronunciation: 'Moodu', meaning: '3' },
+      { english: 'Four', native: 'నాలుగు', pronunciation: 'Naalugu', meaning: '4' },
+      { english: 'Five', native: 'ఐదు', pronunciation: 'Aithu', meaning: '5' },
+      { english: 'Ten', native: 'పది', pronunciation: 'Padhi', meaning: '10' },
+    ],
+    learningCard: {
+      native: 'ఐదు',
+      english: 'Five',
+      pronunciation: 'Ai-dhu',
+      meaning: 'The number 5',
+      tip: 'We have ఐదు (five) fingers on each hand — easy to remember! ✋',
+    },
+    sentenceOfDay: {
+      english: 'I have five mangoes.',
+      native: 'నాకు ఐదు మామిడిపండ్లు ఉన్నాయి.',
+      pronunciation: 'Naaku aithu maamidipandlu unnaayi.',
+      meaning: 'Counting mangoes',
+      wordByWordBreakdown: [
+        { word: 'నాకు', meaning: 'to me' },
+        { word: 'ఐదు', meaning: 'five' },
+        { word: 'మామిడిపండ్లు', meaning: 'mangoes' },
+        { word: 'ఉన్నాయి', meaning: 'are there' },
+      ],
+    },
+    activities: [
+      {
+        type: 'tap-listen',
+        title: 'Number Recall',
+        instruction: 'Listen and tap the correct number in Telugu!',
+        data: {
+          audioWord: 'రెండు',
+          options: ['ఒకటి', 'రెండు', 'మూడు', 'నాలుగు'],
+          correctIndex: 1,
+        },
+        xpReward: 10,
+      },
+      {
+        type: 'match',
+        title: 'Counting Match',
+        instruction: 'Match Telugu numbers to their English meaning.',
+        data: {
+          pairs: [
+            { native: 'ఒకటి', english: 'One' },
+            { native: 'రెండు', english: 'Two' },
+            { native: 'మూడు', english: 'Three' },
+            { native: 'నాలుగు', english: 'Four' },
+            { native: 'ఐదు', english: 'Five' },
+            { native: 'పది', english: 'Ten' },
+          ],
+        },
+        xpReward: 15,
+      },
+      {
+        type: 'write',
+        title: 'Trace: Three',
+        instruction: 'Trace the word for "Three" in Telugu script.',
+        data: { targetWord: 'మూడు', hint: 'Moodu' },
+        xpReward: 15,
+      },
+      {
+        type: 'speak',
+        title: 'Count Aloud',
+        instruction: 'Count from ఒకటి to పది out loud!',
+        data: {
+          targetWords: ['ఒకటి', 'రెండు', 'మూడు', 'నాలుగు', 'ఐదు', 'పది'],
+        },
+        xpReward: 10,
+      },
+    ],
+    quiz: [
+      {
+        question: 'What is "రెండు" in English?',
+        options: ['One', 'Three', 'Two', 'Five'],
+        correct: 2,
+        correctAnswer: 'Two',
+      },
+      {
+        question: 'How do you say "Ten" in Telugu?',
+        options: ['ఐదు', 'పది', 'మూడు', 'ఒకటి'],
+        correct: 1,
+        correctAnswer: 'పది',
+      },
+      {
+        question: '"నాలుగు" means which number?',
+        options: ['3', '5', '4', '2'],
+        correct: 2,
+        correctAnswer: '4',
+      },
+    ],
+    realLifeUsage: [
+      '👉 Shopping: "Give me రెండు (two) apples."',
+      '👉 Telling time: "I wake up at ఐదు (5) o clock."',
+      '👉 Counting people: "There are నాలుగు (four) of us."',
+    ],
+    revisionWords: ['ఎరుపు', 'మామిడిపండు', 'తల్లి', 'తండ్రి'],
+  },
+
+  // ─── Day 6: Body Parts ───
+  {
+    day: 6,
+    week: 1,
+    theme: 'Body Parts',
+    subtitle: 'Learn the parts of your body',
+    icon: '🦴',
+    dailyGoal: 'Learn 6 body part names in Telugu',
+    xpReward: 50,
+    vocabulary: [
+      { english: 'Head', native: 'తల', pronunciation: 'Thala', meaning: 'Head' },
+      { english: 'Eye', native: 'కన్ను', pronunciation: 'Kannu', meaning: 'Eye' },
+      { english: 'Hand', native: 'చేయి', pronunciation: 'Cheyi', meaning: 'Hand' },
+      { english: 'Leg', native: 'కాలు', pronunciation: 'Kaalu', meaning: 'Leg' },
+      { english: 'Nose', native: 'ముక్కు', pronunciation: 'Mukku', meaning: 'Nose' },
+      { english: 'Mouth', native: 'నోరు', pronunciation: 'Noru', meaning: 'Mouth' },
+    ],
+    learningCard: {
+      native: 'కన్ను',
+      english: 'Eye',
+      pronunciation: 'Kan-nu',
+      meaning: 'The organ of sight',
+      tip: '"ఒక కన్ను (one eye)" is also used to say someone is keeping an eye on you! 👁️',
+    },
+    sentenceOfDay: {
+      english: 'I have two eyes.',
+      native: 'నాకు రెండు కళ్ళు ఉన్నాయి.',
+      pronunciation: 'Naaku rendu kallu unnaayi.',
+      meaning: 'Describing eyes',
+      wordByWordBreakdown: [
+        { word: 'నాకు', meaning: 'to me' },
+        { word: 'రెండు', meaning: 'two' },
+        { word: 'కళ్ళు', meaning: 'eyes' },
+        { word: 'ఉన్నాయి', meaning: 'are there' },
+      ],
+    },
+    activities: [
+      {
+        type: 'tap-listen',
+        title: 'Body Bingo',
+        instruction: 'Listen and tap the correct body part in Telugu!',
+        data: {
+          audioWord: 'చేయి',
+          options: ['తల', 'కన్ను', 'చేయి', 'కాలు'],
+          correctIndex: 2,
+        },
+        xpReward: 10,
+      },
+      {
+        type: 'match',
+        title: 'Body Match',
+        instruction: 'Match each body part to its Telugu name.',
+        data: {
+          pairs: [
+            { native: 'తల', english: 'Head' },
+            { native: 'కన్ను', english: 'Eye' },
+            { native: 'చేయి', english: 'Hand' },
+            { native: 'కాలు', english: 'Leg' },
+            { native: 'ముక్కు', english: 'Nose' },
+            { native: 'నోరు', english: 'Mouth' },
+          ],
+        },
+        xpReward: 15,
+      },
+      {
+        type: 'write',
+        title: 'Trace: Eye',
+        instruction: 'Trace the word for "Eye" in Telugu script.',
+        data: { targetWord: 'కన్ను', hint: 'Kannu' },
+        xpReward: 15,
+      },
+      {
+        type: 'speak',
+        title: 'Body Scan',
+        instruction: 'Point and say each body part name aloud!',
+        data: {
+          targetWords: ['తల', 'కన్ను', 'చేయి', 'కాలు', 'ముక్కు', 'నోరు'],
+        },
+        xpReward: 10,
+      },
+    ],
+    quiz: [
+      {
+        question: 'What is "తల" in English?',
+        options: ['Hand', 'Head', 'Eye', 'Leg'],
+        correct: 1,
+        correctAnswer: 'Head',
+      },
+      {
+        question: 'How do you say "Mouth" in Telugu?',
+        options: ['ముక్కు', 'నోరు', 'కన్ను', 'చేయి'],
+        correct: 1,
+        correctAnswer: 'నోరు',
+      },
+      {
+        question: '"కాలు" means which body part?',
+        options: ['Hand', 'Leg', 'Eye', 'Nose'],
+        correct: 1,
+        correctAnswer: 'Leg',
+      },
+    ],
+    realLifeUsage: [
+      '👉 When hurt: "My కాలు (leg) is paining."',
+      '👉 Instructing kids: "Wash your చేయి (hands) before eating!"',
+      '👉 Describing: "Her కన్ను (eyes) are beautiful."',
+    ],
+    revisionWords: ['ఆపిల్', 'కుక్క', 'పిల్లి', 'ఒకటి', 'రెండు'],
+  },
+
+  // ─── Day 7: Common Objects ───
+  {
+    day: 7,
+    week: 1,
+    theme: 'Common Objects',
+    subtitle: 'Things you see every day',
+    icon: '📚',
+    dailyGoal: 'Learn 6 everyday object names',
+    xpReward: 50,
+    vocabulary: [
+      { english: 'Book', native: 'పుస్తకం', pronunciation: 'Pustakam', meaning: 'Book' },
+      { english: 'Water', native: 'నీళ్ళు', pronunciation: 'Neellu', meaning: 'Water' },
+      { english: 'Chair', native: 'కుర్చీ', pronunciation: 'Kurchi', meaning: 'Chair' },
+      { english: 'Table', native: 'మేజు', pronunciation: 'Meju', meaning: 'Table' },
+      { english: 'Pen', native: 'పేనా', pronunciation: 'Penaa', meaning: 'Pen' },
+      { english: 'House', native: 'ఇల్లు', pronunciation: 'Illu', meaning: 'House' },
+    ],
+    learningCard: {
+      native: 'పుస్తకం',
+      english: 'Book',
+      pronunciation: 'Pus-ta-kam',
+      meaning: 'A source of knowledge and stories',
+      tip: 'In Telugu, "పుస్తకం బంధువు" means "a book is a friend" — books are deeply valued! 📖',
+    },
+    sentenceOfDay: {
+      english: 'This is my house.',
+      native: 'ఇది నా ఇల్లు.',
+      pronunciation: 'Idi naa illu.',
+      meaning: 'Introducing your house',
+      wordByWordBreakdown: [
+        { word: 'ఇది', meaning: 'this' },
+        { word: 'నా', meaning: 'my' },
+        { word: 'ఇల్లు', meaning: 'house' },
+      ],
+    },
+    activities: [
+      {
+        type: 'tap-listen',
+        title: 'Object Hunt',
+        instruction: 'Listen and tap the correct object name in Telugu!',
+        data: {
+          audioWord: 'పుస్తకం',
+          options: ['పుస్తకం', 'కుర్చీ', 'మేజు', 'ఇల్లు'],
+          correctIndex: 0,
+        },
+        xpReward: 10,
+      },
+      {
+        type: 'match',
+        title: 'Household Match',
+        instruction: 'Match each object to its Telugu name.',
+        data: {
+          pairs: [
+            { native: 'పుస్తకం', english: 'Book' },
+            { native: 'నీళ్ళు', english: 'Water' },
+            { native: 'కుర్చీ', english: 'Chair' },
+            { native: 'మేజు', english: 'Table' },
+            { native: 'పేనా', english: 'Pen' },
+            { native: 'ఇల్లు', english: 'House' },
+          ],
+        },
+        xpReward: 15,
+      },
+      {
+        type: 'write',
+        title: 'Trace: Water',
+        instruction: 'Trace the word for "Water" in Telugu script.',
+        data: { targetWord: 'నీళ్ళు', hint: 'Neellu' },
+        xpReward: 15,
+      },
+      {
+        type: 'speak',
+        title: 'Room Tour',
+        instruction: 'Say the object names as you look around your room!',
+        data: {
+          targetWords: ['పుస్తకం', 'నీళ్ళు', 'కుర్చీ', 'మేజు', 'పేనా', 'ఇల్లు'],
+        },
+        xpReward: 10,
+      },
+    ],
+    quiz: [
+      {
+        question: 'What is "పుస్తకం" in English?',
+        options: ['Pen', 'Table', 'Book', 'Chair'],
+        correct: 2,
+        correctAnswer: 'Book',
+      },
+      {
+        question: 'How do you say "Water" in Telugu?',
+        options: ['నీళ్ళు', 'పేనా', 'ఇల్లు', 'మేజు'],
+        correct: 0,
+        correctAnswer: 'నీళ్ళు',
+      },
+      {
+        question: '"ఇల్లు" means what?',
+        options: ['House', 'Chair', 'Book', 'Table'],
+        correct: 0,
+        correctAnswer: 'House',
+      },
+    ],
+    realLifeUsage: [
+      '👉 At home: "The పుస్తకం (book) is on the మేజు (table)."',
+      '👉 Asking: "Give me some నీళ్ళు (water), please."',
+      '👉 Describing: "My ఇల్లు (house) is near the temple."',
+    ],
+    revisionWords: ['ఎరుపు', 'మామిడిపండు', 'తల్లి', 'ఐదు', 'కన్ను'],
+  },
+]

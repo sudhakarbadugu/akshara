@@ -43,6 +43,13 @@ const ACHIEVEMENTS_TEMPLATE: Omit<Achievement, 'earned'>[] = [
   { id: 'level_5', icon: '🎯', title: 'Level 5', desc: 'Reach level 5' },
   { id: 'level_10', icon: '🚀', title: 'Level 10', desc: 'Reach level 10' },
   { id: 'trilingual', icon: '🌍', title: 'Trilingual', desc: 'Explore all 3 languages' },
+  { id: 'journey_start', icon: '🗺️', title: 'Journey Beginner', desc: 'Start your 30-day journey' },
+  { id: 'journey_week1', icon: '📅', title: 'Week 1 Complete', desc: 'Complete the first week' },
+  { id: 'journey_week2', icon: '📆', title: 'Week 2 Complete', desc: 'Complete week two' },
+  { id: 'journey_week3', icon: '📊', title: 'Week 3 Complete', desc: 'Complete week three' },
+  { id: 'journey_complete', icon: '🏅', title: 'Journey Master', desc: 'Complete all 30 days' },
+  { id: 'journey_streak_7', icon: '🔥', title: 'Journey Streak', desc: '7-day journey streak' },
+  { id: 'journey_streak_30', icon: '👑', title: 'Unstoppable', desc: '30-day journey streak' },
 ]
 
 export const useAppStore = create<AppState>()(
@@ -70,6 +77,63 @@ export const useAppStore = create<AppState>()(
           selectedAnswer: null,
           quizFeedback: null,
         })
+      },
+
+      // Journey state
+      currentJourneyDay: 1,
+      completedJourneyDays: [],
+      journeyXP: 0,
+      journeyStreak: 0,
+      journeyStartDate: null,
+      lastJourneyVisit: null,
+
+      startJourney: () => {
+        const today = new Date().toISOString().split('T')[0]
+        set({
+          journeyStartDate: today,
+          lastJourneyVisit: today,
+          currentJourneyDay: 1,
+          journeyStreak: 1,
+        })
+      },
+
+      completeDay: (day: number, xp: number) => {
+        const state = get()
+        const today = new Date().toISOString().split('T')[0]
+        const completed = [...state.completedJourneyDays]
+        if (!completed.includes(day)) completed.push(day)
+        completed.sort((a, b) => a - b)
+        
+        let newStreak = state.journeyStreak
+        if (state.lastJourneyVisit) {
+          const last = new Date(state.lastJourneyVisit)
+          const now = new Date(today)
+          const diff = Math.floor((now.getTime() - last.getTime()) / (1000 * 60 * 60 * 24))
+          if (diff === 1) newStreak += 1
+          else if (diff > 1) newStreak = 1
+        } else {
+          newStreak = 1
+        }
+        
+        const { newXp, newLevel, leveledUp } = get().addXp(xp)
+        set({
+          completedJourneyDays: completed,
+          journeyXP: state.journeyXP + xp,
+          journeyStreak: newStreak,
+          lastJourneyVisit: today,
+          currentJourneyDay: Math.min(day + 1, 30),
+          showConfetti: true,
+        })
+        return { xpEarned: xp, leveledUp }
+      },
+
+      getJourneyProgress: () => {
+        const state = get()
+        const completedDays = state.completedJourneyDays.length
+        const totalXP = state.journeyXP
+        const streak = state.journeyStreak
+        const percent = Math.round((completedDays / 30) * 100)
+        return { completedDays, totalXP, streak, percent }
       },
 
       // UI / Theme
@@ -218,6 +282,16 @@ export const useAppStore = create<AppState>()(
         const totalQuiz = state.score.correct + state.score.wrong
         const accuracy = totalQuiz > 0 ? (state.score.correct / totalQuiz) * 100 : 0
         check('perfect_quiz', accuracy === 100 && totalQuiz >= 5)
+
+        // Journey achievements
+        const jCompleted = state.completedJourneyDays.length
+        check('journey_start', jCompleted >= 1)
+        check('journey_week1', jCompleted >= 7)
+        check('journey_week2', jCompleted >= 14)
+        check('journey_week3', jCompleted >= 21)
+        check('journey_complete', jCompleted >= 30)
+        check('journey_streak_7', state.journeyStreak >= 7)
+        check('journey_streak_30', state.journeyStreak >= 30)
 
         // Trilingual (check if user has explored all languages)
         // This would need additional tracking - skip for now
@@ -493,12 +567,27 @@ export const useAppStore = create<AppState>()(
       getUpdatedPaths: () => {
         const state = get()
         const paths = makeLearningPaths(state.currentLanguage)
+        const lessons = getLessons(state.currentLanguage)
         return paths.map((p) => {
           if (p.id === 'alphabets') {
             const alphabets = getAlphabets(state.currentLanguage)
             const total = countAlphabets(alphabets)
             const pct = total > 0 ? Math.round((state.learnedAlphabets.length / total) * 100) : 0
             return { ...p, progress: pct, completedItems: state.learnedAlphabets.length, totalItems: total }
+          }
+          if (p.id === 'gunihalu') {
+            const alphabets = getAlphabets(state.currentLanguage)
+            const total = alphabets.gunihalu?.chars.length || 0
+            const pct = total > 0 ? Math.round((state.learnedGunithalu.length / total) * 100) : 0
+            return { ...p, progress: pct, completedItems: state.learnedGunithalu.length, totalItems: total }
+          }
+          const catId = { greetings: 1, numbers: 2, 'numbers-1k': 9, 'numbers-lakh': 10, family: 3, food: 4, colors: 5, days: 6, phrases: 7, body: 8 }[p.id]
+          if (catId) {
+            const cat = lessons.find(c => c.id === catId)
+            const total = cat?.words.length || 0
+            const completed = cat?.words.filter(w => state.learnedWords.includes(w.english)).length || 0
+            const pct = total > 0 ? Math.round((completed / total) * 100) : 0
+            return { ...p, progress: pct, completedItems: completed, totalItems: total }
           }
           return p
         })
@@ -530,6 +619,12 @@ export const useAppStore = create<AppState>()(
         score: state.score,
         currentLanguage: state.currentLanguage,
         showEnglishInAlphaQuiz: state.showEnglishInAlphaQuiz,
+        currentJourneyDay: state.currentJourneyDay,
+        completedJourneyDays: state.completedJourneyDays,
+        journeyXP: state.journeyXP,
+        journeyStreak: state.journeyStreak,
+        journeyStartDate: state.journeyStartDate,
+        lastJourneyVisit: state.lastJourneyVisit,
       }),
     }
   )

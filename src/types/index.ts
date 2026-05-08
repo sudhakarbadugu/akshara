@@ -215,6 +215,19 @@ export interface AppState {
   // Language selection
   currentLanguage: Language
   setCurrentLanguage: (lang: Language) => void
+
+  // Journey state
+  currentJourneyDay: number
+  completedJourneyDays: number[]
+  journeyXP: number
+  journeyStreak: number
+  journeyStartDate: string | null
+  lastJourneyVisit: string | null
+
+  // Journey actions
+  startJourney: () => void
+  completeDay: (day: number, xp: number) => { xpEarned: number; leveledUp: boolean }
+  getJourneyProgress: () => { completedDays: number; totalXP: number; streak: number; percent: number }
 }
 
 // Flashcard item — can be either an alphabet char or a word
@@ -260,4 +273,54 @@ export interface SpeechRecognitionResult {
   transcript: string
   matched: boolean
   alternatives: string[]
+}
+
+// Journey types
+export interface JourneyDay {
+  day: number
+  week: number
+  theme: string
+  subtitle: string
+  icon: string
+  dailyGoal: string
+  xpReward: number
+  vocabulary: WordItem[]
+  learningCard: {
+    native: string
+    english: string
+    pronunciation: string
+    meaning: string
+    tip?: string
+  }
+  sentenceOfDay: {
+    english: string
+    native: string
+    pronunciation: string
+    meaning: string
+    wordByWordBreakdown?: { word: string; meaning: string }[]
+  }
+  dialogue?: {
+    title: string
+    scenario: string
+    lines: DialogueLine[]
+  }
+  activities: JourneyActivity[]
+  quiz: QuizQuestion[]
+  realLifeUsage: string[]
+  revisionWords: string[]
+}
+
+export interface JourneyActivity {
+  type: 'tap-listen' | 'match' | 'arrange' | 'speak' | 'write' | 'listen-fill' | 'dialogue'
+  title: string
+  instruction: string
+  data: unknown
+  xpReward: number
+}
+
+export interface QuizQuestion {
+  question: string
+  options: string[]
+  correct: number
+  correctAnswer: string
 }
