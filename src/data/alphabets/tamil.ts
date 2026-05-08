@@ -48,19 +48,18 @@ export const tamilAlphabets: AlphabetData = {
   uyirMei: {
     name: 'உயிர் மெய் எழுத்துகள் (Uyir Mei) — Compound Letters',
     chars: [
-      // Each entry stores: vowelSign (the vowel to add), plus example compound for க்
-      { char: 'அ', name: 'a_compound', english: 'a', keyword: 'க (ka) — base form 🐦', example: 'க் + அ = க' },
-      { char: 'ஆ', name: 'aa_compound', english: 'aa', keyword: 'கா — long aa 📄', example: 'க் + ஆ = கா' },
-      { char: 'இ', name: 'i_compound', english: 'i', keyword: 'கி — short i 🦜', example: 'க் + இ = கி' },
-      { char: 'ஈ', name: 'ee_compound', english: 'ee', keyword: 'கீ — long ee 🥬', example: 'க் + ஈ = கீ' },
-      { char: 'உ', name: 'u_compound', english: 'u', keyword: 'கு — short u 🐦', example: 'க் + உ = கு' },
-      { char: 'ஊ', name: 'oo_compound', english: 'oo', keyword: 'கூ — long oo 🏠', example: 'க் + ஊ = கூ' },
-      { char: 'எ', name: 'e_compound', english: 'e', keyword: 'கெ — short e 🏹', example: 'க் + எ = கெ' },
-      { char: 'ஏ', name: 'ae_compound', english: 'ae', keyword: 'கே — long ae 🛡️', example: 'க் + ஏ = கே' },
-      { char: 'ஐ', name: 'ai_compound', english: 'ai', keyword: 'கை — ai (hand) ✋', example: 'க் + ஐ = கை' },
-      { char: 'ஒ', name: 'o_compound', english: 'o', keyword: 'கொ — short o 🏳️', example: 'க் + ஒ = கொ' },
-      { char: 'ஓ', name: 'oa_compound', english: 'oa', keyword: 'கோ — long oa 🐔', example: 'க் + ஓ = கோ' },
-      { char: 'ஔ', name: 'au_compound', english: 'au', keyword: 'கௌ — au 🐦', example: 'க் + ஔ = கௌ' },
+      { char: 'க', name: 'ka', english: 'ka', keyword: 'க — base form 🐦', tip: 'க் + அ = க' },
+      { char: 'கா', name: 'kaa', english: 'kaa', keyword: 'கா — long aa 📄', tip: 'க் + ஆ = கா' },
+      { char: 'கி', name: 'ki', english: 'ki', keyword: 'கி — short i 🦜', tip: 'க் + இ = கி' },
+      { char: 'கீ', name: 'kee', english: 'kee', keyword: 'கீ — long ee 🥬', tip: 'க் + ஈ = கீ' },
+      { char: 'கு', name: 'ku', english: 'ku', keyword: 'கு — short u 🐦', tip: 'க் + உ = கு' },
+      { char: 'கூ', name: 'koo', english: 'koo', keyword: 'கூ — long oo 🏠', tip: 'க் + ஊ = கூ' },
+      { char: 'கெ', name: 'ke', english: 'ke', keyword: 'கெ — short e 🏹', tip: 'க் + எ = கெ' },
+      { char: 'கே', name: 'kae', english: 'kae', keyword: 'கே — long ae 🛡️', tip: 'க் + ஏ = கே' },
+      { char: 'கை', name: 'kai', english: 'kai', keyword: 'கை — ai (hand) ✋', tip: 'க் + ஐ = கை' },
+      { char: 'கொ', name: 'ko', english: 'ko', keyword: 'கொ — short o 🏳️', tip: 'க் + ஒ = கொ' },
+      { char: 'கோ', name: 'koa', english: 'koa', keyword: 'கோ — long oa 🐔', tip: 'க் + ஓ = கோ' },
+      { char: 'கௌ', name: 'kau', english: 'kau', keyword: 'கௌ — au 🐦', tip: 'க் + ஔ = கௌ' },
     ]
   },
   chillu: {

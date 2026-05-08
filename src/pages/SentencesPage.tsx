@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store/useAppStore'
 import { getSentences } from '../data/sentences'
 import { SectionHeader } from '../components/ui/SectionHeader'
@@ -7,6 +8,7 @@ import { LANGUAGES } from '../i18n/languages'
 import type { SentenceItem } from '../types'
 
 export function SentencesPage() {
+  const navigate = useNavigate()
   const darkMode = useAppStore(s => s.darkMode)
   const currentLanguage = useAppStore(s => s.currentLanguage)
 
@@ -32,6 +34,14 @@ export function SentencesPage() {
 
   return (
     <div className="max-w-5xl mx-auto space-y-6">
+      <button
+        onClick={() => navigate(-1)}
+        className="text-sm font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1 focus-visible:ring-2 focus-visible:ring-indigo-400"
+        aria-label="Go back"
+      >
+        ← Back
+      </button>
+
       <SectionHeader
         title="Sentences"
         subtitle={`${sentences.length} useful phrases in ${langConfig.name}`}

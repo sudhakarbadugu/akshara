@@ -3,6 +3,7 @@ import { ErrorBoundary } from './components/ErrorBoundary'
 import { Layout } from './components/Layout'
 import { HomePage } from './pages/HomePage'
 import { PracticePage } from './pages/PracticePage'
+import { HomeworkPage } from './pages/HomeworkPage'
 import { GunithaluPage } from './pages/GunithaluPage'
 import { FlashcardPage } from './pages/FlashcardPage'
 import { MatchPage } from './pages/MatchPage'
@@ -21,6 +22,7 @@ export default function App() {
           <Route element={<Layout />}>
             <Route index element={<ErrorBoundary><HomePage /></ErrorBoundary>} />
             <Route path="/practice" element={<ErrorBoundary><PracticePage /></ErrorBoundary>} />
+            <Route path="/homework" element={<ErrorBoundary><HomeworkPage /></ErrorBoundary>} />
             <Route path="/gunithalu" element={<ErrorBoundary><GunithaluPage /></ErrorBoundary>} />
             <Route path="/review" element={<ErrorBoundary><ReviewPage /></ErrorBoundary>} />
             <Route path="/flashcard" element={<ErrorBoundary><FlashcardPage /></ErrorBoundary>} />

@@ -37,10 +37,10 @@ const pathConfig: Record<string, PathConfig> = {
   'numbers-lakh': { route: 'flashcard', label: '📖 Study' },
   family:     { route: 'flashcard', label: '🃏 Flashcards' },
   food:       { route: 'quiz',      label: '📝 Quiz' },
-  colors:     { route: 'match',     label: '🧩 Match' },
+  colors:     { route: 'match',     label: '🎴 Study' },
   days:       { route: 'flashcard', label: '🃏 Flashcards' },
   phrases:    { route: 'quiz',      label: '📝 Quiz' },
-  body:       { route: 'match',     label: '🧩 Match' },
+  body:       { route: 'match',     label: '🎴 Study' },
 }
 
 const routePaths: Record<PathRoute, string> = {
@@ -168,6 +168,43 @@ export function HomePage() {
               </motion.div>
             )
           })}
+        </div>
+      </div>
+
+      <div>
+        <SectionHeader title="Conversations" subtitle="Sentences & dialogues with audio" icon="💬" darkMode={darkMode} />
+        <div className="grid grid-cols-2 gap-3">
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() => { sounds.playClick(); navigate('/sentences') }}
+            className={`rounded-2xl p-5 text-left border transition-all flex flex-col gap-2 ${
+              darkMode ? 'border-slate-700 bg-slate-800/60 hover:border-indigo-400/40' : 'border-slate-200 bg-white hover:border-indigo-300'
+            }`}
+          >
+            <div className="text-3xl">📜</div>
+            <div className="font-bold text-sm" style={{ color: textPrimary }}>Sentences</div>
+            <div className="text-xs" style={{ color: textSecondary }}>98 sentences per language grouped by category</div>
+            <div className="mt-auto pt-2">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-400">🎧 Audio</span>
+            </div>
+          </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() => { sounds.playClick(); navigate('/dialogues') }}
+            className={`rounded-2xl p-5 text-left border transition-all flex flex-col gap-2 ${
+              darkMode ? 'border-slate-700 bg-slate-800/60 hover:border-indigo-400/40' : 'border-slate-200 bg-white hover:border-indigo-300'
+            }`}
+          >
+            <div className="text-3xl">🗣️</div>
+            <div className="font-bold text-sm" style={{ color: textPrimary }}>Dialogues</div>
+            <div className="text-xs" style={{ color: textSecondary }}>5 real-life conversation scenarios per language</div>
+            <div className="mt-auto pt-2">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400">A ↔ B</span>
+            </div>
+          </motion.button>
         </div>
       </div>
 

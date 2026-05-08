@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store/useAppStore'
 import { getAlphabets } from '../data/alphabets'
 import { SectionHeader } from '../components/ui/SectionHeader'
@@ -33,64 +34,52 @@ function buildCombosIndic(consonant: string, vowelModifiers: AlphabetChar[]): Co
   })
 }
 
-// Build combos for Tamil: consonant (with pulli) + vowel = compound (pulli removed)
+// Tamil vowel diacritics in canonical order (matching the 12 vowels)
+const TAMIL_VOWEL_SIGNS = [
+  { vowel: 'அ', diacritic: '', translit: 'a' },
+  { vowel: 'ஆ', diacritic: 'ா', translit: 'aa' },
+  { vowel: 'இ', diacritic: 'ி', translit: 'i' },
+  { vowel: 'ஈ', diacritic: 'ீ', translit: 'ee' },
+  { vowel: 'உ', diacritic: 'ு', translit: 'u' },
+  { vowel: 'ஊ', diacritic: 'ூ', translit: 'oo' },
+  { vowel: 'எ', diacritic: 'ெ', translit: 'e' },
+  { vowel: 'ஏ', diacritic: 'ே', translit: 'ae' },
+  { vowel: 'ஐ', diacritic: 'ை', translit: 'ai' },
+  { vowel: 'ஒ', diacritic: 'ொ', translit: 'o' },
+  { vowel: 'ஓ', diacritic: 'ோ', translit: 'oa' },
+  { vowel: 'ஔ', diacritic: 'ௌ', translit: 'au' },
+]
+
+// Build combos for Tamil: consonant + vowel diacritics (algorithmic)
 // Tamil compounds are NOT simple concatenation: க் + அ = க (not க்அ)
-function buildCombosTamil(consonant: string, vowelModifiers: AlphabetChar[]): ComboItem[] {
-  // Tamil consonants have pulli (்). We need to remove pulli and add vowel.
-  // The vowelModifiers.char contains the FULL vowel (அ, ஆ, இ, etc.)
-  // For Tamil, we need a mapping table since compounds are irregular
+function buildCombosTamil(consonant: string, _vowelModifiers: AlphabetChar[]): ComboItem[] {
   const consonantBase = consonant.replace('்', '') // Remove pulli: க் → க
-  
-  return vowelModifiers.map(vm => {
-    // For Tamil, we use a special mapping based on the consonant base
-    // The compound is stored in a lookup or computed via rules
-    // For simplicity, we'll use the example from the data if available
-    // Otherwise fall back to concatenation (won't be perfect but works for demo)
+  const baseTranslit = consonantBase === 'க' ? 'k' : consonantBase === 'ச' ? 's' : consonantBase === 'ட' ? 't' : consonantBase === 'த' ? 'th' : consonantBase === 'ப' ? 'p' : consonantBase === 'ற' ? 'rr' : consonantBase === 'ஞ' ? 'n~' : consonantBase === 'ண' ? 'N' : consonantBase === 'ன' ? 'n' : consonantBase === 'ல' ? 'l' : consonantBase === 'ள' ? 'L' : consonantBase === 'ழ' ? 'zh' : consonantBase === 'ர' ? 'r' : consonantBase === 'வ' ? 'v' : consonantBase === 'ய' ? 'y' : consonantBase === 'ஜ' ? 'j' : consonantBase === 'ஷ' ? 'sh' : consonantBase === 'ஸ' ? 's2' : consonantBase === 'ஹ' ? 'h' : consonantBase
+
+  return TAMIL_VOWEL_SIGNS.map((vs, i) => {
     let compound: string
-    
-    // Tamil compound formation rules (simplified):
-    // க் + அ = க, க் + ஆ = கா, க் + இ = கி, etc.
-    // The vowel sign REPLACES the pulli
-    if (vm.char === 'அ') {
-      compound = consonantBase // க் + அ = க
-    } else if (vm.char === 'ஆ') {
-      compound = consonantBase + 'ா' // க் + ஆ = கா
-    } else if (vm.char === 'இ') {
-      compound = consonantBase + 'ி' // க் + இ = கி
-    } else if (vm.char === 'ஈ') {
-      compound = consonantBase + 'ீ' // க் + ஈ = கீ
-    } else if (vm.char === 'உ') {
-      compound = consonantBase + 'ு' // க் + உ = கு
-    } else if (vm.char === 'ஊ') {
-      compound = consonantBase + 'ூ' // க் + ஊ = கூ
-    } else if (vm.char === 'எ') {
-      compound = consonantBase + 'ெ' // க் + எ = கெ
-    } else if (vm.char === 'ஏ') {
-      compound = consonantBase + 'ே' // க் + ஏ = கே
-    } else if (vm.char === 'ஐ') {
-      compound = consonantBase + 'ை' // க் + ஐ = கை
-    } else if (vm.char === 'ஒ') {
-      compound = consonantBase + 'ொ' // க் + ஒ = கொ
-    } else if (vm.char === 'ஓ') {
-      compound = consonantBase + 'ோ' // க் + ஓ = கோ
-    } else if (vm.char === 'ஔ') {
-      compound = consonantBase + 'ௌ' // க் + ஔ = கௌ
+    // Tamil has special pre/base positioning for some vowel signs around க etc.
+    // For ெ, ே, ை, ொ, ோ, ௌ — these wrap around the consonant
+    if (vs.diacritic === '' || vs.diacritic === 'ா' || vs.diacritic === 'ி' || vs.diacritic === 'ீ' || vs.diacritic === 'ு' || vs.diacritic === 'ூ') {
+      compound = consonantBase + vs.diacritic
     } else {
-      compound = consonantBase + vm.char // Fallback
+      // Pre-base vowel signs: ெ+க → கெ, ே+க → கே, etc.
+      // In Unicode, the pre-base signs come after the consonant visually but are stored after
+      compound = consonantBase + vs.diacritic
     }
-    
+
     return {
       compound,
       consonant,
-      vowelSign: vm.char,
-      translit: vm.english.replace('_compound', ''),
-      example: vm.example?.replace('க்', consonant).replace('க', consonantBase),
-      keyword: vm.keyword?.replace('க', consonantBase),
+      vowelSign: vs.vowel,
+      translit: baseTranslit + vs.translit,
+      keyword: vs.translit,
     }
   })
 }
 
 export function GunithaluPage() {
+  const navigate = useNavigate()
   const sounds = useSounds()
   const mascot = useMascot()
 
@@ -186,6 +175,14 @@ export function GunithaluPage() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
+      <button
+        onClick={() => navigate(-1)}
+        className="text-sm font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1 focus-visible:ring-2 focus-visible:ring-indigo-400"
+        aria-label="Go back"
+      >
+        ← Back
+      </button>
+
       <SectionHeader title={pageTitle} subtitle={pageSubtitle} icon="🔣" darkMode={darkMode} />
 
       {/* Progress bar */}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const CONFETTI_COLORS = [
@@ -62,17 +62,35 @@ export function ConfettiCelebration({ active = false, count = 60 }: { active?: b
   )
 }
 
-export function LevelUpModal({ level, show }: { level: number; show: boolean }) {
-  if (!show) return null
+export function LevelUpModal({ level, show, onDismiss }: { level: number; show: boolean; onDismiss?: () => void }) {
+  const [visible, setVisible] = useState(false)
+  const onDismissRef = useRef(onDismiss)
+  onDismissRef.current = onDismiss
+
+  useEffect(() => {
+    if (show) {
+      setVisible(true)
+      const timer = setTimeout(() => {
+        setVisible(false)
+        onDismissRef.current?.()
+      }, 2000)
+      return () => clearTimeout(timer)
+    }
+  }, [show])
+
+  if (!visible) return null
+
   return (
     <motion.div
       className="fixed inset-0 z-[200] flex items-center justify-center bg-black/60 backdrop-blur-sm"
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      onClick={() => { setVisible(false); onDismiss?.() }}
     >
       <motion.div
-        className="bg-slate-900 border border-indigo-500/30 rounded-3xl p-8 text-center shadow-2xl shadow-indigo-500/20"
+        className="bg-slate-900 border border-indigo-500/30 rounded-3xl p-8 text-center shadow-2xl shadow-indigo-500/20 cursor-pointer"
         initial={{ scale: 0.5, y: 50 }} animate={{ scale: 1, y: 0 }}
         transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+        onClick={(e) => { e.stopPropagation(); setVisible(false); onDismiss?.() }}
       >
         <motion.div
           className="text-6xl mb-4"
@@ -82,6 +100,7 @@ export function LevelUpModal({ level, show }: { level: number; show: boolean }) 
         <h2 className="text-2xl font-black text-white mb-2">Level Up!</h2>
         <div className="text-5xl font-black gradient-text mb-2">Level {level}</div>
         <p className="text-slate-400 text-sm">Keep going! You're doing amazing.</p>
+        <div className="text-[10px] text-slate-500 mt-3">tap to dismiss</div>
       </motion.div>
     </motion.div>
   )

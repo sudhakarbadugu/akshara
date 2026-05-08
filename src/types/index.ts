@@ -154,6 +154,9 @@ export interface AppState {
   setCurrentAlphaGroup: (group: string) => void
   setAlphaCardIndex: (idx: number) => void
 
+
+  showEnglishInAlphaQuiz: boolean
+  setShowEnglishInAlphaQuiz: (val: boolean) => void
   quizActive: boolean
   quizWord: AlphabetChar | WordItem | null
   quizOptions: (AlphabetChar | WordItem)[]

@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion'
-import { Home, PenTool, FileQuestion, BarChart3, User, Brain } from 'lucide-react'
+import { Home, PenTool, FileQuestion, BarChart3, User, Brain, BookOpen } from 'lucide-react'
 
 const navItems = [
   { key: 'home', label: 'Home', icon: Home },
   { key: 'practice', label: 'Practice', icon: PenTool },
+  { key: 'homework', label: 'Homework', icon: BookOpen },
   { key: 'review', label: 'Review', icon: Brain },
   { key: 'quiz', label: 'Quiz', icon: FileQuestion },
   { key: 'progress', label: 'Progress', icon: BarChart3 },
@@ -16,7 +17,7 @@ export function BottomNav({ active = 'home', onNavigate, darkMode = true }: { ac
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center py-3 px-4"
+      className="lg:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center py-3 px-4"
       style={{
         background: bg, backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)',
         borderTop: `1px solid ${border}`, paddingBottom: 'max(12px, env(safe-area-inset-bottom))',

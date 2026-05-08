@@ -59,12 +59,8 @@ export function useSounds() {
   }, [beep])
 
   const playLevelUp = useCallback(() => {
-    const notes = [523.25, 659.25, 783.99, 1046.50, 1318.51]
-    notes.forEach((f, i) => setTimeout(() => beep(f, 0.14, 'sine', 0.28), i * 100))
-    setTimeout(() => {
-      beep(1046.50, 0.3, 'sine', 0.25)
-      setTimeout(() => beep(1318.51, 0.5, 'sine', 0.25), 120)
-    }, 550)
+    const notes = [523.25, 659.25, 783.99, 1046.50]
+    notes.forEach((f, i) => setTimeout(() => beep(f, 0.1, 'sine', 0.22), i * 100))
   }, [beep])
 
   const playStar = useCallback(() => {

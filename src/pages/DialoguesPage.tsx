@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store/useAppStore'
 import { getDialogues } from '../data/dialogues'
 import { SectionHeader } from '../components/ui/SectionHeader'
@@ -6,6 +7,7 @@ import { SpeechButton } from '../components/SpeechButton'
 import { LANGUAGES } from '../i18n/languages'
 
 export function DialoguesPage() {
+  const navigate = useNavigate()
   const darkMode = useAppStore(s => s.darkMode)
   const currentLanguage = useAppStore(s => s.currentLanguage)
 
@@ -24,6 +26,14 @@ export function DialoguesPage() {
 
   return (
     <div className="max-w-5xl mx-auto space-y-6">
+      <button
+        onClick={() => navigate(-1)}
+        className="text-sm font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1 focus-visible:ring-2 focus-visible:ring-indigo-400"
+        aria-label="Go back"
+      >
+        ← Back
+      </button>
+
       <SectionHeader
         title="Dialogues"
         subtitle={`${dialogues.length} conversations in ${langConfig.name}`}

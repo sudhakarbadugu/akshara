@@ -103,9 +103,11 @@ export const useAppStore = create<AppState>()(
       currentAlphaGroup: 'vowels',
       alphaCardIndex: 0,
       setPracticeChar: (char: AlphabetChar | null) => set({ practiceChar: char }),
+      showEnglishInAlphaQuiz: false,
       setPracticeMode: (mode: 'trace' | 'write') => set({ practiceMode: mode }),
       setShowGuide: (val: boolean) => set({ showGuide: val }),
       setCurrentAlphaGroup: (group: string) => set({ currentAlphaGroup: group }),
+      setShowEnglishInAlphaQuiz: (val: boolean) => set({ showEnglishInAlphaQuiz: val }),
       setAlphaCardIndex: (idx: number) => set({ alphaCardIndex: idx }),
 
       // Quiz
@@ -527,6 +529,7 @@ export const useAppStore = create<AppState>()(
         srsItems: state.srsItems,
         score: state.score,
         currentLanguage: state.currentLanguage,
+        showEnglishInAlphaQuiz: state.showEnglishInAlphaQuiz,
       }),
     }
   )
