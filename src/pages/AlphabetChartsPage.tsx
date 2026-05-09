@@ -62,7 +62,7 @@ function GunithaluMatrix({ darkMode }: { darkMode: boolean }) {
   const gunihalu = alphabets.gunihalu || alphabets.uyirMei
   const vowelModifiers = gunihalu?.chars || []
 
-  // Tamil diacritics mapping
+  // For Tamil, show the compound (e.g., கா) in the header instead of just the vowel
   const TAMIL_DIACRITICS: Record<string, string> = {
     'அ': '', 'ஆ': 'ா', 'இ': 'ி', 'ஈ': 'ீ', 'உ': 'ு', 'ஊ': 'ூ',
     'எ': 'ெ', 'ஏ': 'ே', 'ஐ': 'ை', 'ஒ': 'ொ', 'ஓ': 'ோ', 'ஔ': 'ௌ',
@@ -78,6 +78,9 @@ function GunithaluMatrix({ darkMode }: { darkMode: boolean }) {
 
   // Show ALL vowel modifiers
   const displayVowels = vowelModifiers
+
+  // For Tamil, use க் as model consonant to show compound examples in header
+  const modelConsonant = consonants[0]?.char || 'க்'
 
   return (
     <div className="w-full rounded-xl overflow-hidden border" style={{ borderColor: darkMode ? 'rgba(99,102,241,0.2)' : 'rgba(99,102,241,0.1)', background: darkMode ? '#0f172a' : '#ffffff' }}>
@@ -96,17 +99,21 @@ function GunithaluMatrix({ darkMode }: { darkMode: boolean }) {
           {/* Header row with vowels */}
           <thead>
             <tr>
-              <th className="p-3 text-center sticky left-0 z-10" 
-                  style={{ background: darkMode ? '#1e293b' : '#e2e8f0', minWidth: '70px', borderBottom: `1px solid ${darkMode ? 'rgba(99,102,241,0.2)' : 'rgba(99,102,241,0.1)'}` }}>
-                <span className="text-xs font-bold" style={{ color: darkMode ? '#94a3b8' : '#64748b' }}>Consonant</span>
+              <th className="p-3 text-center sticky left-0 z-10"
+                  style={{ background: '#0f172a', minWidth: '70px', borderBottom: `1px solid ${darkMode ? 'rgba(99,102,241,0.3)' : 'rgba(99,102,241,0.2)'}` }}>
+                <span className="text-xs font-bold text-amber-400">Consonant</span>
               </th>
-              {displayVowels.map((vm, i) => (
-                <th key={`header-${vm.char}-${i}`} className="p-3 text-center" 
-                    style={{ background: '#1e3a5f', minWidth: '70px', borderBottom: `1px solid ${darkMode ? 'rgba(99,102,241,0.2)' : 'rgba(99,102,241,0.1)'}` }}>
-                  <span className="text-lg font-bold text-white">{vm.char}</span>
-                  <span className="text-xs block text-slate-300">{vm.english}</span>
-                </th>
-              ))}
+              {displayVowels.map((vm, i) => {
+                // For Tamil, show the compound example in header (e.g., கா) instead of just the vowel (ஆ)
+                const headerCompound = currentLanguage === 'tamil' ? getCompound(modelConsonant, vm.char) : vm.char
+                return (
+                  <th key={`header-${vm.char}-${i}`} className="p-3 text-center"
+                      style={{ background: '#1e3a5f', minWidth: '70px', borderBottom: `1px solid ${darkMode ? 'rgba(99,102,241,0.2)' : 'rgba(99,102,241,0.1)'}` }}>
+                    <span className="text-lg font-bold text-white">{headerCompound}</span>
+                    <span className="text-xs block text-slate-300">{vm.english.replace(/[()]/g, '')}</span>
+                  </th>
+                )
+              })}
             </tr>
           </thead>
           {/* Body rows */}
