@@ -1,7 +1,7 @@
 {
   "name": "language-learning",
-  "version": "1.1.84",
-  "build": "20260509-0721",
+  "version": "1.1.90",
+  "build": "20260509-1541",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,6 +15,7 @@
     "firebase": "^12.13.0",
     "framer-motion": "^12.0.1",
     "lucide-react": "^0.474.0",
+    "node-html-to-image": "^5.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.3",

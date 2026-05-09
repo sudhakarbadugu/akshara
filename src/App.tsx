@@ -13,6 +13,7 @@ import { ProfilePage } from './pages/ProfilePage'
 import { ReviewPage } from './pages/ReviewPage'
 import { SentencesPage } from './pages/SentencesPage'
 import { DialoguesPage } from './pages/DialoguesPage'
+import { AlphabetChartsPage } from './pages/AlphabetChartsPage'
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/profile" element={<ErrorBoundary><ProfilePage /></ErrorBoundary>} />
             <Route path="/sentences" element={<ErrorBoundary><SentencesPage /></ErrorBoundary>} />
             <Route path="/dialogues" element={<ErrorBoundary><DialoguesPage /></ErrorBoundary>} />
+            <Route path="/charts" element={<ErrorBoundary><AlphabetChartsPage /></ErrorBoundary>} />
           </Route>
         </Routes>
       </BrowserRouter>
