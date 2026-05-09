@@ -2,8 +2,10 @@ import { useRef, useEffect, useCallback, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAppStore } from '../store/useAppStore'
 import { getAlphabets } from '../data/alphabets'
+import { getWordsForLetter } from '../data/wordsForLetter'
 import { SectionHeader } from '../components/ui/SectionHeader'
 import { SpeechButton } from '../components/SpeechButton'
+import { WordChipBar } from '../components/WordChipBar'
 import { useSounds } from '../hooks/useSounds'
 import { useMascot } from '../hooks/useMascot'
 import { LANGUAGES } from '../i18n/languages'
@@ -58,15 +60,20 @@ export function PracticePage() {
   const textSecondary = darkMode ? '#94a3b8' : '#475569'
   const borderColor = darkMode ? 'rgba(99,102,241,0.15)' : 'rgba(99,102,241,0.1)'
 
+  // Words that contain the currently selected letter
+  const letterWords = getWordsForLetter(practiceChar?.char ?? '', currentLanguage, 10)
+
   const drawGuide = useCallback(
     (ctx: CanvasRenderingContext2D) => {
       if (!canvasRef.current) return
       ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height)
-      if (!showGuide || practiceMode !== 'trace' || !practiceChar) return
+      if (!showGuide || !practiceChar) return
+
+      // Draw faint character ghost only (stroke guide is SVG overlay now)
       ctx.save()
       ctx.font = `bold 180px "Noto Sans ${langConfig.name}", serif`
-      ctx.fillStyle = 'rgba(99, 102, 241, 0.08)'
-      ctx.strokeStyle = 'rgba(99, 102, 241, 0.15)'
+      ctx.fillStyle = 'rgba(99, 102, 241, 0.06)'
+      ctx.strokeStyle = 'rgba(99, 102, 241, 0.10)'
       ctx.lineWidth = 2
       ctx.textAlign = 'center'
       ctx.textBaseline = 'middle'
@@ -74,7 +81,7 @@ export function PracticePage() {
       ctx.strokeText(practiceChar.char, ctx.canvas.width / 2, ctx.canvas.height / 2)
       ctx.restore()
     },
-    [practiceChar, practiceMode, showGuide, langConfig.name]
+    [practiceChar, showGuide, langConfig.name]
   )
 
   useEffect(() => {
@@ -355,9 +362,11 @@ export function PracticePage() {
 
             <div className="w-px h-6 bg-slate-700/50" />
 
+
+
             <button
               onClick={() => setShowGuide(!showGuide)}
-              className={`p-2 rounded-lg text-xs font-semibold transition-all ${showGuide ? 'bg-amber-500/20 text-amber-400' : 'text-slate-400 hover:text-slate-300'}`}
+              className={`p-2 rounded-lg text-xs font-semibold transition-all ${showGuide ? 'bg-indigo-500/20 text-indigo-400' : 'text-slate-400 hover:text-slate-300'}`}
             >
               {showGuide ? '👁 Guide' : '👁‍🗨 Guide'}
             </button>
@@ -445,6 +454,8 @@ export function PracticePage() {
               aria-label={`Drawing canvas for tracing ${langConfig.name} letters`}
             />
 
+
+
             {/* Learned animation overlay */}
             <AnimatePresence>
               {showLearnedAnim && (
@@ -504,6 +515,18 @@ export function PracticePage() {
           </div>
         </div>
       </div>
+
+      {/* ─── Bottom: Word chips for selected letter ─── */}
+      {letterWords.length > 0 && (
+        <div className="mt-5">
+          <WordChipBar
+            letter={practiceChar!.char}
+            lang={currentLanguage}
+            darkMode={darkMode}
+            voiceLang={langConfig.voiceLang}
+          />
+        </div>
+      )}
     </div>
   )
 }

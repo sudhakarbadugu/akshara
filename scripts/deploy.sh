@@ -58,7 +58,8 @@ step_build() {
     log "Cleaned previous dist/"
   fi
 
-  # Build
+  # Build: only bump patch if not already bumped in this session,
+  # then compile + bundle
   if ! npm run build; then
     die "Build failed — check output above"
   fi

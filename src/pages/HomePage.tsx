@@ -68,6 +68,7 @@ export function HomePage() {
   const getOverallPct = useAppStore(s => s.getOverallPct)
   const setCurrentAlphaGroup = useAppStore(s => s.setCurrentAlphaGroup)
   const setAlphaCardIndex = useAppStore(s => s.setAlphaCardIndex)
+  const getSRSItemsDue = useAppStore(s => s.getSRSItemsDue)
   const currentLanguage = useAppStore(s => s.currentLanguage)
 
   // Check and update streak on page load
@@ -76,10 +77,12 @@ export function HomePage() {
   const overallPct = getOverallPct()
   const updatedPaths = getUpdatedPaths()
   const achievements = getAchievements()
+  const dueCount = getSRSItemsDue().length
 
   const bgCard = darkMode ? 'rgba(30,41,59,0.7)' : 'rgba(255,255,255,0.9)'
   const textPrimary = darkMode ? '#f8fafc' : '#0f172a'
   const textSecondary = darkMode ? '#94a3b8' : '#475569'
+  const borderColor = darkMode ? 'rgba(99,102,241,0.15)' : 'rgba(99,102,241,0.1)'
 
   const heroPath = updatedPaths.find(p => p.status === 'progress') || updatedPaths[0]
 
@@ -153,6 +156,30 @@ export function HomePage() {
           <span>Level {level} · {xp} XP</span>
         </div>
       </motion.div>
+
+      {/* SRS Review Due Banner */}
+      {dueCount > 0 && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="rounded-2xl p-4 border cursor-pointer"
+          style={{ background: darkMode ? 'rgba(239,68,68,0.1)' : 'rgba(239,68,68,0.05)', borderColor: darkMode ? 'rgba(239,68,68,0.25)' : 'rgba(239,68,68,0.2)' }}
+          onClick={() => { sounds.playClick(); navigate('/review') }}
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-red-500/15 flex items-center justify-center text-xl">🧠</div>
+              <div>
+                <div className="text-sm font-bold text-red-400">{dueCount} item{dueCount > 1 ? 's' : ''} due for review</div>
+                <div className="text-xs" style={{ color: textSecondary }}>Spaced repetition keeps memory strong</div>
+              </div>
+            </div>
+            <button className="px-4 py-2 rounded-xl bg-red-500 text-white text-sm font-bold hover:bg-red-600 transition-colors">
+              Review Now →
+            </button>
+          </div>
+        </motion.div>
+      )}
 
       <div>
         <SectionHeader title="Learning Paths" subtitle="Choose a skill to master" icon="🧭" darkMode={darkMode} />

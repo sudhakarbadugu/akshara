@@ -349,10 +349,14 @@ export const useAppStore = create<AppState>()(
       startAlphaQuiz: () => {
         const state = get()
         const alphabets = getAlphabets(state.currentLanguage)
-        const chars = alphabets[state.currentAlphaGroup]?.chars || []
-        if (!chars.length) return
-        const randChar = chars[Math.floor(Math.random() * chars.length)]
-        const others = chars.filter((c) => c.char !== randChar.char).slice(0, 3)
+        // Flatten ALL groups so every alphabet character is quiz-eligible
+        const allChars = Object.values(alphabets).flatMap((g) => g.chars || [])
+        if (!allChars.length) return
+        const randChar = allChars[Math.floor(Math.random() * allChars.length)]
+        const others = allChars
+          .filter((c) => c.char !== randChar.char)
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 3)
         set({
           quizWord: randChar,
           selectedAnswer: null,
@@ -367,12 +371,16 @@ export const useAppStore = create<AppState>()(
         const cat = lessons.find((c) => c.id === categoryId)
         if (!cat) return
         const randWord = cat.words[Math.floor(Math.random() * cat.words.length)]
+        const others = cat.words
+          .filter((w) => w.english !== randWord.english)
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 3)
         set({
           quizWord: randWord,
           selectedCategory: categoryId,
           selectedAnswer: null,
           quizFeedback: null,
-          quizOptions: [...cat.words.filter((w) => w.english !== randWord.english).slice(0, 3), randWord].sort(() => Math.random() - 0.5),
+          quizOptions: [...others, randWord].sort(() => Math.random() - 0.5),
         })
       },
 
@@ -380,7 +388,9 @@ export const useAppStore = create<AppState>()(
         const state = get()
         if (!state.learnedAlphabets.includes(char)) {
           set({ learnedAlphabets: [...state.learnedAlphabets, char] })
-          get().checkAchievements() // Check for new achievements
+          get().checkAchievements()
+          // Add to SRS for spaced repetition
+          get().addSRSItem({ id: `alpha:${char}`, type: 'alpha', content: char, meaning: char })
         }
         get().addXp(3)
       },
@@ -389,7 +399,9 @@ export const useAppStore = create<AppState>()(
         const state = get()
         if (!state.learnedGunithalu.includes(compound)) {
           set({ learnedGunithalu: [...state.learnedGunithalu, compound] })
-          get().checkAchievements() // Check for new achievements
+          get().checkAchievements()
+          // Add to SRS
+          get().addSRSItem({ id: `gunithalu:${compound}`, type: 'gunithalu', content: compound, meaning: compound })
         }
         get().addXp(3)
       },
@@ -398,7 +410,9 @@ export const useAppStore = create<AppState>()(
         const state = get()
         if (!state.learnedWords.includes(key)) {
           set({ learnedWords: [...state.learnedWords, key] })
-          get().checkAchievements() // Check for new achievements
+          get().checkAchievements()
+          // Add to SRS
+          get().addSRSItem({ id: `word:${key}`, type: 'word', content: key, meaning: key })
         }
         get().addXp(2)
       },

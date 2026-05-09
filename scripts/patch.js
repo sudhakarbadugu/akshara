@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'fs'
+import { readFileSync, writeFileSync, existsSync } from 'fs'
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
 
@@ -10,15 +10,25 @@ const rootDir = dirname(__dirname)
 const pkgPath = join(rootDir, 'package.json')
 const pkg = JSON.parse(readFileSync(pkgPath, 'utf8'))
 
-// Parse current version (e.g., "1.2.0")
-const [major, minor, patch] = pkg.version.split('.').map(Number)
-
-// Increment patch version (1.2.0 → 1.2.1)
-const newVersion = `${major}.${minor}.${patch + 1}`
-
 // Generate new build timestamp
 const now = new Date()
 const buildTimestamp = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}-${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}`
+
+// Only bump the patch version if the build timestamp has changed
+// This prevents double-bumping when deploy.sh calls npm run build
+// after we've already built manually
+const currentBuild = pkg.build || ''
+let newVersion = pkg.version
+
+if (currentBuild !== buildTimestamp) {
+  // Build timestamp changed → this is a new build, bump the version
+  const [major, minor, patch] = pkg.version.split('.').map(Number)
+  newVersion = `${major}.${minor}.${patch + 1}`
+  console.log(`✅ Version bumped: ${pkg.version} → ${newVersion}`)
+} else {
+  // Same build timestamp → version was already bumped for this build
+  console.log(`✅ Version already bumped for this build: ${pkg.version} → ${newVersion}`)
+}
 
 pkg.version = newVersion
 pkg.build = buildTimestamp
@@ -33,5 +43,4 @@ export const APP_BUILD = '${buildTimestamp}'
 
 writeFileSync(join(rootDir, 'src', 'version.ts'), versionTs)
 
-console.log(`✅ Version bumped: ${pkg.version} → ${newVersion}`)
 console.log(`✅ Build timestamp: ${buildTimestamp}`)
