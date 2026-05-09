@@ -18,7 +18,7 @@ import { AlphabetChartsPage } from './pages/AlphabetChartsPage'
 export default function App() {
   return (
     <ErrorBoundary>
-      <BrowserRouter basename="/language-learning">
+      <BrowserRouter basename="/akshara">
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<ErrorBoundary><HomePage /></ErrorBoundary>} />

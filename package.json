@@ -1,7 +1,7 @@
 {
   "name": "language-learning",
-  "version": "1.1.90",
-  "build": "20260509-1541",
+  "version": "1.1.92",
+  "build": "20260509-1842",
   "type": "module",
   "scripts": {
     "dev": "vite",
