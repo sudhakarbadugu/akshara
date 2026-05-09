@@ -21,19 +21,10 @@ const ROW_COLORS = [
 
 function AlphabetCell({ char, english, darkMode }: { char: string; english: string; darkMode: boolean }) {
   return (
-    <div className="flex flex-col items-center justify-center p-2 rounded-lg min-w-[60px]">
-      <span className="text-2xl font-bold text-white leading-none">{char}</span>
-      <span className={`text-[10px] mt-1 ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>{english}</span>
-    </div>
-  )
-}
-
-function AlphabetRow({ chars, bgColor, darkMode }: { chars: { char: string; english: string }[]; bgColor: string; darkMode: boolean }) {
-  return (
-    <div className="flex" style={{ background: bgColor }}>
-      {chars.map((c) => (
-        <AlphabetCell key={c.char + c.english} char={c.char} english={c.english} darkMode={darkMode} />
-      ))}
+    <div className="flex flex-col items-center justify-center p-4 rounded-lg min-w-[80px] min-h-[80px] m-1"
+         style={{ background: darkMode ? 'rgba(30,41,59,0.6)' : 'rgba(241,245,249,0.8)', border: `1px solid ${darkMode ? 'rgba(99,102,241,0.2)' : 'rgba(99,102,241,0.1)'}` }}>
+      <span className="text-3xl font-bold leading-none" style={{ color: darkMode ? '#ffffff' : '#1e293b' }}>{char}</span>
+      <span className={`text-xs mt-1 font-medium`} style={{ color: darkMode ? '#94a3b8' : '#64748b' }}>{english}</span>
     </div>
   )
 }
@@ -43,21 +34,23 @@ function AlphabetChart({ type, darkMode }: { type: 'vowels' | 'consonants'; dark
   const alphabets = getAlphabets(currentLanguage)
   const group = alphabets[type]
   const chars = group?.chars || []
-  const rows: { char: string; english: string }[][] = []
-  for (let i = 0; i < chars.length; i += 12) {
-    rows.push(chars.slice(i, i + 12))
-  }
+  
+  // Use CSS Grid instead of flex rows
+  const cols = type === 'vowels' ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6' : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6'
 
   return (
-    <div className="w-full rounded-xl overflow-hidden border" style={{ borderColor: darkMode ? 'rgba(99,102,241,0.2)' : 'rgba(99,102,241,0.1)' }}>
+    <div className="w-full rounded-xl overflow-hidden border p-4" style={{ borderColor: darkMode ? 'rgba(99,102,241,0.2)' : 'rgba(99,102,241,0.1)', background: darkMode ? '#0f172a' : '#ffffff' }}>
       {/* Header */}
-      <div className="px-4 py-2" style={{ background: darkMode ? '#1e293b' : '#f1f5f9' }}>
-        <span className="font-bold text-sm" style={{ color: darkMode ? '#e2e8f0' : '#334155' }}>{group?.name}</span>
+      <div className="px-4 py-3 mb-4 rounded-lg" style={{ background: darkMode ? '#1e293b' : '#f1f5f9' }}>
+        <span className="font-bold text-base" style={{ color: darkMode ? '#e2e8f0' : '#334155' }}>{group?.name}</span>
+        <span className="text-sm ml-2" style={{ color: darkMode ? '#64748b' : '#94a3b8' }}>({chars.length} letters)</span>
       </div>
-      {/* Grid rows */}
-      {rows.map((row, i) => (
-        <AlphabetRow key={i} chars={row} bgColor={ROW_COLORS[i % ROW_COLORS.length]} darkMode={darkMode} />
-      ))}
+      {/* Grid */}
+      <div className={`grid ${cols} gap-3`}>
+        {chars.map((c, i) => (
+          <AlphabetCell key={`${type}-${c.char}-${i}`} char={c.char} english={c.english} darkMode={darkMode} />
+        ))}
+      </div>
     </div>
   )
 }
@@ -69,7 +62,7 @@ function GunithaluMatrix({ darkMode }: { darkMode: boolean }) {
   const gunihalu = alphabets.gunihalu || alphabets.uyirMei
   const vowelModifiers = gunihalu?.chars || []
 
-  // Tamil special: consonant base + vowel diacritic
+  // Tamil diacritics mapping
   const TAMIL_DIACRITICS: Record<string, string> = {
     'அ': '', 'ஆ': 'ா', 'இ': 'ி', 'ஈ': 'ீ', 'உ': 'ு', 'ஊ': 'ூ',
     'எ': 'ெ', 'ஏ': 'ே', 'ஐ': 'ை', 'ஒ': 'ொ', 'ஓ': 'ோ', 'ஔ': 'ௌ',
@@ -86,50 +79,58 @@ function GunithaluMatrix({ darkMode }: { darkMode: boolean }) {
   // Show ALL vowel modifiers
   const displayVowels = vowelModifiers
 
-  // Responsive cell sizing based on number of vowels
-  const cellMinWidth = displayVowels.length > 12 ? '45px' : displayVowels.length > 8 ? '55px' : '65px'
-
   return (
-    <div className="w-full rounded-xl overflow-hidden border" style={{ borderColor: darkMode ? 'rgba(99,102,241,0.2)' : 'rgba(99,102,241,0.1)' }}>
-      <div className="px-4 py-2" style={{ background: darkMode ? '#1e293b' : '#f1f5f9' }}>
-        <span className="font-bold text-sm" style={{ color: darkMode ? '#e2e8f0' : '#334155' }}>
+    <div className="w-full rounded-xl overflow-hidden border" style={{ borderColor: darkMode ? 'rgba(99,102,241,0.2)' : 'rgba(99,102,241,0.1)', background: darkMode ? '#0f172a' : '#ffffff' }}>
+      <div className="px-4 py-3" style={{ background: darkMode ? '#1e293b' : '#f1f5f9' }}>
+        <span className="font-bold text-base" style={{ color: darkMode ? '#e2e8f0' : '#334155' }}>
           {gunihalu?.name}
         </span>
-        <span className="text-xs ml-2" style={{ color: darkMode ? '#64748b' : '#94a3b8' }}>
+        <span className="text-sm ml-2" style={{ color: darkMode ? '#64748b' : '#94a3b8' }}>
           ({consonants.length} consonants × {displayVowels.length} vowels = {consonants.length * displayVowels.length} combos)
         </span>
       </div>
-      {/* Top vowel row header - scrollable horizontally */}
-      <div className="overflow-x-auto w-full">
-        <div className="flex" style={{ background: '#1e3a5f', minWidth: 'fit-content' }}>
-          <div className="sticky left-0 z-10" style={{ minWidth: cellMinWidth, background: '#e0e0e0' }} />
-          {displayVowels.map(vm => (
-            <div key={vm.char} className="flex flex-col items-center justify-center p-2 text-center" style={{ minWidth: cellMinWidth, flex: '0 0 auto' }}>
-              <span className="font-bold text-white" style={{ fontSize: displayVowels.length > 12 ? '15px' : '19px' }}>{vm.char}</span>
-              <span className="text-slate-300" style={{ fontSize: displayVowels.length > 12 ? '8px' : '10px' }}>{vm.english}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-      {/* Consonant rows - scrollable container, no height limit */}
-      <div className="overflow-x-auto overflow-y-auto w-full">
-        <div className="min-w-fit">
-          {/* Show ALL consonants */}
-          {consonants.map((con, ci) => (
-            <div key={con.char} className="flex" style={{ background: ROW_COLORS[ci % ROW_COLORS.length] }}>
-              <div className="sticky left-0 z-10 flex flex-col items-center justify-center p-2 text-center" style={{ minWidth: cellMinWidth, background: ROW_COLORS[ci % ROW_COLORS.length] }}>
-                <span className="font-bold text-white" style={{ fontSize: displayVowels.length > 12 ? '15px' : '19px' }}>{con.char}</span>
-                <span className="text-slate-300" style={{ fontSize: displayVowels.length > 12 ? '8px' : '10px' }}>{con.english}</span>
-              </div>
-              {displayVowels.map(vm => (
-                <div key={vm.char} className="flex flex-col items-center justify-center p-2 text-center" style={{ minWidth: cellMinWidth, flex: '0 0 auto' }}>
-                  <span className="font-bold text-white" style={{ fontSize: displayVowels.length > 12 ? '15px' : '19px' }}>{getCompound(con.char, vm.char)}</span>
-                  <span className="text-slate-300" style={{ fontSize: displayVowels.length > 12 ? '8px' : '10px' }}>{con.english.replace(/[0-9]/g, '')}{vm.english.replace(/ sign/g, '').replace(/ /g, '')}</span>
-                </div>
+      
+      {/* Matrix Table */}
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse">
+          {/* Header row with vowels */}
+          <thead>
+            <tr>
+              <th className="p-3 text-center sticky left-0 z-10" 
+                  style={{ background: darkMode ? '#1e293b' : '#e2e8f0', minWidth: '70px', borderBottom: `1px solid ${darkMode ? 'rgba(99,102,241,0.2)' : 'rgba(99,102,241,0.1)'}` }}>
+                <span className="text-xs font-bold" style={{ color: darkMode ? '#94a3b8' : '#64748b' }}>Consonant</span>
+              </th>
+              {displayVowels.map((vm, i) => (
+                <th key={`header-${vm.char}-${i}`} className="p-3 text-center" 
+                    style={{ background: '#1e3a5f', minWidth: '70px', borderBottom: `1px solid ${darkMode ? 'rgba(99,102,241,0.2)' : 'rgba(99,102,241,0.1)'}` }}>
+                  <span className="text-lg font-bold text-white">{vm.char}</span>
+                  <span className="text-xs block text-slate-300">{vm.english}</span>
+                </th>
               ))}
-            </div>
-          ))}
-        </div>
+            </tr>
+          </thead>
+          {/* Body rows */}
+          <tbody>
+            {consonants.map((con, ci) => (
+              <tr key={`row-${con.char}-${ci}`} style={{ background: ROW_COLORS[ci % ROW_COLORS.length] }}>
+                <td className="p-3 text-center sticky left-0 z-10" 
+                    style={{ background: ROW_COLORS[ci % ROW_COLORS.length], minWidth: '70px', borderBottom: `1px solid rgba(255,255,255,0.1)` }}>
+                  <span className="text-xl font-bold text-white">{con.char}</span>
+                  <span className="text-xs block text-slate-300">{con.english}</span>
+                </td>
+                {displayVowels.map((vm, vi) => (
+                  <td key={`cell-${ci}-${vi}`} className="p-3 text-center" 
+                      style={{ minWidth: '70px', borderBottom: `1px solid rgba(255,255,255,0.1)` }}>
+                    <span className="text-xl font-bold text-white">{getCompound(con.char, vm.char)}</span>
+                    <span className="text-xs block text-slate-300">
+                      {con.english.replace(/[0-9]/g, '')}{vm.english.replace(/ sign/g, '').replace(/ /g, '').replace(/\(/g, '').replace(/\)/g, '')}
+                    </span>
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   )
@@ -154,7 +155,7 @@ export function AlphabetChartsPage() {
     <div className="w-full space-y-4">
       <SectionHeader
         title={`${langConfig.name} Alphabet Chart`}
-        subtitle="247 letters — with English pronunciation"
+        subtitle="Complete alphabet with English pronunciation"
         icon="📋"
         darkMode={darkMode}
       />

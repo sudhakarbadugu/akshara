@@ -11,63 +11,63 @@ export const tamilAlphabets: AlphabetData = {
       { char: 'உ', name: 'u', english: 'u' },
       { char: 'ஊ', name: 'oo', english: 'oo' },
       { char: 'எ', name: 'e', english: 'e' },
-      { char: 'ஏ', name: 'ee2', english: 'ae' },
+      { char: 'ஏ', name: 'ae', english: 'ae' },
       { char: 'ஐ', name: 'ai', english: 'ai' },
       { char: 'ஒ', name: 'o', english: 'o' },
-      { char: 'ஓ', name: 'oo2', english: 'oa' },
+      { char: 'ஓ', name: 'oa', english: 'oa' },
       { char: 'ஔ', name: 'au', english: 'au' },
     ]
   },
   consonants: {
     name: 'மெய் எழுத்துகள் (Mei Ezhuthukal) — Consonants',
     chars: [
-      { char: 'க்', name: 'ka', english: 'k' },
-      { char: 'ச்', name: 'sa', english: 's' },
-      { char: 'ட்', name: 'ta', english: 't' },
-      { char: 'த்', name: 'tha', english: 'th' },
-      { char: 'ப்', name: 'pa', english: 'p' },
-      { char: 'ஜ்', name: 'ja', english: 'j' },
-      { char: 'ஞ்', name: 'na2', english: 'n~' },
-      { char: 'ழ்', name: 'zha', english: 'zh' },
-      { char: 'ல்', name: 'la', english: 'l' },
-      { char: 'ண்', name: 'nna', english: 'N' },
-      { char: 'ன்', name: 'na', english: 'n' },
-      { char: 'ர்', name: 'ra', english: 'r' },
-      { char: 'ற்', name: 'rra', english: 'rr' },
-      { char: 'வ்', name: 'va', english: 'v' },
-      { char: 'ஷ்', name: 'ssha', english: 'sh' },
-      { char: 'ஸ்', name: 'sa2', english: 's2' },
-      { char: 'ஹ்', name: 'ha', english: 'h' },
-      { char: 'அம்', name: 'aum', english: 'aum' },
+      // வர்க்க வாய்ப்பாடு (Varga) — 18 consonants
+      { char: 'க்', name: 'k', english: 'k' },
+      { char: 'ங்', name: 'ng', english: 'ng' },
+      { char: 'ச்', name: 's', english: 's/ch' },
+      { char: 'ஞ்', name: 'nj', english: 'nj' },
+      { char: 'ட்', name: 't', english: 't' },
+      { char: 'ண்', name: 'N', english: 'N (retroflex)' },
+      { char: 'த்', name: 'th', english: 'th' },
+      { char: 'ந்', name: 'n', english: 'n' },
+      { char: 'ப்', name: 'p', english: 'p' },
+      { char: 'ம்', name: 'm', english: 'm' },
+      { char: 'ய்', name: 'y', english: 'y' },
+      { char: 'ர்', name: 'r', english: 'r' },
+      { char: 'ல்', name: 'l', english: 'l' },
+      { char: 'வ்', name: 'v', english: 'v' },
+      { char: 'ழ்', name: 'zh', english: 'zh (l-retroflex)' },
+      { char: 'ள்', name: 'L', english: 'L (retroflex)' },
+      { char: 'ற்', name: 'rr', english: 'rr (trill)' },
+      { char: 'ன்', name: 'nn', english: 'nn (alveolar)' },
     ]
   },
-  // Tamil uyir-mei vowel signs
-  // Tamil is special: vowels don't use diacritical marks like Indic scripts.
-  // Instead, the compound form replaces the pulli (dot) with the full vowel character.
-  // We store the VOWEL characters here since Tamil compounds are consonant+vowel.
+  // Tamil uyir-mei: compounds generated dynamically from consonants + vowels
   uyirMei: {
     name: 'உயிர் மெய் எழுத்துகள் (Uyir Mei) — Compound Letters',
     chars: [
-      { char: 'க', name: 'ka', english: 'ka', keyword: 'க — base form 🐦', tip: 'க் + அ = க' },
-      { char: 'கா', name: 'kaa', english: 'kaa', keyword: 'கா — long aa 📄', tip: 'க் + ஆ = கா' },
-      { char: 'கி', name: 'ki', english: 'ki', keyword: 'கி — short i 🦜', tip: 'க் + இ = கி' },
-      { char: 'கீ', name: 'kee', english: 'kee', keyword: 'கீ — long ee 🥬', tip: 'க் + ஈ = கீ' },
-      { char: 'கு', name: 'ku', english: 'ku', keyword: 'கு — short u 🐦', tip: 'க் + உ = கு' },
-      { char: 'கூ', name: 'koo', english: 'koo', keyword: 'கூ — long oo 🏠', tip: 'க் + ஊ = கூ' },
-      { char: 'கெ', name: 'ke', english: 'ke', keyword: 'கெ — short e 🏹', tip: 'க் + எ = கெ' },
-      { char: 'கே', name: 'kae', english: 'kae', keyword: 'கே — long ae 🛡️', tip: 'க் + ஏ = கே' },
-      { char: 'கை', name: 'kai', english: 'kai', keyword: 'கை — ai (hand) ✋', tip: 'க் + ஐ = கை' },
-      { char: 'கொ', name: 'ko', english: 'ko', keyword: 'கொ — short o 🏳️', tip: 'க் + ஒ = கொ' },
-      { char: 'கோ', name: 'koa', english: 'koa', keyword: 'கோ — long oa 🐔', tip: 'க் + ஓ = கோ' },
-      { char: 'கௌ', name: 'kau', english: 'kau', keyword: 'கௌ — au 🐦', tip: 'க் + ஔ = கௌ' },
+      // These are the vowel diacritics used to form compounds
+      // The actual compounds are generated as consonant + diacritic
+      { char: 'அ', name: 'base', english: 'base', keyword: 'க — base form 🐦', tip: 'க் + அ = க' },
+      { char: 'ஆ', name: 'aa', english: 'aa (ா)', keyword: 'கா — long aa 📄', tip: 'க் + ஆ = கா' },
+      { char: 'இ', name: 'i', english: 'i (ி)', keyword: 'கி — short i 🦜', tip: 'க் + இ = கி' },
+      { char: 'ஈ', name: 'ee', english: 'ee (ீ)', keyword: 'கீ — long ee 🥬', tip: 'க் + ஈ = கீ' },
+      { char: 'உ', name: 'u', english: 'u (ு)', keyword: 'கு — short u 🐦', tip: 'க் + உ = கு' },
+      { char: 'ஊ', name: 'oo', english: 'oo (ூ)', keyword: 'கூ — long oo 🏠', tip: 'க் + ஊ = கூ' },
+      { char: 'எ', name: 'e', english: 'e (ெ)', keyword: 'கெ — short e 🏹', tip: 'க் + எ = கெ' },
+      { char: 'ஏ', name: 'ae', english: 'ae (ே)', keyword: 'கே — long ae 🛡️', tip: 'க் + ஏ = கே' },
+      { char: 'ஐ', name: 'ai', english: 'ai (ை)', keyword: 'கை — ai (hand) ✋', tip: 'க் + ஐ = கை' },
+      { char: 'ஒ', name: 'o', english: 'o (ொ)', keyword: 'கொ — short o 🏳️', tip: 'க் + ஒ = கொ' },
+      { char: 'ஓ', name: 'oa', english: 'oa (ோ)', keyword: 'கோ — long oa 🐔', tip: 'க் + ஓ = கோ' },
+      { char: 'ஔ', name: 'au', english: 'au (ௌ)', keyword: 'கௌ — au 🐦', tip: 'க் + ஔ = கௌ' },
     ]
   },
   chillu: {
-    name: 'சில்லு எழுத்துகள் (Chillu) — Special Letters',
+    name: 'சிறப்பு எழுத்துகள் (Special Letters)',
     chars: [
-      { char: 'ஂ', name: 'ann', english: 'an' },
-      { char: 'ஃ', name: 'ah', english: 'ah' },
-      { char: '்', name: 'pulli', english: 'pulli (virama)' },
+      { char: 'ஂ', name: 'anusvara', english: 'anusvara (ஂ)' },
+      { char: 'ஃ', name: 'aytham', english: 'aytham (ஃ)' },
+      { char: '்', name: 'pulli', english: 'pulli (்) — virama' },
     ]
   }
 }
