@@ -150,13 +150,14 @@ export function AlphabetChartsPage() {
   const currentLanguage = useAppStore(s => s.currentLanguage)
   const langConfig = LANGUAGES[currentLanguage]
 
-  const [chartTab, setChartTab] = useState<'vowels' | 'consonants' | 'matrix'>('matrix')
+  const isEnglish = currentLanguage === 'english'
+  const [chartTab, setChartTab] = useState<'vowels' | 'consonants' | 'matrix'>(isEnglish ? 'vowels' : 'matrix')
 
   const chartTabs = [
-    { key: 'matrix', label: currentLanguage === 'tamil' ? 'உயிர் மெய்' : currentLanguage === 'hindi' ? 'मात्राएं' : 'గుణింతాలు', icon: '🔗' },
-    { key: 'vowels', label: 'Vowels', icon: '🔤' },
-    { key: 'consonants', label: 'Consonants', icon: '🔠' },
-  ] as const
+    ...(!isEnglish ? [{ key: 'matrix' as const, label: currentLanguage === 'tamil' ? 'உயிர் மெய்' : currentLanguage === 'hindi' ? 'मात्राएं' : 'గుణింతాలు', icon: '🔗' }] : []),
+    { key: 'vowels' as const, label: 'Vowels', icon: '🔤' },
+    { key: 'consonants' as const, label: 'Consonants', icon: '🔠' },
+  ]
 
   return (
     <div className="w-full space-y-4">
@@ -192,7 +193,7 @@ export function AlphabetChartsPage() {
       {chartTab === 'matrix' && <GunithaluMatrix darkMode={darkMode} />}
 
       <div className="text-center text-xs" style={{ color: darkMode ? '#64748b' : '#94a3b8' }}>
-        Tap any letter to hear pronunciation · Charts show {currentLanguage === 'tamil' ? 'Uyir Mei (compound letters)' : 'Gunithalu / Matras'}
+        Tap any letter to hear pronunciation {isEnglish ? '' : `· Charts show ${currentLanguage === 'tamil' ? 'Uyir Mei (compound letters)' : 'Gunithalu / Matras'}`}
       </div>
     </div>
   )

@@ -6,9 +6,14 @@ import { getLessons, countLessons } from '../data/lessons'
 
 function makeLearningPaths(lang: Language): LearningPath[] {
   const langName = lang.charAt(0).toUpperCase() + lang.slice(1)
-  return [
+  const paths: LearningPath[] = [
     { id: 'alphabets', title: `${langName} Alphabets`, subtitle: 'Vowels, Consonants & Compounds', icon: '🔤', progress: 0, status: 'progress', totalItems: 0, completedItems: 0, level: 1, xpReward: 50 },
-    { id: 'gunihalu', title: `${langName} Gunithalu`, subtitle: 'Learn compound letters', icon: '🔣', progress: 0, status: 'progress', totalItems: 15, completedItems: 0, level: 2, xpReward: 60 },
+  ]
+  // Gunithalu / compound letters only apply to abugida scripts (not English)
+  if (lang !== 'english') {
+    paths.push({ id: 'gunihalu', title: `${langName} Gunithalu`, subtitle: 'Learn compound letters', icon: '🔣', progress: 0, status: 'progress', totalItems: 15, completedItems: 0, level: 2, xpReward: 60 })
+  }
+  paths.push(
     { id: 'greetings', title: 'Greetings & Basics', subtitle: `Say hello in ${langName}`, icon: '👋', progress: 0, status: 'progress', totalItems: 8, completedItems: 0, level: 1, xpReward: 30 },
     { id: 'numbers', title: 'Numbers 1-100', subtitle: `Count in ${langName}`, icon: '🔢', progress: 0, status: 'progress', totalItems: 100, completedItems: 0, level: 1, xpReward: 25 },
     { id: 'numbers-1k', title: 'Numbers 1K-100K', subtitle: `Thousands in ${langName}`, icon: '📊', progress: 0, status: 'progress', totalItems: 10, completedItems: 0, level: 2, xpReward: 30 },
@@ -18,8 +23,9 @@ function makeLearningPaths(lang: Language): LearningPath[] {
     { id: 'colors', title: `Colors in ${langName}`, subtitle: 'Express yourself with color', icon: '🎨', progress: 0, status: 'progress', totalItems: 8, completedItems: 0, level: 3, xpReward: 30 },
     { id: 'days', title: 'Days of the Week', subtitle: 'Learn the calendar', icon: '📅', progress: 0, status: 'progress', totalItems: 7, completedItems: 0, level: 3, xpReward: 25 },
     { id: 'phrases', title: 'Common Phrases', subtitle: 'Everyday conversations', icon: '💬', progress: 0, status: 'progress', totalItems: 7, completedItems: 0, level: 3, xpReward: 50 },
-    { id: 'body', title: 'Body Parts', subtitle: 'Parts of the body', icon: '🦴', progress: 0, status: 'progress', totalItems: 8, completedItems: 0, level: 4, xpReward: 35 },
-  ]
+    { id: 'body', title: 'Body Parts', subtitle: 'Parts of the body', icon: '🦴', progress: 0, status: 'progress', totalItems: 8, completedItems: 0, level: 4, xpReward: 35 }
+  )
+  return paths
 }
 
 const ACHIEVEMENTS_TEMPLATE: Omit<Achievement, 'earned'>[] = [

@@ -41,7 +41,7 @@ export const englishSentences: SentenceItem[] = [
   { english: 'What time is it now?', native: 'What time is it now?', pronunciation: 'WHAT time IS it NOW?', meaning: 'Asking time' },
   { english: 'It is half past two.', native: 'It is half past two.', pronunciation: 'it is HALF PAST TWO.', meaning: 'Telling time - 2:30' },
   { english: 'Today is Monday.', native: 'Today is Monday.', pronunciation: 'to-DAY is MON-day.', meaning: 'Stating day of week' },
-  { english: 'I wake up at six o clock.', native: 'I wake up at six o\'clock.', pronunciation: 'I WAKE up at SIX o\'CLOCK.', meaning: 'Daily routine - waking up' },
+  { english: 'I wake up at six o\'clock.', native: 'I wake up at six o\'clock.', pronunciation: 'I WAKE up at SIX o\'CLOCK.', meaning: 'Daily routine - waking up' },
   { english: 'The meeting starts at ten.', native: 'The meeting starts at ten.', pronunciation: 'the MEET-ing STARTS at TEN.', meaning: 'Stating meeting time' },
   { english: 'How many do you want?', native: 'How many do you want?', pronunciation: 'HOW MA-ny do you WANT?', meaning: 'Asking quantity' },
   { english: 'I need two kilograms of rice.', native: 'I need two kilograms of rice.', pronunciation: 'I NEED two KIL-o-grams of RICE.', meaning: 'Stating quantity needed' },

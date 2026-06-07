@@ -191,8 +191,8 @@ export const englishDialogues: DialogueItem[] = [
       },
       {
         speaker: 'B',
-        english: 'This is he. Who is calling?',
-        native: 'This is he. Who is calling?',
+        english: 'Speaking. Who is calling?',
+        native: 'Speaking. Who is calling?',
         pronunciation: 'this IS he! WHO is CALL-ing?'
       },
       {
@@ -273,7 +273,7 @@ export const englishDialogues: DialogueItem[] = [
     lines: [
       {
         speaker: 'A',
-        english: 'Beautiful morning, is not it? The sun is shining so bright!',
+        english: 'Beautiful morning, isn\'t it? The sun is shining so bright!',
         native: 'Beautiful morning, isn\'t it? The sun is shining so bright!',
         pronunciation: 'BEAU-ti-ful MOR-ning, ISN\'T it? the SUN is SHIN-ing so BRIGHT!'
       },

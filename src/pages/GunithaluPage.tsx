@@ -89,6 +89,23 @@ export function GunithaluPage() {
   const markGunithaluLearned = useAppStore(s => s.markGunithaluLearned)
   const currentLanguage = useAppStore(s => s.currentLanguage)
 
+  // English uses a Latin alphabet — compound letter concepts (gunithalu/matras) don't apply
+  if (currentLanguage === 'english') {
+    return (
+      <div className="max-w-4xl mx-auto space-y-6 text-center py-20">
+        <div className="text-6xl mb-4">🔤</div>
+        <h2 className="text-2xl font-bold text-indigo-400 mb-2">Not Applicable for English</h2>
+        <p className="text-slate-400 mb-6">English uses the Latin alphabet. Compound letters (like Gunithalu or Matras) are a feature of abugida scripts such as Telugu, Tamil, and Hindi.</p>
+        <button
+          onClick={() => navigate('/practice')}
+          className="px-6 py-3 rounded-xl bg-indigo-500 text-white font-semibold hover:bg-indigo-600 transition-colors"
+        >
+          Go to Alphabet Practice →
+        </button>
+      </div>
+    )
+  }
+
   const alphabets = getAlphabets(currentLanguage)
   const langConfig = LANGUAGES[currentLanguage]
 
@@ -162,11 +179,9 @@ export function GunithaluPage() {
 
   const pageTitle = currentLanguage === 'telugu' ? 'Gunithalu'
     : currentLanguage === 'tamil' ? 'Uyir Mei'
-    : currentLanguage === 'english' ? 'Diphthongs'
     : 'Matras'
   const pageSubtitle = currentLanguage === 'telugu' ? 'గుణింతాలు — Compound Letters'
     : currentLanguage === 'tamil' ? 'உயிர் மெய் — Compound Letters'
-    : currentLanguage === 'english' ? 'Diphthongs & Vowel Combinations'
     : 'मात्राएं — Compound Letters'
 
   const totalCombos = consonants.length * vowelModifiers.length

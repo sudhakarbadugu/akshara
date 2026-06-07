@@ -8,14 +8,14 @@ export const englishAlphabets: AlphabetData = {
       { char: 'E', name: 'ee', english: 'E as in "elephant"', keyword: 'elephant', emoji: '🐘', example: 'E for Elephant', tip: 'Smile a little when you say this sound' },
       { char: 'I', name: 'ai', english: 'I as in "igloo"', keyword: 'igloo', emoji: '🏠', example: 'I for Igloo', tip: 'Your mouth opens quite wide for this sound' },
       { char: 'O', name: 'oh', english: 'O as in "orange"', keyword: 'orange', emoji: '🍊', example: 'O for Orange', tip: 'Round your lips like you\'re blowing a kiss' },
-      { char: 'U', name: 'yu', english: 'U as in "umbrella"', keyword: 'umbrella', emoji: '☂️', example: 'U for Umbrella', tip: 'Your jaw drops and lips open wide' },
+      { char: 'U', name: 'uh', english: 'U as in "umbrella"', keyword: 'umbrella', emoji: '☂️', example: 'U for Umbrella', tip: 'Your jaw drops and lips open wide' },
     ]
   },
   consonants: {
     name: 'Consonants — b c d f g h j k l m n p q r s t v w x y z',
     chars: [
       { char: 'B', name: 'bee', english: 'B as in "ball"', keyword: 'ball', emoji: '⚽', example: 'B for Ball', tip: 'Press your lips together tightly, then release' },
-      { char: 'C', name: 'see', english: 'C as in "cat"', keyword: 'cat', emoji: '🐱', example: 'C for Cat', tip: 'Same sound as K. C comes before e, i, o. K before a, u.' },
+      { char: 'C', name: 'see', english: 'C as in "cat"', keyword: 'cat', emoji: '🐱', example: 'C for Cat', tip: 'Sounds like K before a, o, u. Sounds like S before e, i, y.' },
       { char: 'D', name: 'dee', english: 'D as in "dog"', keyword: 'dog', emoji: '🐕', example: 'D for Dog', tip: 'Touch the roof of your mouth with your tongue tip' },
       { char: 'F', name: 'ef', english: 'F as in "fish"', keyword: 'fish', emoji: '🐟', example: 'F for Fish', tip: 'Touch your top teeth with your bottom lip and blow' },
       { char: 'G', name: 'jee', english: 'G as in "gate"', keyword: 'gate', emoji: '🚪', example: 'G for Gate', tip: 'Press the back of your tongue to the roof of your mouth' },
@@ -57,13 +57,13 @@ export const englishAlphabets: AlphabetData = {
     chars: [
       { char: 'AI', name: 'ae-i', english: 'AI as in "rain"', keyword: 'rain', emoji: '🌧️', example: 'AI in Rain', tip: 'Start with A sound, glide to EE — like a falling note' },
       { char: 'AU', name: 'ah-oo', english: 'AU as in "audience"', keyword: 'audience', emoji: '🎭', example: 'AU in Audience', tip: 'Start with AH sound, glide to OO — your mouth opens then closes' },
-      { char: 'EA', name: 'ee-uh', english: 'EA as in "read"', keyword: 'read', emoji: '📖', example: 'EA in Read', tip: 'Usually says EE. Start with EE, slightly open at end' },
+      { char: 'EA', name: 'ee', english: 'EA as in "read"', keyword: 'read', emoji: '📖', example: 'EA in Read', tip: 'Usually says EE. Start with EE, slightly open at end' },
       { char: 'EE', name: 'ee', english: 'EE as in "feet"', keyword: 'feet', emoji: '🦶', example: 'EE in Feet', tip: 'Smile wide and hold this long vowel sound' },
       { char: 'OO', name: 'oo', english: 'OO as in "moon"', keyword: 'moon', emoji: '🌙', example: 'OO in Moon', tip: 'Round your lips like you\'re blowing through a straw' },
-      { char: 'OW', name: 'ow', english: 'OW as in "snow"', keyword: 'snow', emoji: '❄️', example: 'OW in Snow', tip: 'Start with the S sound, glide to OH — your jaw drops' },
+      { char: 'OW', name: 'ow', english: 'OW as in "snow"', keyword: 'snow', emoji: '❄️', example: 'OW in Snow', tip: 'Start with OH sound, glide to OO — like a falling note' },
       { char: 'OI', name: 'oy', english: 'OI as in "coin"', keyword: 'coin', emoji: '🪙', example: 'OI in Coin', tip: 'Start with OH, glide to EE — like a surprised sound' },
       { char: 'AW', name: 'aw', english: 'AW as in "saw"', keyword: 'saw', emoji: '🪚', example: 'AW in Saw', tip: 'Open your mouth wide and say AW — like being amazed' },
-      { char: 'IE', name: 'ee-uh', english: 'IE as in "field"', keyword: 'field', emoji: '🌾', example: 'IE in Field', tip: 'Start EE and open slightly — makes a falling sound' },
+      { char: 'IE', name: 'ee', english: 'IE as in "field"', keyword: 'field', emoji: '🌾', example: 'IE in Field', tip: 'Start EE and open slightly — makes a falling sound' },
       { char: 'OU', name: 'ow', english: 'OU as in "house"', keyword: 'house', emoji: '🏠', example: 'OU in House', tip: 'Start with AH, glide to OO — like looking at something big' },
     ]
   },

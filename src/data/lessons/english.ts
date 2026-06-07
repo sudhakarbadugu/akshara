@@ -3,7 +3,7 @@ import type { LessonCategory } from '../../types'
 export const englishLessons: LessonCategory[] = [
   {
     id: 1,
-    category: 'Greetings \u0026 Basics',
+    category: 'Greetings & Basics',
     words: [
       { english: 'Hello', native: 'Hello', pronunciation: 'he-LOH', meaning: 'General greeting' },
       { english: 'Good morning', native: 'Good morning', pronunciation: 'good MOR-ning', meaning: 'Morning greeting' },
@@ -93,7 +93,7 @@ export const englishLessons: LessonCategory[] = [
   },
   {
     id: 4,
-    category: 'Days \u0026 Time',
+    category: 'Days & Time',
     words: [
       { english: 'Sunday', native: 'Sunday', pronunciation: 'SUN-day', meaning: 'First day of week' },
       { english: 'Monday', native: 'Monday', pronunciation: 'MON-day', meaning: 'Second day of week' },
@@ -127,8 +127,8 @@ export const englishLessons: LessonCategory[] = [
       { english: 'Sister', native: 'Sister', pronunciation: 'SIS-ter', meaning: 'Female sibling' },
       { english: 'Son', native: 'Son', pronunciation: 'suhn', meaning: 'Male child' },
       { english: 'Daughter', native: 'Daughter', pronunciation: 'DAW-ter', meaning: 'Female child' },
-      { english: 'Grandfather', native: 'Grandfather', pronunciation: 'GRAND-fah-ther', meaning: 'Father parent' },
-      { english: 'Grandmother', native: 'Grandmother', pronunciation: 'GRAND-muh-ther', meaning: 'Father mother' },
+      { english: 'Grandfather', native: 'Grandfather', pronunciation: 'GRAND-fah-ther', meaning: "Father's father" },
+      { english: 'Grandmother', native: 'Grandmother', pronunciation: 'GRAND-muh-ther', meaning: "Father's mother" },
       { english: 'Uncle', native: 'Uncle', pronunciation: 'UNG-kl', meaning: 'Parent brother' },
       { english: 'Aunt', native: 'Aunt', pronunciation: 'ANT', meaning: 'Parent sister' },
       { english: 'Cousin', native: 'Cousin', pronunciation: 'KUH-zin', meaning: 'Uncle/aunt child' },
@@ -142,7 +142,7 @@ export const englishLessons: LessonCategory[] = [
   },
   {
     id: 6,
-    category: 'Food \u0026 Drink',
+    category: 'Food & Drink',
     words: [
       { english: 'Rice', native: 'Rice', pronunciation: 'RYS', meaning: 'Staple grain' },
       { english: 'Bread', native: 'Bread', pronunciation: 'BRED', meaning: 'Baked food' },
@@ -244,7 +244,7 @@ export const englishLessons: LessonCategory[] = [
   },
   {
     id: 10,
-    category: 'Emotions \u0026 Feelings',
+    category: 'Emotions & Feelings',
     words: [
       { english: 'Happy', native: 'Happy', pronunciation: 'HAP-ee', meaning: 'Joyful feeling' },
       { english: 'Sad', native: 'Sad', pronunciation: 'sad', meaning: 'Unhappy feeling' },
@@ -333,7 +333,7 @@ export const englishLessons: LessonCategory[] = [
       { english: 'Driver', native: 'Driver', pronunciation: 'DRY-ver', meaning: 'Operates vehicles' },
       { english: 'Farmer', native: 'Farmer', pronunciation: 'FAR-mer', meaning: 'Grows crops' },
       { english: 'Cook', native: 'Cook', pronunciation: 'kook', meaning: 'Prepares food' },
-      { english: 'Police', native: 'Police', pronunciation: 'puh-LEES', meaning: 'Maintains law' },
+      { english: 'Police officer', native: 'Police officer', pronunciation: 'puh-LEES OFF-i-ser', meaning: 'Law enforcement officer' },
       { english: 'Nurse', native: 'Nurse', pronunciation: 'nurs', meaning: 'Medical helper' },
       { english: 'Artist', native: 'Artist', pronunciation: 'AR-tist', meaning: 'Creates art' },
       { english: 'Musician', native: 'Musician', pronunciation: 'myoo-ZISH-un', meaning: 'Plays music' },
