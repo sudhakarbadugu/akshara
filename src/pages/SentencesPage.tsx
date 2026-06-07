@@ -71,7 +71,7 @@ export function SentencesPage() {
                   <span
                     className="font-black break-words leading-tight"
                     style={{
-                      fontFamily: '"Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", serif',
+                      fontFamily: '"Noto Sans", "Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", serif',
                       fontSize: '1.2rem',
                       color: accentColor,
                       wordBreak: 'break-word',

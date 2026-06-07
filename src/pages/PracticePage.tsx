@@ -71,7 +71,7 @@ export function PracticePage() {
 
       // Draw faint character ghost only (stroke guide is SVG overlay now)
       ctx.save()
-      ctx.font = `bold 180px "Noto Sans ${langConfig.name}", serif`
+      ctx.font = `bold 180px "Noto Sans ${langConfig.name === 'English' ? '' : langConfig.name}", serif`
       ctx.fillStyle = 'rgba(99, 102, 241, 0.06)'
       ctx.strokeStyle = 'rgba(99, 102, 241, 0.10)'
       ctx.lineWidth = 2
@@ -250,7 +250,7 @@ export function PracticePage() {
             <div className="flex lg:flex-col items-center lg:items-center gap-4 lg:gap-5">
               <div
                 className="text-7xl lg:text-8xl font-black"
-                style={{ fontFamily: `"Noto Sans ${langConfig.name}", serif`, color: '#fbbf24', lineHeight: '1' }}
+                style={{ fontFamily: `"Noto Sans ${langConfig.name === 'English' ? '' : langConfig.name}", serif`, color: '#fbbf24', lineHeight: '1' }}
               >
                 {practiceChar.char}
               </div>

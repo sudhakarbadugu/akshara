@@ -25,6 +25,14 @@ export const LANGUAGES: Record<Language, LanguageConfig> = {
     flag: '🇮🇳',
     voiceLang: 'te-IN',
   },
+  english: {
+    code: 'en-US',
+    name: 'English',
+    nativeName: 'English',
+    script: 'ltr',
+    flag: '🇺🇸',
+    voiceLang: 'en-US',
+  },
 }
 
 export const DEFAULT_LANGUAGE: Language = 'tamil'

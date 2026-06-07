@@ -42,7 +42,7 @@ const ACHIEVEMENTS_TEMPLATE: Omit<Achievement, 'earned'>[] = [
   { id: 'xp_1000', icon: '🌟', title: 'XP Champion', desc: 'Earn 1000 XP' },
   { id: 'level_5', icon: '🎯', title: 'Level 5', desc: 'Reach level 5' },
   { id: 'level_10', icon: '🚀', title: 'Level 10', desc: 'Reach level 10' },
-  { id: 'trilingual', icon: '🌍', title: 'Trilingual', desc: 'Explore all 3 languages' },
+  { id: 'trilingual', icon: '🌍', title: 'Polyglot', desc: 'Explore all 4 languages' },
   { id: 'journey_start', icon: '🗺️', title: 'Journey Beginner', desc: 'Start your 30-day journey' },
   { id: 'journey_week1', icon: '📅', title: 'Week 1 Complete', desc: 'Complete the first week' },
   { id: 'journey_week2', icon: '📆', title: 'Week 2 Complete', desc: 'Complete week two' },

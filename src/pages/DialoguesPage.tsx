@@ -103,7 +103,7 @@ export function DialoguesPage() {
                     <p
                       className="font-black break-words leading-snug mb-2"
                       style={{
-                        fontFamily: '"Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", serif',
+                        fontFamily: '"Noto Sans", "Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", serif',
                         fontSize: '1.1rem',
                         color: '#fbbf24',
                         wordBreak: 'break-word',

@@ -328,7 +328,7 @@ export function QuizPage() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 25 }}
                 className="text-4xl lg:text-5xl font-black mb-3"
-                style={{ fontFamily: '"Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", serif', color: '#fbbf24' }}
+                style={{ fontFamily: '"Noto Sans", "Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", serif', color: '#fbbf24' }}
               >
                 {quizType === 'alpha' ? (quizWord as any)?.name : (quizWord as WordItem)?.english}
               </motion.div>

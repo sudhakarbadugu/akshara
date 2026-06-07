@@ -142,7 +142,7 @@ export function MatchGame({ items = [], onComplete, darkMode = true }: MatchGame
                 ) : (
                   <motion.div key="front" initial={{ opacity: 0, rotateY: -180 }} animate={{ opacity: 1, rotateY: 0 }} exit={{ opacity: 0 }} className="text-center flex flex-col items-center px-1">
                     {card.type === 'display' ? (
-                      <span style={{ fontFamily: '"Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", serif', fontSize: '2rem', fontWeight: 900, color: '#fbbf24' }}>{card.display}</span>
+                      <span style={{ fontFamily: '"Noto Sans", "Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", serif', fontSize: '2rem', fontWeight: 900, color: '#fbbf24' }}>{card.display}</span>
                     ) : (
                       <span className="text-sm font-bold text-indigo-300 text-center leading-tight">{card.name}</span>
                     )}
