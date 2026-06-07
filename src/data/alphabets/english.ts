@@ -1,6 +1,37 @@
 import type { AlphabetData } from '../../types'
 
 export const englishAlphabets: AlphabetData = {
+  allAlphabets: {
+    name: 'All Alphabets — A to Z',
+    chars: [
+      { char: 'A', name: 'ae', english: 'A as in "apple"', keyword: 'apple', emoji: '🍎', example: 'A for Apple', tip: 'Open your mouth wide for this vowel sound' },
+      { char: 'B', name: 'bee', english: 'B as in "ball"', keyword: 'ball', emoji: '⚽', example: 'B for Ball', tip: 'Press your lips together tightly, then release' },
+      { char: 'C', name: 'see', english: 'C as in "cat"', keyword: 'cat', emoji: '🐱', example: 'C for Cat', tip: 'Sounds like K before a, o, u. Sounds like S before e, i, y.' },
+      { char: 'D', name: 'dee', english: 'D as in "dog"', keyword: 'dog', emoji: '🐕', example: 'D for Dog', tip: 'Touch the roof of your mouth with your tongue tip' },
+      { char: 'E', name: 'ee', english: 'E as in "elephant"', keyword: 'elephant', emoji: '🐘', example: 'E for Elephant', tip: 'Smile a little when you say this sound' },
+      { char: 'F', name: 'ef', english: 'F as in "fish"', keyword: 'fish', emoji: '🐟', example: 'F for Fish', tip: 'Touch your top teeth with your bottom lip and blow' },
+      { char: 'G', name: 'jee', english: 'G as in "gate"', keyword: 'gate', emoji: '🚪', example: 'G for Gate', tip: 'Press the back of your tongue to the roof of your mouth' },
+      { char: 'H', name: 'aitch', english: 'H as in "hat"', keyword: 'hat', emoji: '🎩', example: 'H for Hat', tip: 'Open your mouth and let out a gentle breath' },
+      { char: 'I', name: 'ai', english: 'I as in "igloo"', keyword: 'igloo', emoji: '🏠', example: 'I for Igloo', tip: 'Your mouth opens quite wide for this sound' },
+      { char: 'J', name: 'jay', english: 'J as in "jump"', keyword: 'jump', emoji: '⬆️', example: 'J for Jump', tip: 'Touch the roof of your mouth and push air out firmly' },
+      { char: 'K', name: 'kay', english: 'K as in "kite"', keyword: 'kite', emoji: '🪁', example: 'K for Kite', tip: 'Press the back of your tongue to the roof of your mouth' },
+      { char: 'L', name: 'el', english: 'L as in "lion"', keyword: 'lion', emoji: '🦁', example: 'L for Lion', tip: 'Touch your tongue tip to the ridge behind your top teeth' },
+      { char: 'M', name: 'em', english: 'M as in "moon"', keyword: 'moon', emoji: '🌙', example: 'M for Moon', tip: 'Close your lips and hum like a bee' },
+      { char: 'N', name: 'en', english: 'N as in "nest"', keyword: 'nest', emoji: '🪺', example: 'N for Nest', tip: 'Press your tongue tip to the roof of your mouth' },
+      { char: 'O', name: 'oh', english: 'O as in "orange"', keyword: 'orange', emoji: '🍊', example: 'O for Orange', tip: 'Round your lips like you\'re blowing a kiss' },
+      { char: 'P', name: 'pee', english: 'P as in "pen"', keyword: 'pen', emoji: '🖊️', example: 'P for Pen', tip: 'Press your lips together tightly, then push air out' },
+      { char: 'Q', name: 'cue', english: 'Q as in "queen"', keyword: 'queen', emoji: '👑', example: 'Q for Queen', tip: 'Made with a K sound, then a small WOO sound' },
+      { char: 'R', name: 'ar', english: 'R as in "rabbit"', keyword: 'rabbit', emoji: '🐰', example: 'R for Rabbit', tip: 'Curl your tongue up and back in your mouth' },
+      { char: 'S', name: 'es', english: 'S as in "sun"', keyword: 'sun', emoji: '☀️', example: 'S for Sun', tip: 'Hold your tongue low and push air between your teeth' },
+      { char: 'T', name: 'tee', english: 'T as in "tree"', keyword: 'tree', emoji: '🌳', example: 'T for Tree', tip: 'Touch your tongue tip to the ridge behind your top teeth' },
+      { char: 'U', name: 'uh', english: 'U as in "umbrella"', keyword: 'umbrella', emoji: '☂️', example: 'U for Umbrella', tip: 'Your jaw drops and lips open wide' },
+      { char: 'V', name: 'vee', english: 'V as in "van"', keyword: 'van', emoji: '🚐', example: 'V for Van', tip: 'Touch your top teeth with your bottom lip and blow' },
+      { char: 'W', name: 'double-yoo', english: 'W as in "water"', keyword: 'water', emoji: '💧', example: 'W for Water', tip: 'Round your lips and say OO, then quickly change to UH' },
+      { char: 'X', name: 'ex', english: 'X as in "box"', keyword: 'box', emoji: '📦', example: 'X for Box', tip: 'Two sounds combined: K + S. Say K then S fast' },
+      { char: 'Y', name: 'why', english: 'Y as in "yellow"', keyword: 'yellow', emoji: '🌼', example: 'Y for Yellow', tip: 'Can say YUH or EE. Say it like you\'re greeting someone' },
+      { char: 'Z', name: 'zee', english: 'Z as in "zebra"', keyword: 'zebra', emoji: '🦓', example: 'Z for Zebra', tip: 'Like S but with voice vibrating. Hold your throat while saying it' },
+    ]
+  },
   vowels: {
     name: 'Vowels — a e i o u',
     chars: [
