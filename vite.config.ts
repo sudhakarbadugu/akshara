@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: '/language-learning/',
+  base: '/akshara/',
   plugins: [
     react(),
     tailwindcss(),

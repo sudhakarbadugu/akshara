@@ -162,9 +162,11 @@ export function GunithaluPage() {
 
   const pageTitle = currentLanguage === 'telugu' ? 'Gunithalu'
     : currentLanguage === 'tamil' ? 'Uyir Mei'
+    : currentLanguage === 'english' ? 'Diphthongs'
     : 'Matras'
   const pageSubtitle = currentLanguage === 'telugu' ? 'గుణింతాలు — Compound Letters'
     : currentLanguage === 'tamil' ? 'உயிர் மெய் — Compound Letters'
+    : currentLanguage === 'english' ? 'Diphthongs & Vowel Combinations'
     : 'मात्राएं — Compound Letters'
 
   const totalCombos = consonants.length * vowelModifiers.length

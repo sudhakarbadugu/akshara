@@ -94,8 +94,6 @@ export const teluguAlphabets: AlphabetData = {
       { char: 'ొ', name: 'o_sign', english: 'o (ొ)', keyword: 'కొండ (koṇḍa) - hill ⛰️' },
       { char: 'ో', name: 'oa_sign', english: 'oa (ో)', keyword: 'కోడి (kōḍi) - hen 🐔' },
       { char: 'ౌ', name: 'au_sign', english: 'au (ౌ)', keyword: 'కౌగిలి (kaugili) - hug 🤗' },
-      { char: 'ౢ', name: 'lu_sign', english: 'lu (ౢ)', keyword: 'కౢ (kḷ) - rare form 📖' },
-      { char: 'ౣ', name: 'llu_sign', english: 'lū (ౣ)', keyword: 'కౣ (kḹ) - rare form 📖' },
       { char: 'ం', name: 'anusvara', english: 'am (ం)', keyword: 'కంచు (kañcu) - bronze 🥉' },
       { char: 'ః', name: 'visarga', english: 'ah (ః)', keyword: 'విసర్గ (visarga) - breath 🌬️' },
     ]

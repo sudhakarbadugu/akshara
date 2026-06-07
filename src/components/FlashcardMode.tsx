@@ -103,7 +103,7 @@ export function FlashcardMode({
           <div className="absolute inset-0 flex flex-col items-center justify-center p-6" style={{ backfaceVisibility: 'hidden' }}>
             <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} key={`front-${index}`} className="text-center w-full">
               <div className="text-7xl md:text-8xl font-black leading-tight mb-4 break-words px-2" style={{
-                fontFamily: '"Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", serif',
+                fontFamily: '"Noto Sans", "Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", serif',
                 background: 'linear-gradient(135deg, #fbbf24, #f59e0b)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
                 lineHeight: '1.1',
               }}>{current?.display}</div>
@@ -128,7 +128,7 @@ export function FlashcardMode({
                 </motion.div>
               )}
               <div className="text-3xl md:text-4xl font-black mb-2 break-words px-2 leading-tight" style={{
-                fontFamily: '"Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", serif', color: '#fbbf24',
+                fontFamily: '"Noto Sans", "Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", serif', color: '#fbbf24',
               }}>{current?.keywordNative || current?.name}</div>
               <div className="text-lg font-semibold mb-1" style={{ color: textPrimary }}>{current?.keyword || current?.english}</div>
               {current?.example && (

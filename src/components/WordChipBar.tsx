@@ -73,7 +73,7 @@ export function WordChipBar({ letter, lang, darkMode, voiceLang }: WordChipBarPr
             <div className="flex flex-col leading-tight">
               <span
                 className="text-base font-bold"
-                style={{ color: textPrimary, fontFamily: `"Noto Sans ${lang === 'tamil' ? 'Tamil' : lang === 'telugu' ? 'Telugu' : 'Devanagari'}", serif` }}
+                style={{ color: textPrimary, fontFamily: lang === 'english' ? undefined : `"Noto Sans ${lang === 'tamil' ? 'Tamil' : lang === 'telugu' ? 'Telugu' : 'Devanagari'}", serif` }}
               >
                 {w.native}
               </span>

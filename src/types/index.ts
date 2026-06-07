@@ -107,7 +107,7 @@ export type QuizType = 'alpha' | 'words'
 export type QuizFeedback = 'correct' | 'wrong' | null
 
 // Language types
-export type Language = 'tamil' | 'hindi' | 'telugu'
+export type Language = 'tamil' | 'hindi' | 'telugu' | 'english'
 
 export interface LanguageConfig {
   code: string          // BCP-47 code e.g. 'ta-IN', 'hi-IN', 'te-IN'

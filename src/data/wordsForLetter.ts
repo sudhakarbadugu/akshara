@@ -6,6 +6,7 @@ const cache: Record<Language, WordItem[] | undefined> = {
   telugu: undefined,
   tamil: undefined,
   hindi: undefined,
+  english: undefined,
 }
 
 function allWords(lang: Language): WordItem[] {
