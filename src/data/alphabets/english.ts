@@ -37,34 +37,4 @@ export const englishAlphabets: AlphabetData = {
       { char: 'Z', name: 'zee', english: 'Z as in "zebra"', keyword: 'zebra', emoji: '🦓', example: 'Z for Zebra', tip: 'Like S but with voice vibrating. Hold your throat while saying it' },
     ]
   },
-  digraphs: {
-    name: 'Digraphs — two letters, one sound',
-    chars: [
-      { char: 'CH', name: 'ch', english: 'CH as in "chair"', keyword: 'chair', emoji: '🪑', example: 'CH in Chair', tip: 'Two sounds: C + H. Press tongue back then release air' },
-      { char: 'SH', name: 'sh', english: 'SH as in "ship"', keyword: 'ship', emoji: '🚢', example: 'SH in Ship', tip: 'Push your tongue back and blow air gently' },
-      { char: 'TH', name: 'th', english: 'TH as in "thumb"', keyword: 'thumb', emoji: '👍', example: 'TH in Thumb', tip: 'Stick your tongue out between your teeth and blow' },
-      { char: 'WH', name: 'w-h', english: 'WH as in "wheel"', keyword: 'wheel', emoji: '🎡', example: 'WH in Wheel', tip: 'Start with W shape then add a small breath' },
-      { char: 'PH', name: 'f', english: 'PH as in "phone"', keyword: 'phone', emoji: '📱', example: 'PH in Phone', tip: 'Makes the F sound. F and PH sound exactly the same' },
-      { char: 'CK', name: 'k', english: 'CK as in "duck"', keyword: 'duck', emoji: '🦆', example: 'CK in Duck', tip: 'Makes the K sound at end of syllables' },
-      { char: 'NG', name: 'ng', english: 'NG as in "ring"', keyword: 'ring', emoji: '💍', example: 'NG in Ring', tip: 'Press the back of your tongue up and hum through your nose' },
-      { char: 'GH', name: 'f', english: 'GH as in "laugh"', keyword: 'laugh', emoji: '😄', example: 'GH in Laugh', tip: 'Often silent at start, or makes F sound at end' },
-      { char: 'WR', name: 'r', english: 'WR as in "write"', keyword: 'write', emoji: '✏️', example: 'WR in Write', tip: 'The W is silent. Say only the R part' },
-      { char: 'KN', name: 'n', english: 'KN as in "knight"', keyword: 'knight', emoji: '⚔️', example: 'KN in Knight', tip: 'The K is silent. Say only the N part' },
-    ]
-  },
-  diphthongs: {
-    name: 'Diphthongs — gliding vowel sounds',
-    chars: [
-      { char: 'AI', name: 'ae-i', english: 'AI as in "rain"', keyword: 'rain', emoji: '🌧️', example: 'AI in Rain', tip: 'Start with A sound, glide to EE — like a falling note' },
-      { char: 'AU', name: 'ah-oo', english: 'AU as in "audience"', keyword: 'audience', emoji: '🎭', example: 'AU in Audience', tip: 'Start with AH sound, glide to OO — your mouth opens then closes' },
-      { char: 'EA', name: 'ee', english: 'EA as in "read"', keyword: 'read', emoji: '📖', example: 'EA in Read', tip: 'Usually says EE. Start with EE, slightly open at end' },
-      { char: 'EE', name: 'ee', english: 'EE as in "feet"', keyword: 'feet', emoji: '🦶', example: 'EE in Feet', tip: 'Smile wide and hold this long vowel sound' },
-      { char: 'OO', name: 'oo', english: 'OO as in "moon"', keyword: 'moon', emoji: '🌙', example: 'OO in Moon', tip: 'Round your lips like you\'re blowing through a straw' },
-      { char: 'OW', name: 'ow', english: 'OW as in "snow"', keyword: 'snow', emoji: '❄️', example: 'OW in Snow', tip: 'Start with OH sound, glide to OO — like a falling note' },
-      { char: 'OI', name: 'oy', english: 'OI as in "coin"', keyword: 'coin', emoji: '🪙', example: 'OI in Coin', tip: 'Start with OH, glide to EE — like a surprised sound' },
-      { char: 'AW', name: 'aw', english: 'AW as in "saw"', keyword: 'saw', emoji: '🪚', example: 'AW in Saw', tip: 'Open your mouth wide and say AW — like being amazed' },
-      { char: 'IE', name: 'ee', english: 'IE as in "field"', keyword: 'field', emoji: '🌾', example: 'IE in Field', tip: 'Start EE and open slightly — makes a falling sound' },
-      { char: 'OU', name: 'ow', english: 'OU as in "house"', keyword: 'house', emoji: '🏠', example: 'OU in House', tip: 'Start with AH, glide to OO — like looking at something big' },
-    ]
-  },
 }
