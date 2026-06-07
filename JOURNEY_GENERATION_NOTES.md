@@ -41,3 +41,52 @@
 ✅ tsc: No TypeScript errors
 ✅ eslint: 0 errors (3 pre-existing warnings in test file)
 ✅ npm build: Success
+
+## Week 3+4 Generation (Days 15-28)
+Generated on June 7, 2026 for all 4 languages (English, Tamil, Hindi, Telugu)
+
+### Week 3 Themes (Days 15-21)
+- Day 15: Places & Travel
+- Day 16: Occupations
+- Day 17: Emotions & Feelings
+- Day 18: Actions & Verbs
+- Day 19: Technology & Communication
+- Day 20: Time & Dates
+- Day 21: Review & Practice (mixed vocab from Weeks 1-3)
+
+### Week 4 Themes (Days 22-28)
+- Day 22: Common Phrases (advanced questions)
+- Day 23: Numbers 1K-100K
+- Day 24: Household + Clothing (compound theme)
+- Day 25: Food + Weather (compound theme)
+- Day 26: Family + Emotions (compound theme)
+- Day 27: Mixed Practice (Week 4 review)
+- Day 28: Journey Wrap-up (celebration + favorite words)
+
+### Uncertainties / Notes
+
+#### English
+1. **Technology & Communication**: No matching category in english.ts lessons; used fallback word list (Phone, Computer, Internet, Message, Call, Email)
+2. **Household Items**: No matching category; fallback to Places vocabulary
+3. **Numbers 1K-100K**: No matching category; used fallback (One thousand, Ten thousand, Hundred thousand, Million, Billion, Trillion)
+4. All other categories mapped from standard names (e.g., "Professions" → Occupations, "Clothes" → Clothing, "Nature" → Weather & Nature)
+
+#### Tamil/Hindi/Telugu
+1. **Day 21 Review**: Vocabulary mixed from Days 15-20; star word varies by language
+2. **Compound days (24, 25, 26)**: 3 words from each category mixed together
+3. **Day 28 Wrap-up**: "Thank you" word is the star (நன்றி/धन्यवाद/ధన్యవాదాలు/Thank you)
+4. Sentence constructions prioritize simplicity over idiomatic perfection
+
+### File Statistics After Generation
+| Language | Lines | Days |
+|----------|-------|------|
+| Tamil    | ~3001 | 28   |
+| Hindi    | ~3022 | 28   |
+| Telugu   | ~3003 | 28   |
+| English  | ~3051 | 28   |
+
+### Verification Status (Week 3+4)
+✅ vitest: 5/5 tests passing
+✅ tsc: No TypeScript errors (npm build succeeded)
+✅ eslint: 0 errors (3 pre-existing warnings in journey.test.ts)
+✅ npm build: Success (built in ~11s)
