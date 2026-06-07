@@ -21,7 +21,9 @@ export function useSounds() {
   const toggleMute = useCallback(() => {
     setMuted(prev => {
       const next = !prev
-      try { localStorage.setItem('langMuted', String(next)) } catch {}
+      try { localStorage.setItem('langMuted', String(next)) } catch {
+      // localStorage may be unavailable in restricted environments; mute state persists in memory
+    }
       return next
     })
   }, [])
@@ -41,7 +43,9 @@ export function useSounds() {
       gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration)
       osc.start(ctx.currentTime)
       osc.stop(ctx.currentTime + duration)
-    } catch {}
+    } catch {
+      // Web Audio API may be blocked or unavailable — degrade gracefully
+    }
   }, [muted])
 
   const playCorrect = useCallback(() => {

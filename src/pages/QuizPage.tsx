@@ -84,7 +84,7 @@ function QuizFeedbackOverlay({ feedback, onNext, onRetry, onClose }: { feedback:
             <motion.button
               initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
               whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-              onClick={() => { setVisible(false); isCorrect ? onNext() : onRetry() }}
+              onClick={() => { setVisible(false); if (isCorrect) onNext(); else onRetry(); }}
               className="px-8 py-3 rounded-xl bg-white text-gray-900 font-bold shadow-lg hover:shadow-xl transition-shadow"
             >
               {isCorrect ? 'Next →' : 'Try Again'}

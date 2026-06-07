@@ -92,7 +92,12 @@ export function useSpeechRecognition(lang = 'ta-IN') {
 
   const checkMatch = useCallback((expected: string, transcriptText: string, threshold = 0.6): boolean => {
     if (!transcriptText) return false
-    const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9\u0d80-\u0dff\u0900-\u097f\u0c00-\u0c7f]/g, '').trim()
+    const tamilRange = '\u0d80-\u0dff'
+    const hindiRange = '\u0900-\u097f'
+    const teluguRange = '\u0c00-\u0c7f'
+    // eslint-disable-next-line no-misleading-character-class
+    const pattern = new RegExp(`[^a-z0-9${tamilRange}${hindiRange}${teluguRange}]`, 'gu')
+    const norm = (s: string) => s.toLowerCase().replace(pattern, '').trim()
     const e = norm(expected)
     const t = norm(transcriptText)
     if (e === t) return true

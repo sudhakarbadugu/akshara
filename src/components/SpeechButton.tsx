@@ -32,7 +32,9 @@ export function SpeechButton({
     e?.stopPropagation()
     if (disabled) return
     playClick()
-    try { await speak(text, lang, rate) } catch {}
+    try { await speak(text, lang, rate) } catch {
+      // Speech synthesis may be unavailable; silently degrade
+    }
   }
 
   const handleMic = async (e: React.MouseEvent) => {
@@ -49,7 +51,9 @@ export function SpeechButton({
         onMicResult?.({ transcript: results[0], matched, alternatives: results })
         if (matched) playCorrect(); else playWrong()
       }
-    } catch {}
+    } catch {
+      // Speech recognition may fail; silently degrade
+    }
   }
 
   return (
