@@ -70,6 +70,11 @@ export function HomePage() {
   const setAlphaCardIndex = useAppStore(s => s.setAlphaCardIndex)
   const getSRSItemsDue = useAppStore(s => s.getSRSItemsDue)
   const currentLanguage = useAppStore(s => s.currentLanguage)
+  const currentJourneyDay = useAppStore(s => s.currentJourneyDay)
+  const completedJourneyDays = useAppStore(s => s.completedJourneyDays)
+  const journeyStreak = useAppStore(s => s.journeyStreak)
+  const journeyXP = useAppStore(s => s.journeyXP)
+  const getJourneyProgress = useAppStore(s => s.getJourneyProgress)
 
   // Check and update streak on page load
   const streakResult = checkAndUpdateStreak()
@@ -120,6 +125,8 @@ export function HomePage() {
       })
     }
   }
+
+  const journeyProgress = getJourneyProgress()
 
   return (
     <div className="space-y-8">
@@ -197,6 +204,52 @@ export function HomePage() {
           })}
         </div>
       </div>
+
+      {/* Journey Card */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.15 }}
+      >
+        <SectionHeader title="30-Day Journey" subtitle="Structured daily learning path" icon="🗺️" darkMode={darkMode} />
+        <motion.button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.97 }}
+          onClick={() => { sounds.playClick(); navigate('/journey') }}
+          className={`w-full rounded-2xl p-5 text-left border transition-all flex items-center gap-4 ${
+            darkMode ? 'border-slate-700 bg-slate-800/60 hover:border-indigo-400/40' : 'border-slate-200 bg-white hover:border-indigo-300'
+          }`}
+        >
+          <div className="w-14 h-14 rounded-2xl bg-indigo-500/20 flex items-center justify-center text-3xl">🗺️</div>
+          <div className="flex-1 min-w-0">
+            <div className="font-bold text-sm" style={{ color: textPrimary }}>
+              {currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)} Journey
+            </div>
+            <div className="text-xs" style={{ color: textSecondary }}>
+              Day {currentJourneyDay} of 30 · {completedJourneyDays.length} completed
+            </div>
+            <div className="mt-2 h-1.5 bg-slate-700/30 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-purple-500"
+                initial={{ width: 0 }}
+                animate={{ width: `${journeyProgress.percent}%` }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            {journeyStreak > 0 && (
+              <div className="bg-orange-500/15 rounded-lg px-2 py-0.5 flex items-center gap-1">
+                <span className="text-xs">🔥</span>
+                <span className="text-xs font-bold text-orange-400">{journeyStreak}</span>
+              </div>
+            )}
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-400">
+              {journeyXP} XP
+            </span>
+          </div>
+        </motion.button>
+      </motion.div>
 
       <div>
         <SectionHeader title="Conversations" subtitle="Sentences & dialogues with audio" icon="💬" darkMode={darkMode} />

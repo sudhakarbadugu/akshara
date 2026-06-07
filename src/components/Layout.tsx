@@ -6,7 +6,7 @@ import { ConfettiCelebration, LevelUpModal } from './ui/Confetti'
 import { StreakBadge, XPIndicator } from './ui/Gamification'
 import { BottomNav } from './ui/BottomNav'
 import { Mascot } from './ui/Mascot'
-import { Sun, Moon, Volume2, VolumeX, Home, PenTool, FileQuestion, BarChart3, User, Brain, BookOpen, Grid3X3 } from 'lucide-react'
+import { Sun, Moon, Volume2, VolumeX, Home, PenTool, FileQuestion, BarChart3, User, Brain, BookOpen, Grid3X3, Map } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { useEffect, useCallback } from 'react'
@@ -25,18 +25,21 @@ const pageToRoute: Record<string, string> = {
   home: '/', practice: '/practice', homework: '/homework', flashcard: '/flashcard',
   match: '/match', quiz: '/quiz', progress: '/progress', profile: '/profile',
   review: '/review', sentences: '/sentences', dialogues: '/dialogues', charts: '/charts',
+  journey: '/journey',
 }
 
 const routeToPage: Record<string, string> = {
   '/': 'home', '/practice': 'practice', '/homework': 'homework', '/flashcard': 'flashcard',
   '/match': 'match', '/quiz': 'quiz', '/progress': 'progress', '/profile': 'profile',
   '/review': 'review', '/sentences': 'sentences', '/dialogues': 'dialogues', '/charts': 'charts',
+  '/journey': 'journey',
 }
 
 const sidebarItems = [
   { key: 'home', label: 'Home', icon: Home },
   { key: 'practice', label: 'Practice', icon: PenTool },
   { key: 'charts', label: 'Alphabet Chart', icon: Grid3X3 },
+  { key: 'journey', label: 'Journey', icon: Map },
   { key: 'homework', label: 'Homework', icon: BookOpen },
   { key: 'review', label: 'Review', icon: Brain },
   { key: 'quiz', label: 'Quiz', icon: FileQuestion },

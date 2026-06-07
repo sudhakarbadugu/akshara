@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion'
-import { Home, PenTool, FileQuestion, BarChart3, User, Brain, BookOpen } from 'lucide-react'
+import { Home, PenTool, FileQuestion, BarChart3, User, Brain, BookOpen, Map } from 'lucide-react'
 
 const navItems = [
   { key: 'home', label: 'Home', icon: Home },
   { key: 'practice', label: 'Practice', icon: PenTool },
+  { key: 'journey', label: 'Journey', icon: Map },
   { key: 'homework', label: 'Homework', icon: BookOpen },
   { key: 'review', label: 'Review', icon: Brain },
   { key: 'quiz', label: 'Quiz', icon: FileQuestion },

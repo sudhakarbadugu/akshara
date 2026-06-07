@@ -14,6 +14,8 @@ import { ReviewPage } from './pages/ReviewPage'
 import { SentencesPage } from './pages/SentencesPage'
 import { DialoguesPage } from './pages/DialoguesPage'
 import { AlphabetChartsPage } from './pages/AlphabetChartsPage'
+import { JourneyPage } from './pages/JourneyPage'
+import { DayLessonPage } from './pages/DayLessonPage'
 
 export default function App() {
   return (
@@ -34,6 +36,8 @@ export default function App() {
             <Route path="/sentences" element={<ErrorBoundary><SentencesPage /></ErrorBoundary>} />
             <Route path="/dialogues" element={<ErrorBoundary><DialoguesPage /></ErrorBoundary>} />
             <Route path="/charts" element={<ErrorBoundary><AlphabetChartsPage /></ErrorBoundary>} />
+            <Route path="/journey" element={<ErrorBoundary><JourneyPage /></ErrorBoundary>} />
+            <Route path="/journey/:day" element={<ErrorBoundary><DayLessonPage /></ErrorBoundary>} />
           </Route>
         </Routes>
       </BrowserRouter>
