@@ -1,3 +1,769 @@
 import type { JourneyDay } from '../../types'
 
-export const hindiJourney: JourneyDay[] = []
+export const hindiJourney: JourneyDay[] = [
+  // ===================== WEEK 1: WORD FOUNDATION =====================
+
+  // ─── Day 1: Greetings ───
+  {
+    day: 1,
+    week: 1,
+    theme: 'Greetings',
+    subtitle: 'Master basic greetings and introductions',
+    icon: '👋',
+    dailyGoal: 'Learn 6 common greetings and practice saying them',
+    xpReward: 50,
+    vocabulary: [
+      { english: 'Hello', native: 'नमस्ते', pronunciation: 'Namaste', meaning: 'Hello / Greetings' },
+      { english: 'Good morning', native: 'सुप्रभात', pronunciation: 'Suprabhat', meaning: 'Good morning' },
+      { english: 'Good evening', native: 'शुभ संध्या', pronunciation: 'Shubh sandhya', meaning: 'Good evening' },
+      { english: 'Thank you', native: 'धन्यवाद', pronunciation: 'Dhanyavaad', meaning: 'Thank you' },
+      { english: 'Please', native: 'कृपया', pronunciation: 'Kripaya', meaning: 'Please' },
+      { english: 'Goodbye', native: 'अलविदा', pronunciation: 'Alvida', meaning: 'Goodbye' },
+    ],
+    learningCard: {
+      native: 'नमस्ते',
+      english: 'Hello',
+      pronunciation: 'Namaste',
+      meaning: 'The most common greeting in Hindi',
+      tip: 'नमस्ते is said with folded hands — a beautiful Indian greeting! 🙏',
+    },
+    sentenceOfDay: {
+      english: 'Hello! How are you?',
+      native: 'नमस्ते! आप कैसे हैं?',
+      pronunciation: 'Namaste! Aap kaise hain?',
+      meaning: 'A friendly greeting asking about well-being',
+      wordByWordBreakdown: [
+        { word: 'नमस्ते', meaning: 'Hello' },
+        { word: 'आप', meaning: 'you (respectful)' },
+        { word: 'कैसे', meaning: 'how' },
+        { word: 'हैं', meaning: 'are' },
+      ],
+    },
+    activities: [
+      {
+        type: 'tap-listen',
+        title: 'Greeting Recall',
+        instruction: 'Listen and tap the correct greeting!',
+        data: {
+          audioWord: 'नमस्ते',
+          options: ['नमस्ते', 'अलविदा', 'कृपया', 'धन्यवाद'],
+          correctIndex: 0,
+        },
+        xpReward: 10,
+      },
+      {
+        type: 'match',
+        title: 'Greeting Match',
+        instruction: 'Match each greeting with its meaning.',
+        data: {
+          pairs: [
+            { native: 'नमस्ते', english: 'Hello' },
+            { native: 'धन्यवाद', english: 'Thank you' },
+            { native: 'कृपया', english: 'Please' },
+            { native: 'अलविदा', english: 'Goodbye' },
+            { native: 'सुप्रभात', english: 'Good morning' },
+            { native: 'शुभ संध्या', english: 'Good evening' },
+          ],
+        },
+        xpReward: 15,
+      },
+      {
+        type: 'write',
+        title: 'Trace: नमस्ते',
+        instruction: 'Trace the word "नमस्ते" carefully.',
+        data: { targetWord: 'नमस्ते', hint: 'Namaste' },
+        xpReward: 15,
+      },
+      {
+        type: 'speak',
+        title: 'Say the Greetings',
+        instruction: 'Speak all six greetings clearly and confidently!',
+        data: {
+          targetWords: ['नमस्ते', 'सुप्रभात', 'शुभ संध्या', 'धन्यवाद', 'कृपया', 'अलविदा'],
+        },
+        xpReward: 10,
+      },
+    ],
+    quiz: [
+      {
+        question: 'Which word means goodbye in Hindi?',
+        options: ['नमस्ते', 'अलविदा', 'कृपया', 'धन्यवाद'],
+        correct: 1,
+        correctAnswer: 'अलविदा',
+      },
+      {
+        question: 'What do you say to express gratitude?',
+        options: ['कृपया', 'धन्यवाद', 'नमस्ते', 'सुप्रभात'],
+        correct: 1,
+        correctAnswer: 'धन्यवाद',
+      },
+      {
+        question: '"कृपया" is used for what?',
+        options: ['Saying hello', 'A polite request', 'Saying goodbye', 'Expressing anger'],
+        correct: 1,
+        correctAnswer: 'A polite request',
+      },
+    ],
+    realLifeUsage: [
+      '👉 Say "नमस्ते" when you meet someone — with folded hands!',
+      '👉 Use "धन्यवाद" after receiving help, a gift, or a kind word.',
+      '👉 Say "अलविदा" when leaving a place or ending a conversation.',
+    ],
+    revisionWords: [],
+  },
+
+  // ─── Day 2: Colors ───
+  {
+    day: 2,
+    week: 1,
+    theme: 'Colors',
+    subtitle: 'Learn to name colors around you',
+    icon: '🎨',
+    dailyGoal: 'Learn 6 color words and practice reading them',
+    xpReward: 50,
+    vocabulary: [
+      { english: 'Red', native: 'लाल', pronunciation: 'Laal', meaning: 'Red' },
+      { english: 'Blue', native: 'नीला', pronunciation: 'Neela', meaning: 'Blue' },
+      { english: 'Green', native: 'हरा', pronunciation: 'Hara', meaning: 'Green' },
+      { english: 'Yellow', native: 'पीला', pronunciation: 'Peela', meaning: 'Yellow' },
+      { english: 'White', native: 'सफेद', pronunciation: 'Safed', meaning: 'White' },
+      { english: 'Black', native: 'काला', pronunciation: 'Kaala', meaning: 'Black' },
+    ],
+    learningCard: {
+      native: 'लाल',
+      english: 'Red',
+      pronunciation: 'Laal',
+      meaning: 'The color of love, roses, and kumkum',
+      tip: 'In Indian culture, लाल (red) is auspicious — brides wear it! 🔴',
+    },
+    sentenceOfDay: {
+      english: 'The flower is red.',
+      native: 'फूल लाल है।',
+      pronunciation: 'Phool laal hai.',
+      meaning: 'Describing the color of a flower',
+      wordByWordBreakdown: [
+        { word: 'फूल', meaning: 'flower' },
+        { word: 'लाल', meaning: 'red' },
+        { word: 'है', meaning: 'is' },
+      ],
+    },
+    activities: [
+      {
+        type: 'tap-listen',
+        title: 'Color Match',
+        instruction: 'Listen to the color name and tap the matching word!',
+        data: {
+          audioWord: 'लाल',
+          options: ['लाल', 'नीला', 'हरा', 'पीला'],
+          correctIndex: 0,
+        },
+        xpReward: 10,
+      },
+      {
+        type: 'match',
+        title: 'Color Pairs',
+        instruction: 'Match each color with its description.',
+        data: {
+          pairs: [
+            { native: 'लाल', english: 'Color of fire' },
+            { native: 'नीला', english: 'Color of sky' },
+            { native: 'हरा', english: 'Color of grass' },
+            { native: 'पीला', english: 'Color of sun' },
+            { native: 'सफेद', english: 'Color of milk' },
+            { native: 'काला', english: 'Color of night' },
+          ],
+        },
+        xpReward: 15,
+      },
+      {
+        type: 'write',
+        title: 'Trace: लाल',
+        instruction: 'Trace the word "लाल" carefully.',
+        data: { targetWord: 'लाल', hint: 'Laal' },
+        xpReward: 15,
+      },
+      {
+        type: 'speak',
+        title: 'Say the Colors',
+        instruction: 'Speak all six color names clearly. You got this!',
+        data: {
+          targetWords: ['लाल', 'नीला', 'हरा', 'पीला', 'सफेद', 'काला'],
+        },
+        xpReward: 10,
+      },
+    ],
+    quiz: [
+      {
+        question: 'Which color is the sky on a clear day?',
+        options: ['लाल', 'नीला', 'हरा', 'पीला'],
+        correct: 1,
+        correctAnswer: 'नीला',
+      },
+      {
+        question: 'What color are leaves on healthy trees?',
+        options: ['नीला', 'पीला', 'हरा', 'काला'],
+        correct: 2,
+        correctAnswer: 'हरा',
+      },
+      {
+        question: 'What color is milk?',
+        options: ['काला', 'सफेद', 'लाल', 'नीला'],
+        correct: 1,
+        correctAnswer: 'सफेद',
+      },
+    ],
+    realLifeUsage: [
+      '👉 Point at objects and say their color: "यह कमीज़ नीली है!" (This shirt is blue!)',
+      '👉 When shopping: "क्या यह लाल में है?" (Do you have this in red?)',
+      '👉 Describe nature: "घास हरी है और आसमान नीला।" (Grass is green, sky is blue.)',
+    ],
+    revisionWords: ['नमस्ते', 'धन्यवाद', 'अलविदा'],
+  },
+
+  // ─── Day 3: Fruits ───
+  {
+    day: 3,
+    week: 1,
+    theme: 'Fruits',
+    subtitle: 'Delicious fruit names you will love',
+    icon: '🍎',
+    dailyGoal: 'Learn 6 fruit names and practice pronunciation',
+    xpReward: 50,
+    vocabulary: [
+      { english: 'Apple', native: 'सेब', pronunciation: 'Seb', meaning: 'Apple' },
+      { english: 'Banana', native: 'केला', pronunciation: 'Kela', meaning: 'Banana' },
+      { english: 'Mango', native: 'आम', pronunciation: 'Aam', meaning: 'Mango' },
+      { english: 'Orange', native: 'नारंगी', pronunciation: 'Naarangi', meaning: 'Orange (fruit)' },
+      { english: 'Grape', native: 'अंगूर', pronunciation: 'Angoor', meaning: 'Grape' },
+      { english: 'Coconut', native: 'नारियल', pronunciation: 'Nariyal', meaning: 'Coconut' },
+    ],
+    learningCard: {
+      native: 'आम',
+      english: 'Mango',
+      pronunciation: 'Aam',
+      meaning: 'The king of fruits — sweet, juicy, and loved across India',
+      tip: 'आम is India\'s national fruit — summer is mango season! 🥭',
+    },
+    sentenceOfDay: {
+      english: 'I like mangoes very much.',
+      native: 'मुझे आम बहुत पसंद है।',
+      pronunciation: 'Mujhe aam bahut pasand hai.',
+      meaning: 'Expressing love for mangoes',
+      wordByWordBreakdown: [
+        { word: 'मुझे', meaning: 'to me' },
+        { word: 'आम', meaning: 'mango' },
+        { word: 'बहुत', meaning: 'very much' },
+        { word: 'पसंद', meaning: 'like' },
+        { word: 'है', meaning: 'is' },
+      ],
+    },
+    activities: [
+      {
+        type: 'tap-listen',
+        title: 'Fruit Recall',
+        instruction: 'Listen and tap the correct fruit name!',
+        data: {
+          audioWord: 'आम',
+          options: ['सेब', 'आम', 'अंगूर', 'नारियल'],
+          correctIndex: 1,
+        },
+        xpReward: 10,
+      },
+      {
+        type: 'match',
+        title: 'Fruit Basket',
+        instruction: 'Match each fruit with its description.',
+        data: {
+          pairs: [
+            { native: 'सेब', english: 'Round red or green fruit' },
+            { native: 'केला', english: 'Long yellow fruit' },
+            { native: 'आम', english: 'Sweet tropical fruit' },
+            { native: 'नारंगी', english: 'Round citrus fruit' },
+            { native: 'अंगूर', english: 'Small fruits in bunches' },
+            { native: 'नारियल', english: 'Hard shell, white inside' },
+          ],
+        },
+        xpReward: 15,
+      },
+      {
+        type: 'write',
+        title: 'Trace: आम',
+        instruction: 'Trace the word "आम" carefully.',
+        data: { targetWord: 'आम', hint: 'Aam' },
+        xpReward: 15,
+      },
+      {
+        type: 'speak',
+        title: 'Fruit Stand',
+        instruction: 'Say each fruit name clearly like you are at a market!',
+        data: {
+          targetWords: ['सेब', 'केला', 'आम', 'नारंगी', 'अंगूर', 'नारियल'],
+        },
+        xpReward: 10,
+      },
+    ],
+    quiz: [
+      {
+        question: 'Which fruit is long and yellow?',
+        options: ['सेब', 'केला', 'आम', 'नारंगी'],
+        correct: 1,
+        correctAnswer: 'केला',
+      },
+      {
+        question: 'What fruit is called the "king of fruits"?',
+        options: ['सेब', 'नारंगी', 'आम', 'अंगूर'],
+        correct: 2,
+        correctAnswer: 'आम',
+      },
+      {
+        question: 'Which fruit grows in small bunches?',
+        options: ['सेब', 'केला', 'अंगूर', 'नारियल'],
+        correct: 2,
+        correctAnswer: 'अंगूर',
+      },
+    ],
+    realLifeUsage: [
+      '👉 At the fruit shop: "मुझे एक किलो आम दीजिए।" (Give me one kilo of mangoes.)',
+      '👉 At breakfast: "मैं रोज़ सेब खाता हूँ।" (I eat an apple every morning.)',
+      '👉 In summer: "चलो बड़ा नारियल खरीदते हैं!" (Let us buy a big coconut!)',
+    ],
+    revisionWords: ['लाल', 'नीला', 'हरा', 'नमस्ते', 'कृपया'],
+  },
+
+  // ─── Day 4: Animals ───
+  {
+    day: 4,
+    week: 1,
+    theme: 'Animals',
+    subtitle: 'Meet the animals and their sounds',
+    icon: '🦁',
+    dailyGoal: 'Learn 6 animal names and their sounds',
+    xpReward: 50,
+    vocabulary: [
+      { english: 'Dog', native: 'कुत्ता', pronunciation: 'Kutta', meaning: 'Dog' },
+      { english: 'Cat', native: 'बिल्ली', pronunciation: 'Billi', meaning: 'Cat' },
+      { english: 'Cow', native: 'गाय', pronunciation: 'Gaay', meaning: 'Cow' },
+      { english: 'Bird', native: 'पक्षी', pronunciation: 'Pakshi', meaning: 'Bird' },
+      { english: 'Fish', native: 'मछली', pronunciation: 'Machhli', meaning: 'Fish' },
+      { english: 'Elephant', native: 'हाथी', pronunciation: 'Haathi', meaning: 'Elephant' },
+    ],
+    learningCard: {
+      native: 'हाथी',
+      english: 'Elephant',
+      pronunciation: 'Haathi',
+      meaning: 'The gentle giant of the animal world',
+      tip: 'Elephants are sacred in India — Lord Ganesha has an elephant head! 🐘',
+    },
+    sentenceOfDay: {
+      english: 'The dog is running.',
+      native: 'कुत्ता दौड़ रहा है।',
+      pronunciation: 'Kutta daudh raha hai.',
+      meaning: 'Describing a running dog',
+      wordByWordBreakdown: [
+        { word: 'कुत्ता', meaning: 'dog' },
+        { word: 'दौड़', meaning: 'running' },
+        { word: 'रहा', meaning: 'is (continuous)' },
+        { word: 'है', meaning: 'is' },
+      ],
+    },
+    activities: [
+      {
+        type: 'tap-listen',
+        title: 'Animal Sounds',
+        instruction: 'Listen and tap the correct animal name!',
+        data: {
+          audioWord: 'हाथी',
+          options: ['कुत्ता', 'गाय', 'पक्षी', 'हाथी'],
+          correctIndex: 3,
+        },
+        xpReward: 10,
+      },
+      {
+        type: 'match',
+        title: 'Animal Kingdom',
+        instruction: 'Match each animal to its description.',
+        data: {
+          pairs: [
+            { native: 'कुत्ता', english: 'Barks and is loyal' },
+            { native: 'बिल्ली', english: 'Meows and climbs' },
+            { native: 'गाय', english: 'Gives milk' },
+            { native: 'पक्षी', english: 'Flies and sings' },
+            { native: 'मछली', english: 'Lives in water' },
+            { native: 'हाथी', english: 'Has a long trunk' },
+          ],
+        },
+        xpReward: 15,
+      },
+      {
+        type: 'write',
+        title: 'Trace: कुत्ता',
+        instruction: 'Trace the word "कुत्ता" carefully.',
+        data: { targetWord: 'कुत्ता', hint: 'Kutta' },
+        xpReward: 15,
+      },
+      {
+        type: 'speak',
+        title: 'Zoo Tour',
+        instruction: 'Say the animal names aloud like you are at a zoo!',
+        data: {
+          targetWords: ['कुत्ता', 'बिल्ली', 'गाय', 'पक्षी', 'मछली', 'हाथी'],
+        },
+        xpReward: 10,
+      },
+    ],
+    quiz: [
+      {
+        question: 'Which animal gives us milk?',
+        options: ['कुत्ता', 'बिल्ली', 'गाय', 'पक्षी'],
+        correct: 2,
+        correctAnswer: 'गाय',
+      },
+      {
+        question: 'What animal lives in water?',
+        options: ['पक्षी', 'मछली', 'कुत्ता', 'बिल्ली'],
+        correct: 1,
+        correctAnswer: 'मछली',
+      },
+      {
+        question: 'Which animal has a long trunk?',
+        options: ['कुत्ता', 'बिल्ली', 'हाथी', 'गाय'],
+        correct: 2,
+        correctAnswer: 'हाथी',
+      },
+    ],
+    realLifeUsage: [
+      '👉 Seeing a pet: "देखो, कुत्ता!" (Look, a dog!)',
+      '👉 Visiting a farm: "गाय दूध देती है।" (The cow gives milk.)',
+      '👉 At the park: "पक्षी बहुत अच्छे से गा रहा है।" (The bird is singing beautifully.)',
+    ],
+    revisionWords: ['सेब', 'केला', 'आम', 'लाल', 'नीला'],
+  },
+
+  // ─── Day 5: Family ───
+  {
+    day: 5,
+    week: 1,
+    theme: 'Family',
+    subtitle: 'Meet your family members in Hindi',
+    icon: '👨‍👩‍👧‍👦',
+    dailyGoal: 'Learn 6 family member names',
+    xpReward: 50,
+    vocabulary: [
+      { english: 'Mother', native: 'माता', pronunciation: 'Mata', meaning: 'Mother' },
+      { english: 'Father', native: 'पिता', pronunciation: 'Pita', meaning: 'Father' },
+      { english: 'Brother', native: 'भाई', pronunciation: 'Bhai', meaning: 'Brother' },
+      { english: 'Sister', native: 'बहन', pronunciation: 'Behen', meaning: 'Sister' },
+      { english: 'Grandmother', native: 'दादी', pronunciation: 'Dadi', meaning: 'Grandmother' },
+      { english: 'Grandfather', native: 'दादा', pronunciation: 'Dada', meaning: 'Grandfather' },
+    ],
+    learningCard: {
+      native: 'दादी',
+      english: 'Grandmother',
+      pronunciation: 'Dadi',
+      meaning: 'The loving elder of the family',
+      tip: 'दादी is often the best cook and storyteller in Indian families! 👵',
+    },
+    sentenceOfDay: {
+      english: 'My mother is very kind.',
+      native: 'मेरी माता बहुत दयालु हैं।',
+      pronunciation: 'Meri mata bahut dayaalu hain.',
+      meaning: "Describing mother's kindness",
+      wordByWordBreakdown: [
+        { word: 'मेरी', meaning: 'my' },
+        { word: 'माता', meaning: 'mother' },
+        { word: 'बहुत', meaning: 'very' },
+        { word: 'दयालु', meaning: 'kind' },
+        { word: 'हैं', meaning: 'is (respectful)' },
+      ],
+    },
+    activities: [
+      {
+        type: 'tap-listen',
+        title: 'Family Tree',
+        instruction: 'Listen and tap the correct family member!',
+        data: {
+          audioWord: 'पिता',
+          options: ['माता', 'पिता', 'भाई', 'बहन'],
+          correctIndex: 1,
+        },
+        xpReward: 10,
+      },
+      {
+        type: 'match',
+        title: 'Family Match',
+        instruction: 'Match each family word to its meaning.',
+        data: {
+          pairs: [
+            { native: 'माता', english: 'Mother' },
+            { native: 'पिता', english: 'Father' },
+            { native: 'भाई', english: 'Brother' },
+            { native: 'बहन', english: 'Sister' },
+            { native: 'दादी', english: 'Grandmother' },
+            { native: 'दादा', english: 'Grandfather' },
+          ],
+        },
+        xpReward: 15,
+      },
+      {
+        type: 'write',
+        title: 'Trace: माता',
+        instruction: 'Trace the word "माता" carefully.',
+        data: { targetWord: 'माता', hint: 'Mata' },
+        xpReward: 15,
+      },
+      {
+        type: 'speak',
+        title: 'Family Introduction',
+        instruction: 'Say each family member name with love!',
+        data: {
+          targetWords: ['माता', 'पिता', 'भाई', 'बहन', 'दादी', 'दादा'],
+        },
+        xpReward: 10,
+      },
+    ],
+    quiz: [
+      {
+        question: 'Who is a female parent?',
+        options: ['पिता', 'माता', 'भाई', 'बहन'],
+        correct: 1,
+        correctAnswer: 'माता',
+      },
+      {
+        question: 'What do you call your male sibling?',
+        options: ['बहन', 'भाई', 'पिता', 'माता'],
+        correct: 1,
+        correctAnswer: 'भाई',
+      },
+      {
+        question: '"दादी" means?',
+        options: ['Your mother', "Your parent's mother", 'Your sister', 'Your daughter'],
+        correct: 1,
+        correctAnswer: "Your parent's mother",
+      },
+    ],
+    realLifeUsage: [
+      '👉 Introducing family: "यह मेरी माता हैं।" (This is my mother.)',
+      '👉 Calling someone: "दादी, कोई कहानी सुनाओ!" (Grandma, tell me a story!)',
+      '👉 Talking about siblings: "मेरे भाई क्रिकेट खेलते हैं।" (My brother plays cricket.)',
+    ],
+    revisionWords: ['कुत्ता', 'बिल्ली', 'हाथी', 'सेब', 'केला'],
+  },
+
+  // ─── Day 6: Numbers 1-10 ───
+  {
+    day: 6,
+    week: 1,
+    theme: 'Numbers 1-10',
+    subtitle: 'Count from one to ten like a pro',
+    icon: '🔢',
+    dailyGoal: 'Learn numbers 1 through 10 in Hindi',
+    xpReward: 50,
+    vocabulary: [
+      { english: 'One', native: 'एक', pronunciation: 'Ek', meaning: '1' },
+      { english: 'Two', native: 'दो', pronunciation: 'Do', meaning: '2' },
+      { english: 'Three', native: 'तीन', pronunciation: 'Teen', meaning: '3' },
+      { english: 'Four', native: 'चार', pronunciation: 'Chaar', meaning: '4' },
+      { english: 'Five', native: 'पाँच', pronunciation: 'Paanch', meaning: '5' },
+      { english: 'Ten', native: 'दस', pronunciation: 'Das', meaning: '10' },
+    ],
+    learningCard: {
+      native: 'पाँच',
+      english: 'Five',
+      pronunciation: 'Paanch',
+      meaning: 'The number 5',
+      tip: 'We have five fingers on each hand — easy to remember! ✋',
+    },
+    sentenceOfDay: {
+      english: 'I have five apples.',
+      native: 'मेरे पास पाँच सेब हैं।',
+      pronunciation: 'Mere paas paanch seb hain.',
+      meaning: 'Counting apples',
+      wordByWordBreakdown: [
+        { word: 'मेरे', meaning: 'my' },
+        { word: 'पास', meaning: 'near / with' },
+        { word: 'पाँच', meaning: 'five' },
+        { word: 'सेब', meaning: 'apple' },
+        { word: 'हैं', meaning: 'are' },
+      ],
+    },
+    activities: [
+      {
+        type: 'tap-listen',
+        title: 'Number Recall',
+        instruction: 'Listen and tap the correct number!',
+        data: {
+          audioWord: 'दो',
+          options: ['एक', 'दो', 'तीन', 'चार'],
+          correctIndex: 1,
+        },
+        xpReward: 10,
+      },
+      {
+        type: 'match',
+        title: 'Counting Match',
+        instruction: 'Match Hindi numbers to their digit values.',
+        data: {
+          pairs: [
+            { native: 'एक', english: '1' },
+            { native: 'दो', english: '2' },
+            { native: 'तीन', english: '3' },
+            { native: 'चार', english: '4' },
+            { native: 'पाँच', english: '5' },
+            { native: 'दस', english: '10' },
+          ],
+        },
+        xpReward: 15,
+      },
+      {
+        type: 'write',
+        title: 'Trace: तीन',
+        instruction: 'Trace the word "तीन" carefully.',
+        data: { targetWord: 'तीन', hint: 'Teen' },
+        xpReward: 15,
+      },
+      {
+        type: 'speak',
+        title: 'Count Aloud',
+        instruction: 'Count from one to ten out loud!',
+        data: {
+          targetWords: ['एक', 'दो', 'तीन', 'चार', 'पाँच', 'दस'],
+        },
+        xpReward: 10,
+      },
+    ],
+    quiz: [
+      {
+        question: 'How many hands do you have?',
+        options: ['एक', 'तीन', 'दो', 'पाँच'],
+        correct: 2,
+        correctAnswer: 'दो',
+      },
+      {
+        question: 'What is the word for 10?',
+        options: ['पाँच', 'दस', 'तीन', 'एक'],
+        correct: 1,
+        correctAnswer: 'दस',
+      },
+      {
+        question: 'How many fingers are on one hand?',
+        options: ['3', '5', '4', '2'],
+        correct: 1,
+        correctAnswer: '5',
+      },
+    ],
+    realLifeUsage: [
+      '👉 Shopping: "मुझे दो सेब दीजिए।" (Give me two apples.)',
+      '👉 Telling time: "मैं पाँच बजे उठता हूँ।" (I wake up at five o\'clock.)',
+      '👉 Counting people: "हम चार लोग हैं।" (There are four of us.)',
+    ],
+    revisionWords: ['लाल', 'नीला', 'माता', 'पिता', 'कुत्ता'],
+  },
+
+  // ─── Day 7: Common Phrases ───
+  {
+    day: 7,
+    week: 1,
+    theme: 'Common Phrases',
+    subtitle: 'Useful words and actions for daily life',
+    icon: '📚',
+    dailyGoal: 'Learn 6 everyday words and actions',
+    xpReward: 50,
+    vocabulary: [
+      { english: 'Come', native: 'आओ', pronunciation: 'Aao', meaning: 'Come' },
+      { english: 'Go', native: 'जाओ', pronunciation: 'Jao', meaning: 'Go' },
+      { english: 'Sit', native: 'बैठो', pronunciation: 'Baitho', meaning: 'Sit' },
+      { english: 'Read', native: 'पढ़ो', pronunciation: 'Padho', meaning: 'Read' },
+      { english: 'Write', native: 'लिखो', pronunciation: 'Likho', meaning: 'Write' },
+      { english: 'Good', native: 'अच्छा', pronunciation: 'Achha', meaning: 'Good' },
+    ],
+    learningCard: {
+      native: 'आओ',
+      english: 'Come',
+      pronunciation: 'Aao',
+      meaning: 'A welcoming word to invite someone',
+      tip: '"आओ" is warm and inviting — Indians say it often! 🤝',
+    },
+    sentenceOfDay: {
+      english: 'Come and read.',
+      native: 'आओ और पढ़ो।',
+      pronunciation: 'Aao aur padho.',
+      meaning: 'Inviting someone to come and read',
+      wordByWordBreakdown: [
+        { word: 'आओ', meaning: 'come' },
+        { word: 'और', meaning: 'and' },
+        { word: 'पढ़ो', meaning: 'read' },
+      ],
+    },
+    activities: [
+      {
+        type: 'tap-listen',
+        title: 'Word Hunt',
+        instruction: 'Listen and tap the correct action word!',
+        data: {
+          audioWord: 'आओ',
+          options: ['आओ', 'बैठो', 'पढ़ो', 'लिखो'],
+          correctIndex: 0,
+        },
+        xpReward: 10,
+      },
+      {
+        type: 'match',
+        title: 'Action Match',
+        instruction: 'Match each action word to its meaning.',
+        data: {
+          pairs: [
+            { native: 'आओ', english: 'Come' },
+            { native: 'जाओ', english: 'Go' },
+            { native: 'बैठो', english: 'Sit' },
+            { native: 'पढ़ो', english: 'Read' },
+            { native: 'लिखो', english: 'Write' },
+            { native: 'अच्छा', english: 'Good' },
+          ],
+        },
+        xpReward: 15,
+      },
+      {
+        type: 'write',
+        title: 'Trace: आओ',
+        instruction: 'Trace the word "आओ" carefully.',
+        data: { targetWord: 'आओ', hint: 'Aao' },
+        xpReward: 15,
+      },
+      {
+        type: 'speak',
+        title: 'Action Words',
+        instruction: 'Say the action words aloud like you are giving commands!',
+        data: {
+          targetWords: ['आओ', 'जाओ', 'बैठो', 'पढ़ो', 'लिखो', 'अच्छा'],
+        },
+        xpReward: 10,
+      },
+    ],
+    quiz: [
+      {
+        question: 'What word means "come" in Hindi?',
+        options: ['आओ', 'जाओ', 'बैठो', 'लिखो'],
+        correct: 0,
+        correctAnswer: 'आओ',
+      },
+      {
+        question: 'What word means "read" in Hindi?',
+        options: ['पढ़ो', 'लिखो', 'जाओ', 'आओ'],
+        correct: 0,
+        correctAnswer: 'पढ़ो',
+      },
+      {
+        question: 'What do you do with a book?',
+        options: ['बैठो', 'पढ़ो', 'जाओ', 'अच्छा'],
+        correct: 1,
+        correctAnswer: 'पढ़ो',
+      },
+    ],
+    realLifeUsage: [
+      '👉 Calling someone: "आओ, यहाँ बैठो।" (Come, sit here.)',
+      '👉 Encouraging: "जाओ, अच्छा पढ़ो।" (Go, read well.)',
+      '👉 Describing: "अच्छी किताब लिखो।" (Write a good book.)',
+    ],
+    revisionWords: ['एक', 'दो', 'माता', 'पिता', 'आम', 'केला'],
+  },
+]
