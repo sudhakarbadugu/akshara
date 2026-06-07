@@ -1,7 +1,7 @@
 {
   "name": "akshara",
-  "version": "1.1.113",
-  "build": "20260607-1210",
+  "version": "1.1.114",
+  "build": "20260607-1212",
   "type": "module",
   "scripts": {
     "dev": "vite",
