@@ -28,14 +28,14 @@ export const tamilDialogues: DialogueItem[] = [
       {
         speaker: 'B',
         english: 'Here you are. Fresh from the farm!',
-        native: 'இதோ உங்களுக்கு. பச்சதையில் இருந்து வந்தது!',
-        pronunciation: 'Idho ungalukku. Pachathaiyil irundhu vandhu!'
+        native: 'இதோ உங்களுக்கு. பண்ணையில் இருந்து வந்தது!',
+        pronunciation: 'Idho ungalukku. Pannaiyil irundhu vandhadhu!'
       },
       {
         speaker: 'A',
         english: 'Do you also have carrots?',
-        native: 'நீங்கள் கேரட் மாடுவீர்களா?',
-        pronunciation: 'Neengal carrot maaduveergalaa?'
+        native: 'உங்களிடம் கேரட் இருக்கிறதா?',
+        pronunciation: 'Ungalidam carrot irukkiradhaa?'
       },
       {
         speaker: 'B',
@@ -60,8 +60,8 @@ export const tamilDialogues: DialogueItem[] = [
       {
         speaker: 'B',
         english: 'I am very well, thank you! And you?',
-        native: 'நான் மிகவும் நன்றி, நன்றி! மற்றும் நீ?',
-        pronunciation: 'Naan mikavum nandri! Mattrom nee?'
+        native: 'நான் மிகவும் நன்றாக இருக்கிறேன், நன்றி! நீங்கள்?',
+        pronunciation: 'Naan mikavum nandraaga irukkiren, nandri! Neengal?'
       },
       {
         speaker: 'A',
@@ -116,14 +116,14 @@ export const tamilDialogues: DialogueItem[] = [
       {
         speaker: 'A',
         english: 'Alright, I will have one dosai and a coffee.',
-        native: 'சரி, ஒரு தோசை ஒன்றும் ஒரு குடிநீரும் வேண்டும்.',
-        pronunciation: 'Sari, oru dosai ondrum oru kudineerum vaendum.'
+        native: 'சரி, ஒரு தோசையும் ஒரு காபியும் வேண்டும்.',
+        pronunciation: 'Sari, oru dosaiyum oru kaapiyum vaendum.'
       },
       {
         speaker: 'B',
         english: 'Sure! That will be ninety rupees.',
-        native: 'நிச்சயம்! அதை ஒன்பது ரூபாய்.',
-        pronunciation: 'Nitchayam! Athai onpathu roobaay.'
+        native: 'நிச்சயம்! அது தொண்ணூறு ரூபாய்.',
+        pronunciation: 'Nitchayam! Athu thonnooru roobaay.'
       }
     ]
   },
@@ -210,8 +210,8 @@ export const tamilDialogues: DialogueItem[] = [
       {
         speaker: 'B',
         english: 'You are welcome!',
-        native: 'வரையறுக்கப் படாத!',
-        pronunciation: 'Varaiyarruka patatha!'
+        native: 'நல்வரவு!',
+        pronunciation: 'Nalvaravu!'
       }
     ]
   }

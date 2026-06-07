@@ -85,17 +85,17 @@ export const tamilSentences: SentenceItem[] = [
   { english: 'What is your profession?', native: 'உங்கள் தொழில் என்ன?', pronunciation: 'Ungal tholil enna?', meaning: 'Asking profession' },
   { english: 'I am a software engineer.', native: 'நான் ஒரு மென்பொருள் பொறியாளர்.', pronunciation: 'Naan oru menborul poriyaalar.', meaning: 'Stating profession' },
   { english: 'Today is a working day.', native: 'இன்று ஒரு வேலை நாள்.', pronunciation: 'Indru oru velai naaL', meaning: 'Stating work day' },
-  { english: 'I finished my work early.', native: 'நான் என் வேலையை early முடித்தேன்.', pronunciation: 'Naan en velaiyai mudiththen.', meaning: 'Finishing work' },
+  { english: 'I finished my work early.', native: 'நான் என் வேலையை விரைவில் முடித்தேன்.', pronunciation: 'Naan en velaiyai viraivil mudiththen.', meaning: 'Finishing work' },
 
   // Emotions
   { english: 'I am very happy today.', native: 'இன்று நான் மிகவும் மகிழ்ச்சியாக இருக்கிறேன்.', pronunciation: 'Indru naan mikavum magizhchiyaaka irukkirren.', meaning: 'Expressing happiness' },
-  { english: 'I am feeling sad.', native: 'நான் சோகமாக உணர்கிறேன்.', pronunciation: 'Naan soakamaag uanarkkirren.', meaning: 'Expressing sadness' },
-  { english: 'Do not worry!', native: 'கவலைப்படாதீர்கள்!', pronunciation: 'Kavalaippaadiireekal!', meaning: 'Consoling phrase' },
-  { english: 'I am excited about this.', native: 'இதைப் பற்றி நான் உற்சாகமாக உள்ளேன்.', pronunciation: 'Idhai patti naan urtshaakamaaka ulleen', meaning: 'Expressing excitement' },
+  { english: 'I am feeling sad.', native: 'நான் சோகமாக உணர்கிறேன்.', pronunciation: 'Naan sokamaaga unarukiren.', meaning: 'Expressing sadness' },
+  { english: 'Do not worry!', native: 'கவலைப்படாதீர்கள்!', pronunciation: 'Kavalaippadaatheergal!', meaning: 'Consoling phrase' },
+  { english: 'I am excited about this.', native: 'இதைப் பற்றி நான் உற்சாகமாக உள்ளேன்.', pronunciation: 'Idhai patti naan urchaagamaaga ullen', meaning: 'Expressing excitement' },
   { english: 'That made me angry.', native: 'அது என்னை கோபப்படுத்தியது.', pronunciation: 'Adhu ennai kopappaduththiyadhu.', meaning: 'Expressing anger' },
 
   // Animals
-  { english: 'The dog is barking loudly.', native: 'நாய் உரசலாக குரைக்கிறது.', pronunciation: 'Naay urasaalaka kuraykirdhathu.', meaning: 'Describing dog' },
+  { english: 'The dog is barking loudly.', native: 'நாய் உரசலாக குரைக்கிறது.', pronunciation: 'Naay usalaaka kuraikkiradhu.', meaning: 'Describing dog' },
   { english: 'The cat is sleeping on the mat.', native: 'பூனை மெத்தையில் தூங்குகிறது.', pronunciation: 'Poonai meththaiyil thoongukirdhathu.', meaning: 'Describing cat' },
   { english: 'The bird is singing beautifully.', native: 'பறவை அழகாக பாடுகிறது.', pronunciation: 'Paravai alagaaka paadukirdhathu.', meaning: 'Describing bird' },
   { english: 'I love watching elephants.', native: 'யானைகளை பார்ப்பதை நான் விரும்புகிறேன்.', pronunciation: 'Yaanaigalai paarpadhai naan virumbukirren.', meaning: 'Expressing love for animals' },
@@ -103,10 +103,10 @@ export const tamilSentences: SentenceItem[] = [
 
   // Technology
   { english: 'My phone battery is low.', native: 'என் தொலைபேசி பேட்டரி குறைவாக உள்ளது.', pronunciation: 'En tholaipesi battery kuraivaaka ulladhu.', meaning: 'Phone battery issue' },
-  { english: 'Can you charge my phone?', native: 'என் தொலைபேசியை charge செய்ய முடியுமா?', pronunciation: 'En tholaipesiyai charge seyya mudhiyumaa?', meaning: 'Requesting phone charge' },
+  { english: 'Can you charge my phone?', native: 'என் தொலைபேசியை சார்ஜ் செய்ய முடியுமா?', pronunciation: 'En tholaipesiyai saarj seyya mudhiyumaa?', meaning: 'Requesting phone charge' },
   { english: 'The internet is not working.', native: 'இணையம் வேலை செய்யவில்லை.', pronunciation: 'Inaiyam velai seyyavillai.', meaning: 'Internet problem' },
-  { english: 'I am learning computer programming.', native: 'நான் கணினி நிரலாக்கம் கற்கிறேன்.', pronunciation: 'Naan grani niralokkam karkiren.', meaning: 'Studying programming' },
-  { english: 'Send me the file via email.', native: 'கோப்பை email மூலம் அனுப்புங்கள்.', pronunciation: 'Koppai email moolam anuppungAL', meaning: 'Email request' },
+  { english: 'I am learning computer programming.', native: 'நான் கணினி நிரலாக்கம் கற்கிறேன்.', pronunciation: 'Naan kanini niralakkam karkiren.', meaning: 'Studying programming' },
+  { english: 'Send me the file via email.', native: 'கோப்பை மின்னஞ்சல் மூலம் அனுப்புங்கள்.', pronunciation: 'Koppai minnanjal moolam anuppungal', meaning: 'Email request' },
 
   // Clothing
   { english: 'I need to buy a new shirt.', native: 'எனக்கு ஒரு புதிய சட்டை வேண்டும்.', pronunciation: 'Enakku oru puthiya sattai ventum.', meaning: 'Shopping for clothes' },
@@ -122,12 +122,12 @@ export const tamilSentences: SentenceItem[] = [
   // House & Home
   { english: 'My house has three rooms.', native: 'என் வீட்டில் மூன்று அறைகள் உள்ளன.', pronunciation: 'En veettil moondru araigal unnaan', meaning: 'Describing house' },
   { english: 'The kitchen is on the first floor.', native: 'சமையல் அறை முதல் தளத்தில் உள்ளது.', pronunciation: 'Samaiyal arai muthal thalaththil ulladhu.', meaning: 'Kitchen location' },
-  { english: 'I cleaned my room today.', native: 'இன்று என் அறையை நான் துடைத்தேன்.', pronunciation: 'Indru en araiyai naan tutaiththen.', meaning: 'Cleaning room' },
+  { english: 'I cleaned my room today.', native: 'இன்று என் அறையை நான் சுத்தம் செய்தேன்.', pronunciation: 'Indru en araiyai naan suththam seiththen.', meaning: 'Cleaning room' },
   { english: 'There is a garden behind the house.', native: 'வீட்டின் பின்னால் ஒரு தோட்டம் உள்ளது.', pronunciation: 'Veettin pinnal oru thottam ulladhu.', meaning: 'Garden location' },
   { english: 'The rent is very high.', native: 'வாடகை மிகவும் அதிகம்.', pronunciation: 'Vaadagai mikavum adigam.', meaning: 'High rent complaint' },
 
   // Daily Routine
-  { english: 'I wake up early every morning.', native: 'நான் ஒவ்வொரு காலையும் early எழுகிறேன்.', pronunciation: 'Naan ovvoru kaalaiyum early elukirren.', meaning: 'Morning routine' },
+  { english: 'I wake up early every morning.', native: 'நான் ஒவ்வொரு காலையும் விரைவில் எழுகிறேன்.', pronunciation: 'Naan ovvoru kaalaiyum viraivil elukirren.', meaning: 'Morning routine' },
   { english: 'I take a bath every day.', native: 'நான் தினமும் குளிக்கிறேன்.', pronunciation: 'Naan thinamum kulkikren.', meaning: 'Daily bathing' },
   { english: 'I usually eat breakfast at seven.', native: 'நான் வழக்கமாக ஏழு மணிக்கு காலை உணவு சாப்பிடுகிறேன்.', pronunciation: 'Naan vazhkamaaka yezhu manikku kaalai unavu saappidukirren.', meaning: 'Breakfast time' },
   { english: 'I go to bed at ten.', native: 'நான் பத்து மணிக்கு படுக்கை போகிறேன்.', pronunciation: 'Naan pathu manikku pattkai pokirren.', meaning: 'Bedtime' },

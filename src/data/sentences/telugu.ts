@@ -14,7 +14,7 @@ export const teluguSentences: SentenceItem[] = [
   { english: 'See you tomorrow!', native: 'రేపు కలుద్దాం!', pronunciation: 'Repu kaluddaam!', meaning: 'Farewell until tomorrow' },
 
   // Family
-  { english: 'My father is a doctor.', native: 'నా అతను డాక్టర్.', pronunciation: 'Naa athanu doctor.', meaning: 'Describing father profession' },
+  { english: 'My father is a doctor.', native: 'నా తండ్రి డాక్టర్.', pronunciation: 'Naa tandri doctor.', meaning: 'Describing father profession' },
   { english: 'My mother cooks delicious food.', native: 'నా అమ్మ చాలా రుచికరమైన ఆహారం వంటుతుంది.', pronunciation: 'Naa amma chaala ruchikaramaina aahaaram vantuthundi.', meaning: 'Describing mother activity' },
   { english: 'I have one brother and two sisters.', native: 'నాకు ఒక అన్నయ్య మరియు రెండు అక్కలు ఉన్నారు.', pronunciation: 'Naaku oka annayya mariyu rendaku akkalu unnaru.', meaning: 'Describing siblings' },
   { english: 'My grandmother tells me stories.', native: 'నా అమ్మమ్మ నాకు కథలు చెబుతారు.', pronunciation: 'Naa ammamma naaku kathalu chebutaaru.', meaning: 'Grandmother activity' },
@@ -28,8 +28,8 @@ export const teluguSentences: SentenceItem[] = [
   { english: 'The tea is very hot.', native: 'టీ చాలా వేడి.', pronunciation: 'Tea chaala vedi.', meaning: 'Describing tea temperature' },
   { english: 'Do you like fruits?', native: 'మీకు పండ్లు ఇష్టమా?', pronunciation: 'Meeku pandlu ishtamaa?', meaning: 'Asking about fruit preference' },
   { english: 'I prefer vegetarian food.', native: 'నాకు శాకాహార ఆహారం ఇష్టం.', pronunciation: 'Naaku shaakaahara aahaaram ishtam.', meaning: 'Stating food preference' },
-  { english: 'Breakfast is ready.', native: 'తినుబండారు సిద్ధంగా ఉంది.', pronunciation: 'Tinubandaaru siddhangaundi.', meaning: 'Announcing breakfast' },
-  { english: 'Let us go for lunch together.', native: 'కలిసి లంచ్ చేద్దాం.', pronunciation: 'Kalisi lunch cheddma.', meaning: 'Inviting for lunch' },
+  { english: 'Breakfast is ready.', native: 'ఉదయాహారం సిద్ధంగా ఉంది.', pronunciation: 'Udayaahaaram siddhangaa undi.', meaning: 'Announcing breakfast' },
+  { english: 'Let us go for lunch together.', native: 'కలిసి మధ్యాహ్న భోజనం చేద్దాం.', pronunciation: 'Kalisi madhyahna bhojanam cheddaam.', meaning: 'Inviting for lunch' },
 
   // Numbers & Time
   { english: 'What time is it now?', native: 'ఇప్పుడు ఎన్ని గంటలు?', pronunciation: 'Ipputu enni gantaalu?', meaning: 'Asking time' },
@@ -59,15 +59,15 @@ export const teluguSentences: SentenceItem[] = [
 
   // Weather & Nature
   { english: 'Today is a sunny day.', native: 'ఈ రోజు ఎండలు ఎక్కువ.', pronunciation: 'Ee roju endalu ekkuvu.', meaning: 'Describing weather' },
-  { english: 'It might rain today.', native: 'ఈ రోజు rain పడే అవకాశం ఉంది.', pronunciation: 'Ee roju rain pade avakaasham undi.', meaning: 'Predicting rain' },
+  { english: 'It might rain today.', native: 'ఈ రోజు వర్షం పడే అవకాశం ఉంది.', pronunciation: 'Ee roju varsham pade avakaasham undi.', meaning: 'Predicting rain' },
   { english: 'The wind is blowing strongly.', native: 'గాలి బలంగా వీస్తోంది.', pronunciation: 'Gaali balanga veestondi.', meaning: 'Describing wind' },
   { english: 'The flowers are blooming.', native: 'పువ్వులు వికసిస్తున్నాయి.', pronunciation: 'Puvvulu vikasisthunnayyi.', meaning: 'Describing flowers' },
   { english: 'It is very cold tonight.', native: 'ఈ రాత్రి చాలా చలి.', pronunciation: 'Ee raatri chaala cali.', meaning: 'Describing night temperature' },
 
   // School & Education
   { english: 'I study in class five.', native: 'నేను ఐదవ తరగతిలో చదువుతున్నాను.', pronunciation: 'Naanu aaidava taragathilo chaduvuthunnaanu.', meaning: 'Describing school grade' },
-  { english: 'My teacher is very kind.', native: 'నా అధ్యాపకుడు చాలా दयालु.', pronunciation: 'Naa adhyapakudu chaala dayaalua.', meaning: 'Describing teacher' },
-  { english: 'I need to do my homework.', native: 'నాకు నా హోమ్‌వర్క్ చేయాలి.', pronunciation: 'Naaku naa homework cheyyali.', meaning: 'Stating homework requirement' },
+  { english: 'My teacher is very kind.', native: 'నా అధ్యాపకుడు చాలా దయాలుడు.', pronunciation: 'Naa adhyapakudu chaala dayaaludu.', meaning: 'Describing teacher' },
+  { english: 'I need to do my homework.', native: 'నాకు నా ఇంటి పని చేయాలి.', pronunciation: 'Naaku naa inti pani cheyyali.', meaning: 'Stating homework requirement' },
   { english: 'The exam is tomorrow.', native: 'పరీక్ష రేపు.', pronunciation: 'Pariksha repu.', meaning: 'Stating exam date' },
   { english: 'I like mathematics.', native: 'నాకు గణితం ఇష్టం.', pronunciation: 'Naaku ganitam ishtam.', meaning: 'Subject preference' },
   { english: 'Can you help me with this problem?', native: 'మీరు ఈ సమస్యలో నాకు సహాయం చేయగలరా?', pronunciation: 'Meeru ee samasyalo naaku sahayam cheyyagalaraa?', meaning: 'Asking for academic help' },
@@ -85,11 +85,11 @@ export const teluguSentences: SentenceItem[] = [
   { english: 'What is your profession?', native: 'మీ వృత్తి ఏమిటి?', pronunciation: 'Mee vritti emiti?', meaning: 'Asking profession' },
   { english: 'I am a software engineer.', native: 'నేను ఒక సాఫ్ట్‌వేర్ ఇంజనీర్.', pronunciation: 'Naanu oka software engineer.', meaning: 'Stating profession' },
   { english: 'Today is a working day.', native: 'ఈ రోజు పని రోజు.', pronunciation: 'Ee roju pani roju.', meaning: 'Stating work day' },
-  { english: 'I finished my work early.', native: 'నా పనిని early ముగించాను.', pronunciation: 'Naa panini mudhimchaanu.', meaning: 'Finishing work' },
+  { english: 'I finished my work early.', native: 'నా పనిని ముందుగా ముగించాను.', pronunciation: 'Naa panini mundhuga mudhimchaanu.', meaning: 'Finishing work' },
 
   // Emotions
   { english: 'I am very happy today.', native: 'ఈ రోజు నేను చాలా సంతోషంగా ఉన్నాను.', pronunciation: 'Ee roju naanu chaala santoshanga unnaanu.', meaning: 'Expressing happiness' },
-  { english: 'I am feeling sad.', native: 'నేను బాధగా ఫీలవుతున్నాను.', pronunciation: 'Naanu baadhaga feelvuthunnaanu.', meaning: 'Expressing sadness' },
+  { english: 'I am feeling sad.', native: 'నేను బాధగా ఉన్నాను.', pronunciation: 'Naanu baadhagaa unnaanu.', meaning: 'Expressing sadness' },
   { english: 'Do not worry!', native: 'చింతించకండి!', pronunciation: 'Chinthinchakandi!', meaning: 'Consoling phrase' },
   { english: 'I am excited about this.', native: 'దీని గురించి నేను ఉత్సాహంగా ఉన్నాను.', pronunciation: 'Deeni gunichi naanu utsaahanga unnaanu.', meaning: 'Expressing excitement' },
   { english: 'That made me angry.', native: 'అది నన్ను ఆగ్రహింపజేసింది.', pronunciation: 'Adi nannu agrahimpjesindi.', meaning: 'Expressing anger' },
@@ -122,13 +122,13 @@ export const teluguSentences: SentenceItem[] = [
   // House & Home
   { english: 'My house has three rooms.', native: 'నా ఇంట్లో మూడు గదులు ఉన్నాయి.', pronunciation: 'Naa intlo moodu gadulu unnayyi.', meaning: 'Describing house' },
   { english: 'The kitchen is on the first floor.', native: 'వంటగది మొదటి అంతస్థులో ఉంది.', pronunciation: 'Vantagadi modati anthashtulo undi.', meaning: 'Kitchen location' },
-  { english: 'I cleaned my room today.', native: 'ఈ రోజు నా గదిని శుభం చేశాను.', pronunciation: 'Ee roju naa gadini shubham chesthaanu.', meaning: 'Cleaning room' },
+  { english: 'I cleaned my room today.', native: 'ఈ రోజు నా గదిని శుభ్రం చేశాను.', pronunciation: 'Ee roju naa gadini shubhram chesthaanu.', meaning: 'Cleaning room' },
   { english: 'There is a garden behind the house.', native: 'ఇంటి వెనుక ఒక తోట ఉంది.', pronunciation: 'Inti venuka oka tota undi.', meaning: 'Garden location' },
   { english: 'The rent is very high.', native: 'అద్దె చాలా ఎక్కువ.', pronunciation: 'Adde chaala ekkuvu.', meaning: 'High rent complaint' },
 
   // Daily Routine
-  { english: 'I wake up early every morning.', native: 'నేను ప్రతి ఉదయం early నిద్ర లేస్తాను.', pronunciation: 'Naanu prati udayam early nidra lesthaanu.', meaning: 'Morning routine' },
-  { english: 'I take a bath every day.', native: 'నేను ప్రతిరోజూ అలమట్టు చేస్తాను.', pronunciation: 'Naanu prati roju alamattu chesthaanu.', meaning: 'Daily bathing' },
+  { english: 'I wake up early every morning.', native: 'నేను ప్రతి ఉదయం త్వరగా నిద్ర లేస్తాను.', pronunciation: 'Naanu prati udayam tvaragaa nidra lesthaanu.', meaning: 'Morning routine' },
+  { english: 'I take a bath every day.', native: 'నేను ప్రతిరోజూ స్నానం చేస్తాను.', pronunciation: 'Naanu prati roju snaanam chesthaanu.', meaning: 'Daily bathing' },
   { english: 'I usually eat breakfast at seven.', native: 'నేను సాధారణంగా ఏడు గంటలకు తినుబండారు చేస్తాను.', pronunciation: 'Naanu saadhaaranaanga eedhu gantaalaku tinubandaaru chesthaanu.', meaning: 'Breakfast time' },
   { english: 'I go to bed at ten.', native: 'నేను పది గంటలకు పడతాను.', pronunciation: 'Naanu padi gantaalaku padataanu.', meaning: 'Bedtime' },
   { english: 'I exercise every morning.', native: 'నేను ప్రతి ఉదయం వ్యాయామం చేస్తాను.', pronunciation: 'Naanu prati udayam vyaayamam chesthaanu.', meaning: 'Exercise routine' },

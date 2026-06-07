@@ -22,8 +22,8 @@ export const teluguDialogues: DialogueItem[] = [
       {
         speaker: 'A',
         english: 'Can I get two kilograms please?',
-        native: 'నాకు రెండు కిలోలు بد్కవచ్చుా?',
-        pronunciation: 'Naaku rendu kilolu kadachachu?'
+        native: 'నాకు రెండు కిలోలు ఇవ్వగలరా?',
+        pronunciation: 'Naaku rendu kilolu ivvagalaraa?'
       },
       {
         speaker: 'B',
@@ -40,8 +40,8 @@ export const teluguDialogues: DialogueItem[] = [
       {
         speaker: 'B',
         english: 'Yes, right here. Forty rupees a bunch.',
-        native: 'అవును, ఇదిగో. మిషములో నలభై రూపాయలు.',
-        pronunciation: 'Avunu, idigo. mishamulo nalabhai ruupaayalu.'
+        native: 'అవును, ఇదిగో. కట్టకు నలభై రూపాయలు.',
+        pronunciation: 'Avunu, idigo. kattaku nalabhai ruupaayalu.'
       }
     ]
   },
@@ -54,8 +54,8 @@ export const teluguDialogues: DialogueItem[] = [
       {
         speaker: 'A',
         english: 'Hey! Long time no see! How are you?',
-        native: 'ఏమ్! చాలా రోజుల తర్వాత! ఎలా ఉన్నావు?',
-        pronunciation: 'Em! Chaalaa rojulu taruvaat! Ela unnva?'
+        native: 'హే! చాలా రోజుల తర్వాత! ఎలా ఉన్నావు?',
+        pronunciation: 'He! Chaalaa rojulu taruvaata! Ela unnaavu?'
       },
       {
         speaker: 'B',
@@ -72,14 +72,14 @@ export const teluguDialogues: DialogueItem[] = [
       {
         speaker: 'B',
         english: 'I started a new job last month. It is very exciting!',
-        native: 'తివారం నెలనాడు నేను కొత్త పని మొదలు పెట్టాను. చాలా ఉత్సాహమైనది!',
-        pronunciation: 'Tivaaram nelanaadu nenu kotta pani modalu pettaanu. Chaalaa utsaahamaianadi!'
+        native: 'గత నెలలో నేను కొత్త పని మొదలు పెట్టాను. చాలా ఉత్సాహమైనది!',
+        pronunciation: 'Gata nelalo nenu kotta pani modalu pettaanu. Chaalaa utsahamainadi!'
       },
       {
         speaker: 'A',
         english: 'That is wonderful news! Congratulations!',
         native: 'అది అద్భుతమైన వార్త! అభినందనలు!',
-        pronunciation: 'Adi adbhutamaina vaarta! Abhinandanal!'
+        pronunciation: 'Adi adbhutamaina vaarta! Abhinandanalu!'
       }
     ]
   },
@@ -122,8 +122,8 @@ export const teluguDialogues: DialogueItem[] = [
       {
         speaker: 'B',
         english: 'Sure! That will be ninety rupees.',
-        native: 'నిశ్చయంగా! అది తొంబది రూపాయలు.',
-        pronunciation: 'Nishchaynga! Adi tombadi ruupaayalu.'
+        native: 'నిశ్చయంగా! అది తొంబై రూపాయలు.',
+        pronunciation: 'Nishchayamga! Adi tombai ruupaayalu.'
       }
     ]
   },
@@ -154,8 +154,8 @@ export const teluguDialogues: DialogueItem[] = [
       {
         speaker: 'B',
         english: 'Let me check your temperature. Please open your mouth.',
-        native: 'నేను మీ జ్వరం చూద్దాను. చిన్ బిగువుండి.',
-        pronunciation: 'Nenu mee jvaram chooddaanu. Chin biguvundi.'
+        native: 'నేను మీ జ్వరం చూద్దాను. నోరు తెరవండి.',
+        pronunciation: 'Nenu mee jvaram chooddaanu. Nooru teravandi.'
       },
       {
         speaker: 'A',
@@ -210,8 +210,8 @@ export const teluguDialogues: DialogueItem[] = [
       {
         speaker: 'B',
         english: 'You are welcome!',
-        native: 'మళ్ళీ కలుదాం!',
-        pronunciation: 'Mallee kalu Daam!'
+        native: 'మీకు స్వాగతం!',
+        pronunciation: 'Meeku swaagatam!'
       }
     ]
   }

@@ -36,7 +36,7 @@ export const hindiSentences: SentenceItem[] = [
   { english: 'It is half past two.', native: 'दो बजकर आधा घंटा हुआ है।', pronunciation: 'Do bajkar aadha ghanta hua hai.', meaning: 'Telling time - 2:30' },
   { english: 'Today is Monday.', native: 'आज सोमवार है।', pronunciation: 'Aaj somvaar hai.', meaning: 'Stating day of week' },
   { english: 'I wake up at six o clock.', native: 'मैं छह बजे उठता हूँ।', pronunciation: 'Main chhah baje uthata hoon.', meaning: 'Daily routine - waking up' },
-  { english: 'The meeting starts at ten.', native: 'मीटिंग दस बजे शुरू होती है।', pronunciation: 'Meeting das baje shuru hoti hai.', meaning: 'Stating meeting time' },
+  { english: 'The meeting starts at ten.', native: 'बैठक दस बजे शुरू होती है।', pronunciation: 'Baithak das baje shuru hoti hai.', meaning: 'Stating meeting time' },
   { english: 'How many do you want?', native: 'आपको कितने चाहिए?', pronunciation: 'Aapko kitne chahiye?', meaning: 'Asking quantity' },
   { english: 'I need two kilograms of rice.', native: 'मुझे दो किलो चावल चाहिए।', pronunciation: 'Mujhe do kilo chaawal chahiye.', meaning: 'Stating quantity needed' },
 
@@ -50,11 +50,11 @@ export const hindiSentences: SentenceItem[] = [
   { english: 'Where is the fitting room?', native: 'पहनने की जगह कहाँ है?', pronunciation: 'Pahanne ki jagah kahaan hai?', meaning: 'Asking for fitting room' },
 
   // Directions & Places
-  { english: 'Where is the train station?', native: 'रेलवे स्टेशन कहाँ है?', pronunciation: 'Railway station kahaan hai?', meaning: 'Asking for station' },
+  { english: 'Where is the train station?', native: 'रेलवे स्टेशन कहाँ है?', pronunciation: 'Relave steshan kahaan hai?', meaning: 'Asking for station' },
   { english: 'Go straight and turn left.', native: 'सीधे जाइए और बाएँ मुड़िए।', pronunciation: 'Seedhe jaayein aur baen muDiye.', meaning: 'Giving directions' },
   { english: 'It is near the temple.', native: 'यह मंदिर के पास है।', pronunciation: 'Yeh mandir ke paas hai.', meaning: 'Describing location' },
   { english: 'I live in Delhi.', native: 'मैं दिल्ली में रहता हूँ।', pronunciation: 'Main Delhi mein rehta hoon.', meaning: 'Stating residence' },
-  { english: 'The bus stop is over there.', native: 'बस स्टॉप वहाँ है।', pronunciation: 'Bus stop vahaan hai.', meaning: 'Pointing out bus stop' },
+  { english: 'The bus stop is over there.', native: 'बस स्टॉप वहाँ है।', pronunciation: 'Bas stopp vahaan hai.', meaning: 'Pointing out bus stop' },
   { english: 'How far is the beach?', native: 'समुद्र तक कितनी दूर है?', pronunciation: 'Samundar tak kitni door hai?', meaning: 'Asking distance' },
 
   // Weather & Nature
@@ -62,7 +62,7 @@ export const hindiSentences: SentenceItem[] = [
   { english: 'It might rain today.', native: 'आज बारिश हो सकती है।', pronunciation: 'Aaj baarish ho sakti hai.', meaning: 'Predicting rain' },
   { english: 'The wind is blowing strongly.', native: 'हवा तेज़ बह रही है।', pronunciation: 'Hawa tez bah rahi hai.', meaning: 'Describing wind' },
   { english: 'The flowers are blooming.', native: 'फूल खिल रहे हैं।', pronunciation: 'Phool khil rahe hain.', meaning: 'Describing flowers' },
-  { english: 'It is very cold tonight.', native: 'आज रात बहुत ठंडा है।', pronunciation: 'Aaj raat bahut thanda hai.', meaning: 'Describing night temperature' },
+  { english: 'It is very cold tonight.', native: 'आज रात बहुत ठंडी है।', pronunciation: 'Aaj raat bahut thandi hai.', meaning: 'Describing night temperature' },
 
   // School & Education
   { english: 'I study in class five.', native: 'मैं पाँचवीं कक्षा में पढ़ता हूँ।', pronunciation: 'Main paanchvi kakshha mein padhta hoon.', meaning: 'Describing school grade' },

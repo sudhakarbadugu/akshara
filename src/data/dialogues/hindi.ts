@@ -11,7 +11,7 @@ export const hindiDialogues: DialogueItem[] = [
         speaker: 'A',
         english: 'How much for these tomatoes?',
         native: 'इन टमाटर की कीमत कितनी है?',
-        pronunciation: 'In tomato ki keemat kiti hai?'
+        pronunciation: 'In tamatar ki keemat kitni hai?'
       },
       {
         speaker: 'B',
@@ -73,7 +73,7 @@ export const hindiDialogues: DialogueItem[] = [
         speaker: 'B',
         english: 'I started a new job last month. It is very exciting!',
         native: 'पिछले महीने मैंने नई नौकरी शुरू की। बहुत रोमांचक है!',
-        pronunciation: 'Pichhle mahine mainei nai naukri shuru ki. Bahut romantic hai!'
+        pronunciation: 'Pichhle mahine mainei nai naukri shuru ki. Bahut romanchak hai!'
       },
       {
         speaker: 'A',
@@ -149,13 +149,13 @@ export const hindiDialogues: DialogueItem[] = [
         speaker: 'A',
         english: 'I have a headache and fever since yesterday.',
         native: 'कल से सिरदर्द और बुखार है।',
-        pronunciation: 'Kal se sirdard aur buqhaar hai.'
+        pronunciation: 'Kal se sirdard aur bukhaar hai.'
       },
       {
         speaker: 'B',
         english: 'Let me check your temperature. Please open your mouth.',
         native: 'मैं तापमान देखता हूँ। कृपया मुँह खोलिए।',
-        pronunciation: 'Main taamaan dekhta hoon. Kritpaa munh kholiye.'
+        pronunciation: 'Main taapmaan dekhta hoon. Kripaya munh kholiye.'
       },
       {
         speaker: 'A',
