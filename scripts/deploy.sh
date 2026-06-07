@@ -12,9 +12,9 @@
 set -euo pipefail
 
 # ── Paths ──────────────────────────────────────────────────────────────
-PROJECT_DIR="/root/Projects/language-learning"
+PROJECT_DIR="/root/Projects/akshara"
 DIST_DIR="$PROJECT_DIR/dist"
-NGINX_DIR="/var/www/apps/language-learning"
+NGINX_DIR="/var/www/apps/akshara"
 NGINX_CONF="/etc/nginx/sites-available/apps.conf"
 
 # ── Colors ─────────────────────────────────────────────────────────────
