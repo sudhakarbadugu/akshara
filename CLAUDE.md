@@ -1,4 +1,4 @@
-# CLAUDE.md — AI Assistant Guide for Language Learning App
+# CLAUDE.md — AI Assistant Guide for Akshara App
 
 This file helps Claude Code (and other AI assistants) work effectively with this codebase.
 
@@ -6,13 +6,13 @@ This file helps Claude Code (and other AI assistants) work effectively with this
 
 ## Project Overview
 
-A React 19 + TypeScript + Vite + Tailwind 4 SPA for learning Indian languages (Tamil, Hindi, Telugu). Deployed to nginx at `/language-learning/`.
+A React 19 + TypeScript + Vite + Tailwind 4 SPA for learning Indian languages (Tamil, Hindi, Telugu). Deployed to nginx at `/akshara/`.
 
 **Key characteristics:**
 - Single-language-at-a-time learning (switchable via header dropdown)
 - All data is static TypeScript files (no API/database)
 - State persisted in localStorage via Zustand
-- SPA routing with React Router (basename: `/language-learning`)
+- SPA routing with React Router (basename: `/akshara`)
 
 ---
 
@@ -237,8 +237,8 @@ Every `npm run build` triggers `scripts/patch.js`:
 ### Manual Deploy
 ```bash
 npm run build
-rm -rf /var/www/apps/language-learning/*
-cp -r dist/* /var/www/apps/language-learning/
+rm -rf /var/www/apps/akshara/*
+cp -r dist/* /var/www/apps/akshara/
 systemctl reload nginx
 ```
 
@@ -246,7 +246,7 @@ systemctl reload nginx
 
 ## Common Gotchas
 
-1. **Base path** — Vite config sets `base: '/language-learning/'`. All assets and routes are relative to this.
+1. **Base path** — Vite config sets `base: '/akshara/'`. All assets and routes are relative to this.
 
 2. **Router state** — HomePage passes `wordCategoryId` via `navigate('/quiz', { state: { wordCategoryId: 4 } })`. QuizPage reads it with `useLocation().state`.
 
@@ -285,10 +285,10 @@ dialogues: index, tamil, hindi, telugu
 ## Testing Changes
 
 After any code change:
-1. `cd /root/Projects/language-learning`
+1. `cd /root/Projects/akshara`
 2. `npm run build` (catches TypeScript errors)
 3. `./scripts/deploy.sh --copy` (if build succeeded)
-4. Verify at `http://<server>/language-learning/`
+4. Verify at `http://<server>/akshara/`
 
 ---
 

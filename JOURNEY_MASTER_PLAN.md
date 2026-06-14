@@ -1,8 +1,8 @@
-# 30-Day Language Learning Journey — Master Implementation Plan
+# 30-Day Akshara Journey — Master Implementation Plan
 
 ## 📋 Executive Summary
 
-Build a complete gamified 30-Day Language Learning Journey for Telugu, Tamil, and Hindi.
+Build a complete gamified 30-Day Akshara Journey for Telugu, Tamil, and Hindi.
 Users already know alphabets, vowels, consonants, and gunithalu/matras.
 Goal: progress from words → phrases → sentences → conversations → real-life fluency.
 
@@ -320,7 +320,7 @@ Each day contains:
 
 ### Phase 7: Build & Deploy
 - `npm run build` verification
-- Deploy to `/var/www/apps/language-learning/`
+- Deploy to `/var/www/apps/akshara/`
 - Update nginx if needed
 - Test on mobile + desktop
 

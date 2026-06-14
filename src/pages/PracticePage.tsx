@@ -9,7 +9,7 @@ import { WordChipBar } from '../components/WordChipBar'
 import { useSounds } from '../hooks/useSounds'
 import { useMascot } from '../hooks/useMascot'
 import { LANGUAGES } from '../i18n/languages'
-import { Eraser, PenTool, Pencil, ChevronLeft, ChevronRight, Check, Palette } from 'lucide-react'
+import { Eraser, PenTool, Pencil, ChevronLeft, ChevronRight, Check, Palette, ChevronDown, ChevronUp } from 'lucide-react'
 import type { AlphabetChar } from '../types'
 
 const PEN_COLORS = [
@@ -53,6 +53,7 @@ export function PracticePage() {
   const [penSize, setPenSize] = useState(5)
   const [showColorPicker, setShowColorPicker] = useState(false)
   const [showLearnedAnim, setShowLearnedAnim] = useState(false)
+  const [infoCollapsed, setInfoCollapsed] = useState(true)
 
   const bgCard = darkMode ? 'rgba(30,41,59,0.7)' : 'rgba(255,255,255,0.9)'
   const bgCardHover = darkMode ? 'rgba(30,41,59,0.9)' : 'rgba(255,255,255,1)'
@@ -71,10 +72,10 @@ export function PracticePage() {
 
       // Draw faint character ghost only (stroke guide is SVG overlay now)
       ctx.save()
-      ctx.font = `bold 180px "Noto Sans ${langConfig.name === 'English' ? '' : langConfig.name}", serif`
-      ctx.fillStyle = 'rgba(99, 102, 241, 0.06)'
-      ctx.strokeStyle = 'rgba(99, 102, 241, 0.10)'
-      ctx.lineWidth = 2
+      ctx.font = `bold 360px "Noto Sans ${langConfig.name === 'English' ? '' : langConfig.name}", serif`
+      ctx.fillStyle = 'rgba(99, 102, 241, 0.08)'
+      ctx.strokeStyle = 'rgba(99, 102, 241, 0.14)'
+      ctx.lineWidth = 3
       ctx.textAlign = 'center'
       ctx.textBaseline = 'middle'
       ctx.fillText(practiceChar.char, ctx.canvas.width / 2, ctx.canvas.height / 2)
@@ -239,39 +240,74 @@ export function PracticePage() {
       <div className="lg:flex lg:gap-6 lg:items-start">
         {/* ─── Left column: Character reference panel ─── */}
         <div className="lg:w-72 xl:w-80 lg:flex-shrink-0 space-y-4 mb-5 lg:mb-0">
-          {/* Character info card */}
+          {/* Character info card — collapsible, collapsed by default */}
           <motion.div
             key={practiceChar.char}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="rounded-2xl p-6 border"
+            className="rounded-2xl border overflow-hidden"
             style={{ background: bgCard, borderColor }}
           >
-            <div className="flex lg:flex-col items-center lg:items-center gap-4 lg:gap-5">
-              <div
-                className="text-7xl lg:text-8xl font-black"
-                style={{ fontFamily: `"Noto Sans ${langConfig.name === 'English' ? '' : langConfig.name}", serif`, color: '#fbbf24', lineHeight: '1' }}
+            <div className={`flex items-center gap-3 p-4 ${infoCollapsed ? '' : 'border-b'}`} style={{ borderColor }}>
+              <button
+                onClick={() => setInfoCollapsed(!infoCollapsed)}
+                aria-label={infoCollapsed ? 'Show character details' : 'Hide character details'}
+                className="flex-1 flex items-center gap-3 text-left rounded-lg focus-visible:ring-2 focus-visible:ring-indigo-400"
               >
-                {practiceChar.char}
-              </div>
-              <div className="flex-1 min-w-0 lg:text-center">
-                <div className="text-lg font-bold" style={{ color: textPrimary }}>{practiceChar.name}</div>
-                <div className="text-sm" style={{ color: textSecondary }}>Sound: {practiceChar.english}</div>
-                {practiceChar.keyword && (
-                  <div className="text-xs mt-1" style={{ color: darkMode ? '#a5b4fc' : '#6366f1' }}>
-                    Keyword: {practiceChar.keyword}
-                  </div>
-                )}
-                {practiceChar.tip && (
-                  <div className="text-xs mt-1 italic" style={{ color: textSecondary }}>
-                    💡 {practiceChar.tip}
-                  </div>
-                )}
-              </div>
+                <div
+                  className="text-5xl lg:text-6xl font-black flex-shrink-0"
+                  style={{ fontFamily: `"Noto Sans ${langConfig.name === 'English' ? '' : langConfig.name}", serif`, color: '#fbbf24', lineHeight: '1' }}
+                >
+                  {practiceChar.char}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-base font-bold truncate" style={{ color: textPrimary }}>{practiceChar.name}</div>
+                  {infoCollapsed && (
+                    <div className="text-xs truncate" style={{ color: textSecondary }}>{practiceChar.english}</div>
+                  )}
+                </div>
+              </button>
+              <button
+                onClick={() => setInfoCollapsed(!infoCollapsed)}
+                aria-label={infoCollapsed ? 'Expand' : 'Collapse'}
+                className="p-2 rounded-lg flex-shrink-0 transition-all hover:scale-110 focus-visible:ring-2 focus-visible:ring-indigo-400"
+                style={{ background: darkMode ? 'rgba(99,102,241,0.15)' : 'rgba(99,102,241,0.08)', color: textSecondary }}
+              >
+                {infoCollapsed ? <ChevronDown size={18} /> : <ChevronUp size={18} />}
+              </button>
             </div>
-            <div className="mt-4 flex justify-center">
-              <SpeechButton text={practiceChar.char} lang={langConfig.voiceLang} size="md" />
-            </div>
+
+            <AnimatePresence initial={false}>
+              {!infoCollapsed && (
+                <motion.div
+                  key="info-content"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.25, ease: 'easeInOut' }}
+                  style={{ overflow: 'hidden' }}
+                >
+                  <div className="p-5 pt-4">
+                    <div className="space-y-1.5">
+                      <div className="text-sm" style={{ color: textSecondary }}>Sound: {practiceChar.english}</div>
+                      {practiceChar.keyword && (
+                        <div className="text-xs" style={{ color: darkMode ? '#a5b4fc' : '#6366f1' }}>
+                          Keyword: {practiceChar.keyword}
+                        </div>
+                      )}
+                      {practiceChar.tip && (
+                        <div className="text-xs italic" style={{ color: textSecondary }}>
+                          💡 {practiceChar.tip}
+                        </div>
+                      )}
+                    </div>
+                    <div className="mt-4 flex justify-center">
+                      <SpeechButton text={practiceChar.char} lang={langConfig.voiceLang} size="md" />
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
 
           {/* Character strip — always visible as sidebar nav on desktop */}
@@ -423,7 +459,12 @@ export function PracticePage() {
 
             <button
               onClick={clearCanvas}
-              className="p-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-slate-300 flex items-center gap-1 transition-all"
+              className="px-3 py-2 rounded-lg text-xs font-bold text-white flex items-center gap-1.5 transition-all focus-visible:ring-2 focus-visible:ring-red-400 hover:scale-105 active:scale-95"
+              style={{
+                background: 'linear-gradient(135deg, #ef4444, #dc2626)',
+                boxShadow: '0 4px 12px rgba(239,68,68,0.35)',
+              }}
+              aria-label="Clear the canvas"
             >
               <Eraser size={14} /> Clear
             </button>

@@ -120,13 +120,13 @@ export function Layout() {
         {/* Sidebar header */}
         <div className="px-5 py-5 flex items-center gap-3 border-b" style={{ borderColor: sidebarBorder }}>
           <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center text-2xl"
-            style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }}
+            className="w-10 h-10 rounded-xl flex items-center justify-center text-2xl font-black"
+            style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', color: '#fff' }}
           >
-            🌐
+            अ
           </div>
           <div>
-            <div className="font-bold text-sm leading-tight" style={{ color: textPrimary }}>Language Learning</div>
+            <div className="font-bold text-sm leading-tight" style={{ color: textPrimary }}>Akshara</div>
             <span className="px-1.5 py-0.5 rounded-md text-[9px] font-mono font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">v{APP_VERSION}</span>
           </div>
         </div>
@@ -205,53 +205,60 @@ export function Layout() {
 
       {/* Mobile/tablet header — hidden on desktop */}
       <header
-        className="lg:hidden sticky top-0 z-40 px-4 py-3 flex items-center justify-between backdrop-blur-xl border-b"
+        className="lg:hidden sticky top-0 z-40 backdrop-blur-xl border-b"
         style={{
           background: darkMode ? 'rgba(15,23,42,0.85)' : 'rgba(248,250,252,0.85)',
           borderColor: darkMode ? 'rgba(99,102,241,0.15)' : 'rgba(99,102,241,0.1)',
         }}
       >
-        <div className="flex items-center gap-2.5">
-          <motion.div
-            whileHover={{ rotate: 10 }}
-            className="w-9 h-9 rounded-xl flex items-center justify-center text-xl"
-            style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }}
-          >
-            🌐
-          </motion.div>
-          <h1 className="font-bold text-sm leading-tight" style={{ color: textPrimary }}>Language Learning</h1>
-          <span className="px-1.5 py-0.5 rounded-md text-[9px] font-mono font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 whitespace-nowrap">v{APP_VERSION}</span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <select
-            value={currentLanguage}
-            onChange={(e) => setCurrentLanguage(e.target.value as Language)}
-            aria-label="Select language"
-            className="text-xs font-semibold rounded-lg px-2 py-1.5 border-0 cursor-pointer focus:ring-2 focus:ring-indigo-400"
-            style={{ background: bgCard, color: textPrimary }}
-          >
-            {(Object.keys(LANGUAGES) as Language[]).map(lang => (
-              <option key={lang} value={lang}>{LANGUAGES[lang].flag} {LANGUAGES[lang].name}</option>
-            ))}
-          </select>
-          <StreakBadge streak={streak} size="sm" showLabel={false} />
-          <XPIndicator xp={xp} level={level} size="sm" showProgress={false} />
-          <button
-            onClick={() => sounds.setMuted()}
-            aria-label={sounds.muted ? 'Unmute sound' : 'Mute sound'}
-            className="w-9 h-9 rounded-xl flex items-center justify-center transition-colors focus-visible:ring-2 focus-visible:ring-indigo-400"
-            style={{ background: bgCard, color: textSecondary }}
-          >
-            {sounds.muted ? <VolumeX size={16} /> : <Volume2 size={16} />}
-          </button>
-          <button
-            onClick={() => toggleDarkMode()}
-            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="w-9 h-9 rounded-xl flex items-center justify-center transition-colors focus-visible:ring-2 focus-visible:ring-indigo-400"
-            style={{ background: bgCard, color: textSecondary }}
-          >
-            {darkMode ? <Sun size={16} /> : <Moon size={16} />}
-          </button>
+        {/* Row 1: brand + essential controls */}
+        <div className="px-4 py-2.5 flex items-center justify-between">
+          <div className="flex items-center gap-2 min-w-0">
+            <motion.div
+              whileHover={{ rotate: 10 }}
+              className="w-9 h-9 rounded-xl flex items-center justify-center text-xl font-black flex-shrink-0"
+              style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', color: '#fff' }}
+            >
+              अ
+            </motion.div>
+            <div className="min-w-0">
+              <div className="flex items-center gap-1.5">
+                <h1 className="font-bold text-sm leading-tight truncate" style={{ color: textPrimary }}>Akshara</h1>
+                <span className="px-1.5 py-0.5 rounded-md text-[9px] font-mono font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 whitespace-nowrap flex-shrink-0">v{APP_VERSION}</span>
+              </div>
+              <select
+                value={currentLanguage}
+                onChange={(e) => setCurrentLanguage(e.target.value as Language)}
+                aria-label="Select language"
+                className="text-[10px] font-semibold rounded-md px-1.5 py-0.5 border-0 cursor-pointer focus:ring-2 focus:ring-indigo-400 mt-0.5"
+                style={{ background: bgCard, color: textPrimary }}
+              >
+                {(Object.keys(LANGUAGES) as Language[]).map(lang => (
+                  <option key={lang} value={lang}>{LANGUAGES[lang].flag} {LANGUAGES[lang].name}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div className="flex items-center gap-1.5 flex-shrink-0">
+            <StreakBadge streak={streak} size="sm" showLabel={false} />
+            <XPIndicator xp={xp} level={level} size="sm" showProgress={false} />
+            <button
+              onClick={() => sounds.setMuted()}
+              aria-label={sounds.muted ? 'Unmute sound' : 'Mute sound'}
+              className="w-8 h-8 rounded-xl flex items-center justify-center transition-colors focus-visible:ring-2 focus-visible:ring-indigo-400"
+              style={{ background: bgCard, color: textSecondary }}
+            >
+              {sounds.muted ? <VolumeX size={15} /> : <Volume2 size={15} />}
+            </button>
+            <button
+              onClick={() => toggleDarkMode()}
+              aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+              className="w-8 h-8 rounded-xl flex items-center justify-center transition-colors focus-visible:ring-2 focus-visible:ring-indigo-400"
+              style={{ background: bgCard, color: textSecondary }}
+            >
+              {darkMode ? <Sun size={15} /> : <Moon size={15} />}
+            </button>
+          </div>
         </div>
       </header>
 

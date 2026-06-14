@@ -1,4 +1,4 @@
-# 🌐 Language Learning — Interactive Multi-Language Web App
+# 🌐 Akshara — Interactive Multi-Language Web App
 
 A multi-sensory language learning platform for beginners and kids. Supports **Tamil**, **Hindi**, and **Telugu**. Built with React 19, TypeScript, Vite, Tailwind CSS 4, and Framer Motion.
 
@@ -63,7 +63,7 @@ A multi-sensory language learning platform for beginners and kids. Supports **Ta
 ## 🚀 Quick Start
 
 ```bash
-cd /root/Projects/language-learning
+cd /root/Projects/akshara
 
 # Install dependencies
 npm install
@@ -83,7 +83,7 @@ npm run build
 ## 📁 Project Structure
 
 ```
-language-learning/
+akshara/
 ├── scripts/
 │   ├── patch.js                # Auto-bump version + build timestamp
 │   └── deploy.sh               # Build → deploy to nginx → reload
@@ -152,7 +152,7 @@ language-learning/
 │       ├── ProgressPage.tsx    # Stats + achievement grid
 │       └── ProfilePage.tsx     # XP, streak, level, reset
 ├── dist/                       # Production build (auto-generated)
-├── vite.config.ts              # Vite config: base=/language-learning/
+├── vite.config.ts              # Vite config: base=/akshara/
 ├── package.json                # Dependencies + scripts
 └── README.md                   # This file
 ```
@@ -279,7 +279,7 @@ language-learning/
 ### Deploy Script (recommended)
 
 ```bash
-cd /root/Projects/language-learning
+cd /root/Projects/akshara
 
 # Full pipeline: build → deploy → reload → verify
 ./scripts/deploy.sh
@@ -297,10 +297,10 @@ cd /root/Projects/language-learning
 ### Manual
 
 ```bash
-cd /root/Projects/language-learning
+cd /root/Projects/akshara
 npm run build
-rm -rf /var/www/apps/language-learning/*
-cp -r dist/* /var/www/apps/language-learning/
+rm -rf /var/www/apps/akshara/*
+cp -r dist/* /var/www/apps/akshara/
 systemctl reload nginx
 ```
 
@@ -309,10 +309,10 @@ systemctl reload nginx
 Config: `/etc/nginx/sites-available/apps.conf`
 
 ```nginx
-location ^~ /language-learning/ {
-    alias /var/www/apps/language-learning/;
+location ^~ /akshara/ {
+    alias /var/www/apps/akshara/;
     index index.html;
-    try_files $uri $uri/ /language-learning/index.html;
+    try_files $uri $uri/ /akshara/index.html;
 }
 ```
 
@@ -329,17 +329,17 @@ Features:
 
 | Page | Path | From |
 |------|------|------|
-| Home | `/language-learning/` | Bottom nav |
-| Practice | `/language-learning/practice` | Home path / bottom nav |
-| Flashcard | `/language-learning/flashcard` | Home path / bottom nav |
-| Study | `/language-learning/match` | Home path / bottom nav |
-| Quiz | `/language-learning/quiz` | Home path / bottom nav |
-| Gunithalu | `/language-learning/gunithalu` | Home path |
-| Review | `/language-learning/review` | Bottom nav |
-| Sentences | `/language-learning/sentences` | Home Conversations |
-| Dialogues | `/language-learning/dialogues` | Home Conversations |
-| Progress | `/language-learning/progress` | Bottom nav |
-| Profile | `/language-learning/profile` | Bottom nav |
+| Home | `/akshara/` | Bottom nav |
+| Practice | `/akshara/practice` | Home path / bottom nav |
+| Flashcard | `/akshara/flashcard` | Home path / bottom nav |
+| Study | `/akshara/match` | Home path / bottom nav |
+| Quiz | `/akshara/quiz` | Home path / bottom nav |
+| Gunithalu | `/akshara/gunithalu` | Home path |
+| Review | `/akshara/review` | Bottom nav |
+| Sentences | `/akshara/sentences` | Home Conversations |
+| Dialogues | `/akshara/dialogues` | Home Conversations |
+| Progress | `/akshara/progress` | Bottom nav |
+| Profile | `/akshara/profile` | Bottom nav |
 
 ---
 

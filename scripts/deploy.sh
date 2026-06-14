@@ -193,7 +193,7 @@ main() {
   esac
 
   echo -e "${BLUE}╔════════════════════════════════════════════════════════════╗${NC}"
-  echo -e "${BLUE}║       Language Learning — Build & Deploy Script            ║${NC}"
+  echo -e "${BLUE}║       Akshara — Build & Deploy Script            ║${NC}"
   echo -e "${BLUE}╚════════════════════════════════════════════════════════════╝${NC}"
   echo
 

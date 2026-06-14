@@ -1,8 +1,8 @@
-# GitHub Copilot Instructions — Language Learning App
+# GitHub Copilot Instructions — Akshara App
 
 ## Project Context
 
-React 19 + TypeScript + Vite + Tailwind CSS 4 SPA for learning Indian languages (Tamil, Hindi, Telugu). All data is static TypeScript. State managed by Zustand with localStorage persistence. Deployed to nginx at `/language-learning/`.
+React 19 + TypeScript + Vite + Tailwind CSS 4 SPA for learning Indian languages (Tamil, Hindi, Telugu). All data is static TypeScript. State managed by Zustand with localStorage persistence. Deployed to nginx at `/akshara/`.
 
 ---
 
@@ -286,7 +286,7 @@ mascot.tip()         // Learning tip
 After any code change:
 1. Run `npm run build` to catch TypeScript errors
 2. If build succeeds, test with `./scripts/deploy.sh --copy`
-3. Verify at `http://<server>/language-learning/`
+3. Verify at `http://<server>/akshara/`
 4. Check browser console for runtime errors
 
 ---

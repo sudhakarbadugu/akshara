@@ -374,7 +374,7 @@ export function HomeworkPage() {
 
         {/* Print footer */}
         <div className="hidden print:block mt-8 pt-4 border-t border-gray-300 text-center text-sm text-gray-500">
-          <p>Generated from Language Learning App • {new Date().toLocaleDateString()}</p>
+          <p>Generated from Akshara • {new Date().toLocaleDateString()}</p>
         </div>
       </div>
 

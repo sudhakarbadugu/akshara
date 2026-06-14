@@ -1,8 +1,8 @@
-# 30-Day Language Learning Journey - Implementation Plan
+# 30-Day Akshara Journey - Implementation Plan
 
 ## 📋 Overview
 
-Build a complete "30-Day Language Learning Journey" feature for the existing Language Learning App.
+Build a complete "30-Day Akshara Journey" feature for the existing Akshara App.
 
 **Target Users:** English speakers learning Telugu, Tamil, or Hindi (already know alphabets, vowels, consonants, gunithalu/matras)
 
