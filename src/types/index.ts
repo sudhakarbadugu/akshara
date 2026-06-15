@@ -8,6 +8,7 @@ export interface AlphabetChar {
   keywordTamil?: string
   emoji?: string
   example?: string
+  exampleTamil?: string
   tip?: string
 }
 
@@ -239,6 +240,7 @@ export interface FlashcardItem {
   keywordNative?: string // Optional native keyword
   emoji?: string
   example?: string
+  exampleNative?: string  // Romanized example word
   tip?: string
 }
 
@@ -252,6 +254,7 @@ export function alphabetToFlashcardItem(c: AlphabetChar): FlashcardItem {
     keywordNative: c.keywordTamil,
     emoji: c.emoji,
     example: c.example,
+    exampleNative: c.exampleTamil,
     tip: c.tip,
   }
 }
