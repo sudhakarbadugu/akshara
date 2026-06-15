@@ -44,4 +44,28 @@ describe('data/wordsForLetter', () => {
     const words2 = getWordsForLetter('அ', 'tamil', 5)
     expect(words1).toEqual(words2)
   })
+
+  it('tamil picture-word categories are prioritized over generic lessons', () => {
+    // Picture-word category id 20 (Uyir Ezhuthu) should be returned first for அ
+    const words = getWordsForLetter('அ', 'tamil', 10)
+    expect(words.length).toBeGreaterThan(0)
+    // First word should be from picture-word category (e.g., அணில் from category 20)
+    // Old generic words like அப்பா/அம்மா (from category 1) should not be the top hits
+    const firstWord = words[0]
+    expect(
+      ['அணில்', 'அன்னாசி', 'அடவி', 'அன்னம்'].includes(firstWord.native),
+      `Expected first word to be a picture word, got: ${firstWord.native}`
+    ).toBe(true)
+  })
+
+  it('tamil picture-word categories prioritized for ஆ', () => {
+    // Picture words like ஆடு, ஆமை, ஆடி should be in the results for ஆ
+    const words = getWordsForLetter('ஆ', 'tamil', 10)
+    expect(words.length).toBeGreaterThan(0)
+    const nativeWords = words.map(w => w.native)
+    expect(
+      nativeWords.some(w => ['ஆடு', 'ஆமை', 'ஆடி', 'ஆந்தை', 'ஆலை'].includes(w)),
+      `Expected picture words like ஆடு/ஆமை, got: ${nativeWords.join(', ')}`
+    ).toBe(true)
+  })
 })
