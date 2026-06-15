@@ -664,6 +664,202 @@ export const tamilLessons: LessonCategory[] = [
       { english: 'Go', native: 'போ', pronunciation: 'Po', meaning: 'Go' },
       { english: 'Give', native: 'கொடு', pronunciation: 'Kodu', meaning: 'Give' },
     ]
+  },
+  {
+    id: 20,
+    category: 'Uyir Ezhuthu (Vowels) - Picture Words',
+    words: [
+      // அ - a vowel
+      { english: 'Squirrel', native: 'அணில்', pronunciation: 'Anil', meaning: 'Squirrel (அ example)' },
+      { english: 'Book', native: 'அம்மா', pronunciation: 'Amma', meaning: 'Mother/Book (அ example)' },
+      { english: 'Forest/Tree group', native: 'அடவி', pronunciation: 'Adavi', meaning: 'Forest (அ example)' },
+      { english: 'Pineapple', native: 'அன்னாசி', pronunciation: 'Annaasi', meaning: 'Pineapple (அ example)' },
+      { english: 'Needle', native: 'ஊசி', pronunciation: 'Oosi', meaning: 'Needle (அ example)' },
+      { english: 'Goat', native: 'ஆடு', pronunciation: 'Aadu', meaning: 'Goat (ஆ example)' },
+      { english: 'Tortoise', native: 'ஆமை', pronunciation: 'Aamai', meaning: 'Tortoise (ஆ example)' },
+      { english: 'Mirror', native: 'ஆடி', pronunciation: 'Aadi', meaning: 'Mirror (ஆ example)' },
+      { english: 'Owl', native: 'ஆந்தை', pronunciation: 'Aanthai', meaning: 'Owl (ஆ example)' },
+      { english: 'Mortar/Pestle', native: 'ஆலை', pronunciation: 'Aalai', meaning: 'Mortar (ஆ example)' },
+      { english: 'Owl (illus.)', native: 'ஆந்தை', pronunciation: 'Aanthai', meaning: 'Owl (ஆ example)' },
+      { english: 'Tortoise (illus.)', native: 'ஆமை', pronunciation: 'Aamai', meaning: 'Tortoise (ஆ example)' },
+      // இ - i vowel
+      { english: 'Fly', native: 'ஈ', pronunciation: 'Ee', meaning: 'Fly (ஈ example)' },
+      { english: 'Apple', native: 'ஈஞ்சி', pronunciation: 'Eenji', meaning: 'Apple (ஈ example - இஞ்சி)' },
+      { english: 'Betel leaf', native: 'இலை', pronunciation: 'Ilai', meaning: 'Betel leaf (ஈ example)' },
+      { english: 'Wing', native: 'இறகு', pronunciation: 'Iraku', meaning: 'Wing (ஈ example)' },
+      { english: 'Palm tree', native: 'ஈச்சமரம்', pronunciation: 'Eechamaram', meaning: 'Palmyra palm (ஈ example)' },
+      { english: 'Leaf', native: 'இலை', pronunciation: 'Ilai', meaning: 'Leaf (ஈ example)' },
+      { english: 'Apple (illus.)', native: 'ஈஞ்சு', pronunciation: 'Eenju', meaning: 'Apple (ஈ example)' },
+      { english: 'Coconut', native: 'இளநீர்', pronunciation: 'Ilaneer', meaning: 'Tender coconut (ஈ example)' },
+      { english: 'Fly (illus.)', native: 'ஈ', pronunciation: 'Ee', meaning: 'Fly (ஈ example)' },
+      { english: 'Palm (illus.)', native: 'ஈச்சம்', pronunciation: 'Eecham', meaning: 'Palmyra (ஈ example)' },
+    ]
+  },
+  {
+    id: 21,
+    category: 'Mei Ezhuthu (Consonants) - Picture Words',
+    words: [
+      // ஆ - picture words (அ)
+      { english: 'Tortoise', native: 'ஆமை', pronunciation: 'Aamai', meaning: 'Tortoise' },
+      { english: 'Mirror', native: 'ஆடி', pronunciation: 'Aadi', meaning: 'Mirror' },
+      { english: 'Banyan tree', native: 'ஆலமரம்', pronunciation: 'Aalamaram', meaning: 'Banyan tree' },
+      { english: 'River', native: 'ஆறு', pronunciation: 'Aaru', meaning: 'River' },
+      { english: 'Owl', native: 'ஆந்தை', pronunciation: 'Aanthai', meaning: 'Owl' },
+      // இ - picture words
+      { english: 'Fly/Insect', native: 'ஈ', pronunciation: 'Ee', meaning: 'Fly/Insect' },
+      { english: 'Apple/Fruit', native: 'ஈஞ்சு', pronunciation: 'Eenju', meaning: 'Apple' },
+      { english: 'Leaf', native: 'இலை', pronunciation: 'Ilai', meaning: 'Leaf' },
+      { english: 'Palm tree', native: 'ஈச்சம்', pronunciation: 'Eecham', meaning: 'Palmyra palm' },
+      { english: 'Coconut', native: 'இளநீர்', pronunciation: 'Ilaneer', meaning: 'Tender coconut' },
+    ]
+  },
+  {
+    id: 22,
+    category: 'Uyir Mei (Vowel Consonants) - Picture Words',
+    words: [
+      // க family - ka
+      { english: 'Crow', native: 'காகம்', pronunciation: 'Kaagam', meaning: 'Crow' },
+      { english: 'Coconut tree', native: 'கள்ளிமரம்', pronunciation: 'Kallimaram', meaning: 'Coconut tree' },
+      { english: 'Squirrel', native: 'குரங்கு', pronunciation: 'Kurangu', meaning: 'Monkey (illus. confusion)' },
+      { english: 'Wooden cradle', native: 'கட்டில்', pronunciation: 'Kattil', meaning: 'Cradle' },
+      { english: 'Whistle', native: 'குழல்', pronunciation: 'Kuzhal', meaning: 'Whistle' },
+      { english: 'Mouse/Rat', native: 'குரங்கு', pronunciation: 'Kurangu', meaning: 'Mouse' },
+      // ங family
+      { english: 'Pot', native: 'குடம்', pronunciation: 'Kudam', meaning: 'Pot' },
+      { english: 'Pot (small)', native: 'குண்டு', pronunciation: 'Kundu', meaning: 'Small pot' },
+      // ச family - sa
+      { english: 'Chariot', native: 'தேர்', pronunciation: 'Thaer', meaning: 'Chariot' },
+      { english: 'Bridge', native: 'பாலம்', pronunciation: 'Paalam', meaning: 'Bridge' },
+      { english: 'Cat', native: 'பூனை', pronunciation: 'Poonaai', meaning: 'Cat' },
+      // ஞ family
+      { english: 'Fox', native: 'நரி', pronunciation: 'Nari', meaning: 'Fox' },
+      { english: 'Mango', native: 'மாம்பழம்', pronunciation: 'Maampazham', meaning: 'Mango' },
+      { english: 'Lime', native: 'எலுமிச்சை', pronunciation: 'Elumichchai', meaning: 'Lime' },
+      // ட family
+      { english: 'Ear', native: 'காது', pronunciation: 'Kaadhu', meaning: 'Ear' },
+      { english: 'Tooth', native: 'பல்', pronunciation: 'Pal', meaning: 'Tooth' },
+      { english: 'Hut', native: 'குடிசை', pronunciation: 'Kudisaai', meaning: 'Hut' },
+    ]
+  },
+  {
+    id: 23,
+    category: 'Picture Words - Daily Objects',
+    words: [
+      { english: 'Box', native: 'பெட்டி', pronunciation: 'Petti', meaning: 'Box' },
+      { english: 'Bed', native: 'படுக்கை', pronunciation: 'Padukkai', meaning: 'Bed' },
+      { english: 'Swing', native: 'ஊஞ்சல்', pronunciation: 'Oonjal', meaning: 'Swing' },
+      { english: 'Fan', native: 'விசிறி', pronunciation: 'Visiri', meaning: 'Fan' },
+      { english: 'Hut', native: 'குடிசை', pronunciation: 'Kudisaai', meaning: 'Hut' },
+      { english: 'Rat', native: 'எலி', pronunciation: 'Eli', meaning: 'Rat/Mouse' },
+      { english: 'Lizard', native: 'பல்லி', pronunciation: 'Palli', meaning: 'Lizard' },
+      { english: 'Snail', native: 'நத்தை', pronunciation: 'Nathai', meaning: 'Snail' },
+      { english: 'Crow', native: 'காகம்', pronunciation: 'Kaagam', meaning: 'Crow' },
+      { english: 'Mosquito', native: 'கொசு', pronunciation: 'Kosu', meaning: 'Mosquito' },
+      { english: 'Cockroach', native: 'கரப்பான்', pronunciation: 'Karappan', meaning: 'Cockroach' },
+      { english: 'Bat', native: 'வௌவால்', pronunciation: 'Vavval', meaning: 'Bat' },
+      { english: 'Vulture', native: 'கழுகு', pronunciation: 'Kazhugu', meaning: 'Vulture' },
+      { english: 'Eagle', native: 'கழுகு', pronunciation: 'Kazhugu', meaning: 'Eagle' },
+    ]
+  },
+  {
+    id: 24,
+    category: 'Picture Words - Fruits & Food',
+    words: [
+      { english: 'Apple', native: 'ஆப்பிள்', pronunciation: 'Aappil', meaning: 'Apple' },
+      { english: 'Mango', native: 'மாம்பழம்', pronunciation: 'Maampazham', meaning: 'Mango' },
+      { english: 'Lime', native: 'எலுமிச்சை', pronunciation: 'Elumichchai', meaning: 'Lime' },
+      { english: 'Coconut', native: 'தேங்காய்', pronunciation: 'Thengaai', meaning: 'Coconut' },
+      { english: 'Betel leaf', native: 'வெற்றிலை', pronunciation: 'Vettrilai', meaning: 'Betel leaf' },
+      { english: 'Tamarind', native: 'புளி', pronunciation: 'Puli', meaning: 'Tamarind' },
+      { english: 'Onion', native: 'வெங்காயம்', pronunciation: 'Vengayam', meaning: 'Onion' },
+      { english: 'Potato', native: 'உருளைக்கிழங்கு', pronunciation: 'Urulaikizhangu', meaning: 'Potato' },
+      { english: 'Leaf', native: 'இலை', pronunciation: 'Ilai', meaning: 'Leaf' },
+    ]
+  },
+  {
+    id: 25,
+    category: 'Picture Words - Trees & Plants',
+    words: [
+      { english: 'Tree', native: 'மரம்', pronunciation: 'Maram', meaning: 'Tree' },
+      { english: 'Banyan tree', native: 'ஆலமரம்', pronunciation: 'Aalamaram', meaning: 'Banyan tree' },
+      { english: 'Coconut tree', native: 'தென்னைமரம்', pronunciation: 'Thennaaimaram', meaning: 'Coconut tree' },
+      { english: 'Palm tree', native: 'பனைமரம்', pronunciation: 'Panaimaram', meaning: 'Palmyra palm' },
+      { english: 'Neem tree', native: 'வேப்பமரம்', pronunciation: 'Vaeppamaram', meaning: 'Neem tree' },
+      { english: 'Mango tree', native: 'மாமரம்', pronunciation: 'Maamaram', meaning: 'Mango tree' },
+      { english: 'Forest', native: 'காடு', pronunciation: 'Kaadu', meaning: 'Forest' },
+      { english: 'Flower', native: 'பூ', pronunciation: 'Poo', meaning: 'Flower' },
+      { english: 'Leaf', native: 'இலை', pronunciation: 'Ilai', meaning: 'Leaf' },
+    ]
+  },
+  {
+    id: 26,
+    category: 'Picture Words - Insects & Small Creatures',
+    words: [
+      { english: 'Fly', native: 'ஈ', pronunciation: 'Ee', meaning: 'Fly' },
+      { english: 'Bee', native: 'தேனீ', pronunciation: 'Thenee', meaning: 'Honey bee' },
+      { english: 'Ant', native: 'எறும்பு', pronunciation: 'Erumbu', meaning: 'Ant' },
+      { english: 'Mosquito', native: 'கொசு', pronunciation: 'Kosu', meaning: 'Mosquito' },
+      { english: 'Butterfly', native: 'வண்ணத்துப்பூச்சி', pronunciation: 'Vannathuppoochi', meaning: 'Butterfly' },
+      { english: 'Spider', native: 'சிலந்தி', pronunciation: 'Silandhi', meaning: 'Spider' },
+      { english: 'Worm', native: 'புழு', pronunciation: 'Puzhu', meaning: 'Worm' },
+      { english: 'Caterpillar', native: 'கம்பளிப்பூச்சி', pronunciation: 'Kambalippoochi', meaning: 'Caterpillar' },
+      { english: 'Cockroach', native: 'கரப்பான்', pronunciation: 'Karappan', meaning: 'Cockroach' },
+      { english: 'Lizard', native: 'பல்லி', pronunciation: 'Palli', meaning: 'Lizard' },
+    ]
+  },
+  {
+    id: 27,
+    category: 'Picture Words - Animals',
+    words: [
+      { english: 'Goat', native: 'ஆடு', pronunciation: 'Aadu', meaning: 'Goat' },
+      { english: 'Cow', native: 'பசு', pronunciation: 'Pasu', meaning: 'Cow' },
+      { english: 'Tortoise', native: 'ஆமை', pronunciation: 'Aamai', meaning: 'Tortoise' },
+      { english: 'Rat/Mouse', native: 'எலி', pronunciation: 'Eli', meaning: 'Rat/Mouse' },
+      { english: 'Squirrel', native: 'அணில்', pronunciation: 'Anil', meaning: 'Squirrel' },
+      { english: 'Cat', native: 'பூனை', pronunciation: 'Poonaai', meaning: 'Cat' },
+      { english: 'Dog', native: 'நாய்', pronunciation: 'Naai', meaning: 'Dog' },
+      { english: 'Monkey', native: 'குரங்கு', pronunciation: 'Kurangu', meaning: 'Monkey' },
+      { english: 'Rabbit', native: 'முயல்', pronunciation: 'Muyal', meaning: 'Rabbit' },
+      { english: 'Elephant', native: 'யானை', pronunciation: 'Yaanai', meaning: 'Elephant' },
+    ]
+  },
+  {
+    id: 28,
+    category: 'Picture Words - Birds',
+    words: [
+      { english: 'Crow', native: 'காகம்', pronunciation: 'Kaagam', meaning: 'Crow' },
+      { english: 'Owl', native: 'ஆந்தை', pronunciation: 'Aanthai', meaning: 'Owl' },
+      { english: 'Sparrow', native: 'சிட்டுக்குருவி', pronunciation: 'Sittukkuruvi', meaning: 'Sparrow' },
+      { english: 'Parrot', native: 'கிளி', pronunciation: 'Kili', meaning: 'Parrot' },
+      { english: 'Pigeon', native: 'புறா', pronunciation: 'Puraa', meaning: 'Pigeon' },
+      { english: 'Peacock', native: 'மயில்', pronunciation: 'Mayil', meaning: 'Peacock' },
+      { english: 'Hen', native: 'கோழி', pronunciation: 'Kozhi', meaning: 'Hen' },
+      { english: 'Rooster', native: 'சேவல்', pronunciation: 'Seval', meaning: 'Rooster' },
+      { english: 'Eagle', native: 'கழுகு', pronunciation: 'Kazhugu', meaning: 'Eagle' },
+      { english: 'Vulture', native: 'கழுகு', pronunciation: 'Kazhugu', meaning: 'Vulture' },
+      { english: 'Duck', native: 'வாத்து', pronunciation: 'Vaaththu', meaning: 'Duck' },
+      { english: 'Bat', native: 'வௌவால்', pronunciation: 'Vavval', meaning: 'Bat' },
+    ]
+  },
+  {
+    id: 29,
+    category: 'Picture Words - Household Objects',
+    words: [
+      { english: 'House', native: 'வீடு', pronunciation: 'Veedu', meaning: 'House' },
+      { english: 'Door', native: 'கதவு', pronunciation: 'Kadhavu', meaning: 'Door' },
+      { english: 'Window', native: 'ஜன்னல்', pronunciation: 'Jannal', meaning: 'Window' },
+      { english: 'Pot', native: 'பானை', pronunciation: 'Paanai', meaning: 'Pot' },
+      { english: 'Box', native: 'பெட்டி', pronunciation: 'Petti', meaning: 'Box' },
+      { english: 'Mirror', native: 'கண்ணாடி', pronunciation: 'Kannaadi', meaning: 'Mirror' },
+      { english: 'Needle', native: 'ஊசி', pronunciation: 'Oosi', meaning: 'Needle' },
+      { english: 'Whistle', native: 'குழல்', pronunciation: 'Kuzhal', meaning: 'Whistle' },
+      { english: 'Cradle', native: 'கட்டில்', pronunciation: 'Kattil', meaning: 'Cradle' },
+      { english: 'Swing', native: 'ஊஞ்சல்', pronunciation: 'Oonjal', meaning: 'Swing' },
+      { english: 'Fan', native: 'விசிறி', pronunciation: 'Visiri', meaning: 'Fan' },
+      { english: 'Bed', native: 'படுக்கை', pronunciation: 'Padukkai', meaning: 'Bed' },
+      { english: 'Bridge', native: 'பாலம்', pronunciation: 'Paalam', meaning: 'Bridge' },
+      { english: 'Chariot', native: 'தேர்', pronunciation: 'Thaer', meaning: 'Chariot' },
+    ]
   }
 ]
 

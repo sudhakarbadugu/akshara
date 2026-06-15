@@ -46,4 +46,45 @@ describe('data/lessons', () => {
       expect(new Set(ids).size).toBe(ids.length)
     }
   })
+
+  it('tamil includes picture words extracted from workbook', () => {
+    const lessons = getLessons('tamil')
+    const pictureWordCategories = lessons.filter(l => 
+      l.category.toLowerCase().includes('picture words') ||
+      l.category.toLowerCase().includes('uyir ezhuthu') ||
+      l.category.toLowerCase().includes('meí ezhuthu')
+    )
+    expect(pictureWordCategories.length).toBeGreaterThan(0)
+    
+    // Verify each category has words
+    for (const cat of pictureWordCategories) {
+      expect(cat.words.length).toBeGreaterThan(0)
+    }
+  })
+
+  it('tamil picture words include expected key items', () => {
+    const lessons = getLessons('tamil')
+    const allWords = lessons.flatMap(l => l.words)
+    const englishWords = allWords.map(w => w.english.toLowerCase())
+    
+    // Animals from workbook
+    expect(englishWords).toContain('goat')
+    expect(englishWords).toContain('tortoise')
+    expect(englishWords).toContain('crow')
+    expect(englishWords).toContain('owl')
+    
+    // Objects from workbook
+    expect(englishWords).toContain('house')
+    expect(englishWords).toContain('mirror')
+    expect(englishWords).toContain('box')
+    expect(englishWords).toContain('bed')
+    expect(englishWords).toContain('swing')
+    expect(englishWords).toContain('fan')
+    
+    // Nature from workbook
+    expect(englishWords).toContain('tree')
+    expect(englishWords).toContain('leaf')
+    expect(englishWords).toContain('coconut')
+    expect(englishWords).toContain('apple')
+  })
 })
