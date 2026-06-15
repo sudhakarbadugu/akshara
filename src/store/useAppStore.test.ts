@@ -3,8 +3,7 @@ import { useAppStore } from './useAppStore'
 
 // Reset store before each test by accessing the internal setState
 beforeEach(() => {
-  // @ts-expect-error - accessing internal zustand api
-  useAppStore.setState({
+  ;(useAppStore.setState as unknown as (s: Record<string, unknown>) => void)({
     streak: 0,
     lastVisitDate: null,
     xp: 0,

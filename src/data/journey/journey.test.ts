@@ -39,7 +39,7 @@ describe('data/journey integrity', () => {
   })
 
   it('days are numbered 1..N sequentially within each language', () => {
-    for (const [lang, days] of Object.entries(ALL_JOURNEYS)) {
+    for (const [, days] of Object.entries(ALL_JOURNEYS)) {
       const dayNumbers = days.map(d => d.day).sort((a, b) => a - b)
       for (let i = 0; i < dayNumbers.length; i++) {
         expect(dayNumbers[i]).toBe(i + 1)
@@ -48,7 +48,7 @@ describe('data/journey integrity', () => {
   })
 
   it('vocabulary words are valid WordItem-shaped objects', () => {
-    for (const [lang, days] of Object.entries(ALL_JOURNEYS)) {
+    for (const [, days] of Object.entries(ALL_JOURNEYS)) {
       for (const day of days) {
         for (const v of day.vocabulary) {
           expect(v.english).toBeTruthy()
@@ -61,7 +61,7 @@ describe('data/journey integrity', () => {
   })
 
   it('quiz questions have a correct answer that is one of the options', () => {
-    for (const [lang, days] of Object.entries(ALL_JOURNEYS)) {
+    for (const [, days] of Object.entries(ALL_JOURNEYS)) {
       for (const day of days) {
         for (const q of day.quiz) {
           expect(q.options.length).toBeGreaterThanOrEqual(2)
